@@ -51,50 +51,76 @@
         .site-footer a {
             color: #F8F8F8 !important;
         }
-        .off-white{
-            color:#F8F8F8 !important;
+
+        .off-white {
+            color: #F8F8F8 !important;
         }
-        .owl-nav{
+
+        .owl-nav {
             bottom: -70px !important;
         }
-        .site-navbar .site-navigation .site-menu > li > a > span:hover{
-            color:red !important;
+
+        .site-navbar .site-navigation .site-menu>li>a>span:hover {
+            color: red !important;
         }
     </style>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11084201160"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11084201160"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'AW-11084201160');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PRZHMTSD');</script>
+        gtag('config', 'AW-11084201160');
+    </script>
 
-<!-- Meta Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1121899502057242');
-    fbq('track', 'PageView');
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PRZHMTSD');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1121899502057242');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 
@@ -120,8 +146,8 @@
                     <h1 class="mb-0 site-logo">
                         <a href="{{ route('home') }}" class="text-white mb-0">
                             <img style="    max-height: 65px;
-                            margin: 10px 0 10px 0;"      
-                            src="{{ asset('public/images/whatsapp/logo-transparent.webp') }}" alt="">
+                            margin: 10px 0 10px 0;"
+                                src="{{ asset('public/images/whatsapp/logo-transparent.webp') }}" alt="">
                         </a>
                     </h1>
                 </div>
@@ -153,7 +179,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="{{ asset('public/images/whatsapp/bg.jpeg') }}" alt="Image"
+                    <img src="{{ asset('public/images/whatsapp/file (3) 1.png') }}" alt="Image"
                         class="img-fluid rounded mb-3">
                 </div>
                 <div class="col-md-7 d-flex justify-content-end">
@@ -203,44 +229,41 @@
 
 
 
-
-    <div class="block-quick-info-2">
+    <div class="block-quick-info-2"
+        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
         <div class="container">
-            <div class="block-quick-info-2-inner" style="background: #d3d3d3">
+            <div>
                 <div class="row">
 
-                    <div class="col-sm-6 col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <a class="align-items-center d-flex " href="https://wa.me/7358728170" target="blank">
-                            <div class="d-flex quick-info-2">
-                                <div class="text  align-items-center d-flex ">
-                                    <span class="icon icon-whatsapp mr-3" style="color: green"></span>
-                                    <p class="lead m-0"> Reach us on whatsapp </p>
-                                </div>
+                    <!-- WhatsApp Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
+                        <a class="align-items-center d-flex justify-content-center" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
+                                <span class="icon icon-whatsapp mr-3" style="color: green; font-size: 24px;"></span>
+                                <p class="lead m-0" style="font-size: 16px; color: #000;">Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <a href="tel:9746222668">
-                            <div class="d-flex quick-info-2">
-                                <span class="icon icon-phone mr-3 ml-2 d-flex align-items-center"></span>
+
+                    <!-- Call Us Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
+                        <a href="tel:9746222668" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
+                                <span class="icon icon-phone mr-3" style="color: red; font-size: 24px;"></span>
                                 <div class="text">
-                                    <strong class="d-block heading" style="color:red">
-                                        <p class="lead m-0"> Call us today</p>
-                                    </strong>
-                                    <span class="excerpt">
-                                        <p class="lead m-0" style="color: red"> +91 97462 22668</p>
-                                    </span>
+                                    <p class="lead m-0" style="font-size: 16px; color: red;">Call us today</p>
+                                    <p class="lead m-0" style="font-size: 16px; color: red;">+91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <a href="{{ route('contact-us') }}">
-                            <div class="d-flex quick-info-2">
-                                <span class="icon icon-home mr-3"></span>
-                                <div class="text  align-items-center d-flex">
-                                    <p class="lead m-0"> Book an appointment </p>
-                                </div>
+
+                    <!-- Book Appointment Link -->
+                    <div class="col-sm-12 col-md-4" style="text-align: center;">
+                        <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
+                                <span class="icon icon-home mr-3" style="font-size: 24px;"></span>
+                                <p class="lead m-0" style="font-size: 16px;">Book an appointment</p>
                             </div>
                         </a>
                     </div>
@@ -249,6 +272,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="block-services-1 py-5">
         <div class="container">
@@ -259,7 +283,7 @@
                         <a href="#" class="thumbnail-link d-block mb-4"><img
                                 src="{{ asset('public/images/whatsapp/1.jpeg') }}" alt="Image"
                                 class="img-fluid"></a>
-                        <h3 class="block-service-1-heading mb-3"><a href="#"  style="color: #666666">25+ Years of Expertise in Allergy
+                        <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">25+ Years of Expertise in Allergy
                                 Testing</a></h3>
 
                     </div>
@@ -303,9 +327,9 @@
         </div>
     </div>
 
-    <div class="block-half-content-1 d-block d-lg-flex mt-5">
+    <!-- <div class="block-half-content-1 d-block d-lg-flex mt-5">
 
-        <div class="block-half-content-text bg-light w-100">
+         <div class="block-half-content-text bg-light w-100">
             <div class="block-half-content-text-inner">
                 <h1 class="block-half-content-heading mb-4 text-center"
                     style="    color: #666666;
@@ -321,7 +345,37 @@
 
 
         </div>
+    </div> -->
+    <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
+        <!-- Background layer with opacity -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle2.png'); background-size: cover; background-position: center; z-index: 0; filter: opacity(0.56);">
+        </div>
+
+        <!-- Content Layer (Text and Image) -->
+        <div style="position: relative; z-index: 1; padding: 0px;">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One'; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left;">
+                            Comprehensive<br>ALLERGY TESTS. 180+ tests with a Single Blood Specimen.
+                            <br>
+                            <span style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
+                                <br>Allergies are much more than a minor inconvenience; studies have shown that untreated allergies can contribute to a plethora of chronic illnesses including asthma, sinus infections, upper respiratory infections, ear infections, and general susceptibility to illness.
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="http://localhost/allergy-test/public/images/whatsapp/189-allergens-13.png" alt="Contact Us" style="max-width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+    </div>
+    </div>
+
 
     <div class="site-section">
         <div class="container">
@@ -381,6 +435,234 @@
 
             </div>
         </div>
+    </div>
+
+    <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
+        <!-- Background layer with opacity -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; opacity: 0.56; z-index: 0;">
+        </div>
+
+        <!-- Content Layer (Text and Image) -->
+        <div style="position: relative; z-index: 1; padding: 20px;">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <h2 class="mb-3 mt-0 " style="font-family: 'Francois One'; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left;">
+                            Allergy Treatment:<br>The best way to treat allergy, is by first knowing the cause.
+                            <br>
+                            <span style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
+                                <br>Skin Allergy: Skin allergy could be due to certain food, inhalants, or some contact items. It can be found out only through proper diagnosis. With a blood test, we can identify it. Once identified, you can get rid of most allergies without any medication.
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="mb-0">
+                            <img src="http://localhost/allergy-test/public/images/whatsapp/allergy-tests-chennai-1-649x3141.png" alt="Contact Us" style="max-width: 100%;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 text-center">
+                    <h2 class="site-section-heading text-center font-secondary" style="font-family: 'Francois One';font-size: 32px;font-weight: 400;line-height: 24px;text-align: center;">ALLERGY SYMPTOMS <br><span style="font-family: 'Francois One';font-size: 22px;font-weight: 400;line-height: 24px;text-align: center;">If you experience any of the following, then you may take an Allergy Test at the earliest.</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'itching' route -->
+                        <a href="{{ route('itching') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/itching2.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Itching
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'hives' route -->
+                        <a href="{{ route('hives') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Hives
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'sneeze' route -->
+                        <a href="{{ route('sneezing') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 3.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Sneeze
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'running_nose' route -->
+                        <a href="{{ route('runnynose') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Running Nose
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'wheezing' route -->
+                        <a href="{{ route('wheezing') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Wheezing
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'swollen_lips' route -->
+                        <a href="{{ route('swollenlips') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_2.png') }}" alt="Image" style="width: 100%; height: 100%; display: block;" class="image-fluid">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Swollen Lips
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'shortness_of_breath' route -->
+                        <a href="{{ route('shortnessbreath') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_3.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Shortness of Breath
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'chest_tightness' route -->
+                        <a href="{{ route('chesttight') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Chest Tightness
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'cough' route -->
+                        <a href="{{ route('cough') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Cough
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'swollen-eyes' route -->
+                        <a href="{{ route('swolleneye') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 2.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Swollen Eyes
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'skin-rashes' route -->
+                        <a href="{{ route('skinrashes') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 6.png') }}" alt="Image" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Skin Rashes
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <!-- Link pointing to the 'swollen-face' route -->
+                        <a href="{{ route('swollenface') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
+                            <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 5.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                            <!-- Text at the bottom of the image -->
+                            <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                                Swollen Face
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Add this script for onclick interaction and animation -->
+                <!-- <script>
+                        function handleClick() {
+                            // Navigation logic (change URL or load a new page)
+                            window.location.href = 'file://Desktop%20-%2011'; // Change the path to your desired navigation destination.
+
+                            // Smart animate logic (fade-in effect)
+                            const element = document.querySelector('.block-service-1-card');
+                            element.style.transition = 'opacity 300ms ease-out';
+                            element.style.opacity = '1'; // Fade in by setting opacity to 1
+                        }
+                    </script> -->
+
+            </div>
+
+
+        </div>
+    </div>
     </div>
 
 
@@ -593,141 +875,185 @@
             </div>
         </div>
     </div>
-
-
-        {{-- our location  --}}
-        <div class="site-section block-services-1">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-md-12 text-center">
-                        <h2 class="site-section-heading text-center font-secondary text-black">Our Locations</h2>
-                    </div>
-                </div>
+    <div class="block-quick-info-2"
+        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
+        <div class="container">
+            <div>
                 <div class="row">
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#">Bengaluru</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-    
-                                    151, 6th cross, 22nd A Main Rd,
-                                    <br>1st Sector, HSR Layout,
-                                    <br>Bengaluru-560102
-                                    <br>Ph. 97462 22668
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#">Chennai</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-                                    10, Shalom Building, 4,
-                                    <br>Mannar Street, T.Nagar,
-                                    <br>Chennai-600017
-                                    <br>Ph. 96772 11647
 
-                                </p>
+                    <!-- WhatsApp Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
+                        <a class="align-items-center d-flex justify-content-center" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
+                                <span class="icon icon-whatsapp mr-3" style="color: green; font-size: 24px;"></span>
+                                <p class="lead m-0" style="font-size: 16px; color: #000;">Reach us on WhatsApp</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#">Hyderabad</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-    
-                                    No.10A&B,Mayfair Gardens,Rd
-    
-                                    <br>No.12,Banjara Hills
-    
-                                    <br>Hyderabad-500034
-                                    <br>Ph. 77366 51520
 
-                                </p>
+                    <!-- Call Us Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
+                        <a href="tel:9746222668" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
+                                <span class="icon icon-phone mr-3" style="color: red; font-size: 24px;"></span>
+                                <div class="text">
+                                    <p class="lead m-0" style="font-size: 16px; color: red;">Call us today</p>
+                                    <p class="lead m-0" style="font-size: 16px; color: red;">+91 97462 22668</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#">Pune</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-    
-                                    Flat no. 103, Jadhav Complex,
-                                    <br>Airport Road, Lohegaon
-                                    <br>Pune-411047
-                                    <br>Ph. 97462 22668
 
-                                </p>
+                    <!-- Book Appointment Link -->
+                    <div class="col-sm-12 col-md-4" style="text-align: center;">
+                        <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
+                                <span class="icon icon-home mr-3" style="font-size: 24px;"></span>
+                                <p class="lead m-0" style="font-size: 16px;">Book an appointment</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
-    
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#">Kochi</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-                                    Ground floor, Chinna Complex,
-                                    <br>Aiswarya Road,(Metro Pillar 548)
-                                    <br>Palarivattom, Kochi-682 025
-                                    <br>Ph. 95672 22877
 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#">Mumbai</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-                                    F-59, 1st Floor, THE ZONE
-                                    <br> MALLChandavarkarRd,
-                                    <br>Borivali (W), Mumbai-400092
-                                    <br>Ph. 97462 22668
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#">Trivandrum</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-                                    1st Floor, Crown Plaza, Pattom,
-                                    <br>Next to St.Mary's Church,
-                                    <br>Trivandrum-695004
-                                    <br>Ph. 73569 45575
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
-                        <div class="block-service-1-card">
-                            <h3 class="block-service-1-heading mb-3"><a href="#" style="color: red">HOME
-                                    COLLECTION</a></h3>
-                            <div class="block-service-1-excerpt">
-                                <p>
-                                    Home collection is possible in all
-                                    <br>these cities.
-                                    <br>Nominal charges apply
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-    
-    
                 </div>
             </div>
         </div>
+    </div>
+
+
+
+    {{-- our location  --}}
+    <div class="site-section block-services-1" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png');">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 text-center">
+                    <h2 class="site-section-heading text-center font-secondary text-black">Our Locations</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#">Bengaluru</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+
+                                151, 6th cross, 22nd A Main Rd,
+                                <br>1st Sector, HSR Layout,
+                                <br>Bengaluru-560102
+                                <br>Ph. 97462 22668
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#">Chennai</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+                                10, Shalom Building, 4,
+                                <br>Mannar Street, T.Nagar,
+                                <br>Chennai-600017
+                                <br>Ph. 96772 11647
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#">Hyderabad</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+
+                                No.10A&B,Mayfair Gardens,Rd
+
+                                <br>No.12,Banjara Hills
+
+                                <br>Hyderabad-500034
+                                <br>Ph. 77366 51520
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#">Pune</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+
+                                Flat no. 103, Jadhav Complex,
+                                <br>Airport Road, Lohegaon
+                                <br>Pune-411047
+                                <br>Ph. 97462 22668
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#">Kochi</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+                                Ground floor, Chinna Complex,
+                                <br>Aiswarya Road,(Metro Pillar 548)
+                                <br>Palarivattom, Kochi-682 025
+                                <br>Ph. 95672 22877
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#">Mumbai</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+                                F-59, 1st Floor, THE ZONE
+                                <br> MALLChandavarkarRd,
+                                <br>Borivali (W), Mumbai-400092
+                                <br>Ph. 97462 22668
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#">Trivandrum</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+                                1st Floor, Crown Plaza, Pattom,
+                                <br>Next to St.Mary's Church,
+                                <br>Trivandrum-695004
+                                <br>Ph. 73569 45575
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 mb-lg-4 col-sm-6 col-md-6 col-lg-3">
+                    <div class="block-service-1-card">
+                        <h3 class="block-service-1-heading mb-3"><a href="#" style="color: red">HOME
+                                COLLECTION</a></h3>
+                        <div class="block-service-1-excerpt">
+                            <p>
+                                Home collection is possible in all
+                                <br>these cities.
+                                <br>Nominal charges apply
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 
 
     <footer class="site-footer off-white" style="background: #000000">
@@ -815,8 +1141,8 @@
     <script src="{{ asset('public/js/main.js') }}"></script>
 
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>
