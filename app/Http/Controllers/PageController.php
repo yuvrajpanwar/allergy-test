@@ -77,7 +77,7 @@ public function swollenlips()
 //allergy-symptoms
 public function allergySymptoms()
 {
-    return view('allergySymptoms'); // This will return the allergy-symptoms.blade.php view
+    return view('allergysymptoms'); // This will return the allergy-symptoms.blade.php view
 
 }
 

@@ -48,7 +48,7 @@
             .custom-heading {
                 font-size: 24px;
                 /* Adjust font size for medium devices */
-                padding-left: 2rem;
+                padding-left: 1rem;
                 /* Adjust padding for medium screens */
             }
         }
@@ -208,7 +208,7 @@
     </header>
 
     <!-- Itching contents here -->
-    <div class="site-section block-services-1" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
+    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
         <div class="container" style="max-width: 100%; padding: 0 15px;">
             <div class="row align-items-left justify-content-between">
                 <!-- Title and Description -->
@@ -225,7 +225,7 @@
                     </p>
                     <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
                         Click here to <span style="font-weight: 700;">Chat
-                            <img src="http://localhost/allergy-test/public/images/whatsapp/wappvector.png" alt="Chat" style="width: 30px; height: 30px;">
+                            <img src="{{asset('public/images/whatsapp/wappvector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
                 </div>
@@ -465,7 +465,7 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
                                 <a href="{{ route('swollenface') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="http://localhost/allergy-test/public/images/whatsapp/skin-rashes-480x320-384x256 5.png" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256 5.png')}}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
                                     <a href="{{ route('swollenface') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN FACE</a>
@@ -492,7 +492,8 @@
 
 
     <div class="block-quick-info-2"
-        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
+
+        style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
         <div class="container">
             <div>
                 <div class="row">
@@ -536,7 +537,7 @@
     </div>
 
     {{-- our location  --}}
-    <div class="site-section block-services-1" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png');">
+    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">

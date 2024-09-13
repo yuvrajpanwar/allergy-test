@@ -41,7 +41,7 @@
 @media (max-width: 768px) {
     .custom-heading {
         font-size: 24px; /* Adjust font size for medium devices */
-        padding-left: 2rem; /* Adjust padding for medium screens */
+        padding-left: 1rem; /* Adjust padding for medium screens */
     }
 }
 
@@ -201,7 +201,7 @@
     </header>
 
     <!-- Itching contents here -->
-    <div class="site-section block-services-1" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
+    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
         <div class="container" style="max-width: 100%; padding: 0 15px;">
             <div class="row align-items-left justify-content-between">
                 <!-- Title and Description -->
@@ -218,7 +218,7 @@
                     </p>
                     <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
                         Click here to <span style="font-weight: 700;">Chat
-                            <img src="http://localhost/allergy-test/public/images/whatsapp/wappvector.png" alt="Chat" style="width: 30px; height: 30px;">
+                            <img src="{{asset('public/images/whatsapp/wappvector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
                 </div>
@@ -226,7 +226,7 @@
 
             <!-- Image Section -->
             <div class="text-center" style="margin-top: 20px;">
-                <img src="http://localhost/allergy-test/public/images/whatsapp/runny480x320.png" alt="Itching Image" style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
+                <img src="{{asset('/public/images/whatsapp/runny480x320.png')}}" alt="Itching Image" style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
             </div>
 
             <!-- Paragraph Content Below the Image -->
@@ -282,7 +282,7 @@
 
 
     <div class="block-quick-info-2"
-        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
+        style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
         <div class="container">
             <div>
                 <div class="row">
@@ -326,7 +326,7 @@
     </div>
 
     {{-- our location  --}}
-    <div class="site-section block-services-1" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png');">
+    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">

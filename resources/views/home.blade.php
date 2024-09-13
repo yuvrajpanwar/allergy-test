@@ -288,7 +288,10 @@
 
 
     <div class="block-quick-info-2"
-        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
+        style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); 
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        padding: 20px 0;">
         <div class="container">
             <div>
                 <div class="row">
@@ -406,9 +409,9 @@
     </div> -->
     <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
         <!-- Background layer with opacity -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle2.png'); background-size: cover; background-position: center; z-index: 0; background-color: rgba(0, 0, 0, 0.56);">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle2.png'); background-size: cover; background-position: center; z-index: 0; background-color: rgba(0, 0, 0, 0.56);">
         </div>
-
+        
         <!-- Content Layer (Text and Image) -->
         <div style="position: relative; z-index: 1; padding: 0px;">
             <div class="container">
@@ -423,7 +426,7 @@
                         </h2>
                     </div>
                     <div class="col-lg-4">
-                        <img src="http://localhost/allergy-test/public/images/whatsapp/189-allergens-13.png" alt="Contact Us" class="responsive-img2">
+                        <img src="{{ asset('public/images/whatsapp/189-allergens-13.png') }}" alt="Contact Us" class="responsive-img2">
                     </div>
                 </div>
             </div>
@@ -499,7 +502,7 @@
 
     <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
         <!-- Background layer with opacity -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.56); z-index: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.56); z-index: 0;">
         </div>
 
         <!-- Content Layer (Text and Image) -->
@@ -517,7 +520,7 @@
                     </div>
                     <div class="col-lg-4">
                         <p class="mb-0">
-                            <img src="http://localhost/allergy-test/public/images/whatsapp/allergy-tests-chennai-1-649x3141.png" alt="Contact Us" class="responsive-img1">
+                            <img src="{{ asset('public/images/whatsapp/allergy-tests-chennai-1-649x3141.png') }}" alt="Contact Us" class="responsive-img1">
                         </p>
                     </div>
                 </div>
@@ -936,7 +939,7 @@
         </div>
     </div>
     <div class="block-quick-info-2"
-        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 0px 0;">
+        style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 0px 0;">
         <div class="container">
             <div>
                 <div class="row">
@@ -982,7 +985,7 @@
 
 
     {{-- our location  --}}
-    <div class="site-section block-services-1" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png');">
+    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
