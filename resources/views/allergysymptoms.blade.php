@@ -21,6 +21,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Dosis:wght@400&display=swap" rel="stylesheet">
 
     <style>
+
+.custom-heading {
+            font-family: 'Francois One', sans-serif;
+            font-size: 28px;
+            /* Default for large screens */
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: left;
+            padding-left: 5rem;
+            /* Default padding for large screens */
+        }
+
+        /* Media Query for small devices (like smartphones) */
+        @media (max-width: 576px) {
+            .custom-heading {
+                font-size: 20px;
+                /* Adjust font size for small devices */
+                padding-left: 1rem;
+                /* Reduce padding for small screens */
+            }
+        }
+
+        /* Media Query for medium devices (like tablets) */
+        @media (max-width: 768px) {
+            .custom-heading {
+                font-size: 24px;
+                /* Adjust font size for medium devices */
+                padding-left: 2rem;
+                /* Adjust padding for medium screens */
+            }
+        }
         .error {
             color: red;
         }
@@ -181,9 +212,9 @@
         <div class="container" style="max-width: 100%; padding: 0 15px;">
             <div class="row align-items-left justify-content-between">
                 <!-- Title and Description -->
-                <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="col-lg-7 mb-4 mb-lg-0 custom-heading">
                     <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4; text-align: left;">
-                        ALLERGY SYMPTOMS<br>Itching
+                        ALLERGY SYMPTOMS<br><span style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 31.76px;text-align: center;">Some of the common allergy symptoms are are given below</span>
                     </h2>
                 </div>
 
@@ -204,22 +235,22 @@
             <div class="site-section">
                 <div class="container">
                     <!-- Heading -->
-                    <div class="row mb-5">
+                    <!-- <div class="row mb-5">
                         <div class="col-md-12 text-center">
                             <h2 class="site-section-heading text-center font-secondary">TYPES OF ALLERGENS WE TEST</h2>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Image grid -->
                     <div class="row">
                         <!-- Image 1: Veg Food -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('itching') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/itching2.png') }}" alt="Veg Food Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: 'Francois One', sans-serif; font-size: 22.4px; font-weight: 400; line-height: 38px; text-align: left;">ITCHING</a>
+                                    <a href="{{ route('itching') }}" style="font-family: 'Francois One', sans-serif; font-size: 22.4px; font-weight: 400; line-height: 38px; text-align: left;">ITCHING</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Itching is an irritating sensation that makes you want
@@ -236,11 +267,11 @@
                         <!-- Image 2: Non-Veg Food -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('hives') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png') }}" alt="Non-Veg Food Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">HIVES</a>
+                                    <a href="{{ route('hives') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">HIVES</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Hives are raised welts on the skin that appear in
@@ -256,11 +287,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('sneezing') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 3.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SNEEZING</a>
+                                    <a href="{{ route('sneezing') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SNEEZING</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Sneezing is your body's way of removing irritants from your nose or throat. A sneeze is a powerful, involuntary expulsion of air. Sneezing often happens suddenly and without warning. Sneezing can be triggered by a variety of things, including allergens, viruses, such as the common cold or flu, nasal irritants or inhalation of corticosteroids through a nasal spray.
@@ -270,11 +301,11 @@
                         <!-- Image 4: Contact Allergy -->
                         <div class="mb-4 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('runnynose') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png') }}" alt="Contact Allergy Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">RUNNY NOSE</a>
+                                    <a href="{{ route('runnynose') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">RUNNY NOSE</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     A runny nose can be caused by anything that
@@ -293,11 +324,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('wheezing') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">WHEEZING</a>
+                                    <a href="{{ route('wheezing') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">WHEEZING</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Wheezing happens when the airways are tightened,
@@ -314,11 +345,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('chesttight') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">CHEST TIGHTNESS</a>
+                                    <a href="{{ route('chesttight') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">CHEST TIGHTNESS</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Chest tightness: Seasonal allergies are extremely common and
@@ -334,11 +365,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('shortnessbreath') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2563.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SHORTNESS OF BREATH</a>
+                                    <a href="{{ route('shortnessbreath') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SHORTNESS OF BREATH</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Shortness of breath may be triggered by some common foods
@@ -354,11 +385,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('cough') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">COUGH</a>
+                                    <a href="{{ route('cough') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">COUGH</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Asthma and allergy coughs are typically caused by
@@ -374,11 +405,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('swollenlips') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2562.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN LIPS</a>
+                                    <a href="{{ route('swollenlips') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN LIPS</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Swollen lips are caused by underlying inflammation
@@ -394,11 +425,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('swolleneye') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 2.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN EYES</a>
+                                    <a href="{{ route('swolleneye') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN EYES</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Swollen eyelids cause a puffy appearance to the eyes.
@@ -413,11 +444,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('skinrashes') }}" class="thumbnail-link d-block mb-3">
                                     <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 6.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SKIN RASHES</a>
+                                    <a href="{{ route('skinrashes') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SKIN RASHES</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     Skin rashes can occur from a variety of factors,
@@ -433,11 +464,11 @@
                         <!-- Image 3: Inhalants -->
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card">
-                                <a href="#" class="thumbnail-link d-block mb-3">
+                                <a href="{{ route('swollenface') }}" class="thumbnail-link d-block mb-3">
                                     <img src="http://localhost/allergy-test/public/images/whatsapp/skin-rashes-480x320-384x256 5.png" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="#" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN FACE</a>
+                                    <a href="{{ route('swollenface') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN FACE</a>
                                 </h3>
                                 <p class="small-description" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;">
                                     A swollen face due to an allergic reaction may be accompanied
@@ -470,8 +501,8 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a class="align-items-center d-flex justify-content-center" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-whatsapp mr-3" style="color: green; font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px; color: #000;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;padding: 0px 0px 0.14px 0px;gap: 0px;opacity: 0px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -480,10 +511,10 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a href="tel:9746222668" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-phone mr-3" style="color: red; font-size: 24px;"></span>
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;gap: 0px;opacity: 0px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">Call us today</p>
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">+91 97462 22668</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">+91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -493,8 +524,8 @@
                     <div class="col-sm-12 col-md-4" style="text-align: center;">
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-home mr-3" style="font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px;">Book an appointment</p>
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;gap: 0px;opacity: 0px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Book an appointment</p>
                             </div>
                         </a>
                     </div>

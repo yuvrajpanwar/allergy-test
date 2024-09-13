@@ -19,6 +19,64 @@
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <style>
+        /* Default styles for small screens */
+        .responsive-img1 {
+            width: 100%;
+            height: auto;
+            max-width: 540px;
+            /* Limits the width on larger screens */
+            max-height: 262.02px;
+            /* Limits the height on larger screens */
+            display: block;
+            /* Ensures the image behaves correctly inside the container */
+            margin: 0 auto;
+            /* Center the image if it's smaller than the container width */
+        }
+
+        /* Media Query for Large Displays */
+        @media (min-width: 1200px) {
+            .responsive-img1 {
+                width: 540px;
+                height: 262.02px;
+                top: 2539px;
+                /* If necessary */
+                left: 720px;
+                /* If necessary */
+            }
+        }
+
+        .responsive-img2 {
+            width: 100%;
+            height: auto;
+            max-width: 387px;
+            /* Limits the width on larger screens */
+            max-height: 126px;
+            /* Limits the height on larger screens */
+            display: block;
+            /* Ensures the image behaves correctly inside the container */
+            margin: 0 auto;
+            /* Center the image if it's smaller than the container width */
+        }
+
+        /* Media Query for Large Displays */
+        @media (min-width: 1200px) {
+            .responsive-img2 {
+                width: 387px;
+                height: 126px;
+                /* Adjust these if needed, but usually position is handled by layout */
+                /* top: 1533px; */
+                /* left: 730px; */
+            }
+        }
+
+
+
+
+
+
+
+
+
         .error {
             color: red;
         }
@@ -175,7 +233,7 @@
     </header>
 
 
-    <div class="site-section pt-0">
+    <div class="site-section pt-0" style="padding-bottom:0;">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
@@ -239,8 +297,8 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a class="align-items-center d-flex justify-content-center" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-whatsapp mr-3" style="color: green; font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px; color: #000;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;padding: 0px 0px 0.14px 0px;gap: 0px;opacity: 0px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -249,10 +307,10 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a href="tel:9746222668" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-phone mr-3" style="color: red; font-size: 24px;"></span>
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;gap: 0px;opacity: 0px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">Call us today</p>
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">+91 97462 22668</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">+91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -262,8 +320,8 @@
                     <div class="col-sm-12 col-md-4" style="text-align: center;">
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-home mr-3" style="font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px;">Book an appointment</p>
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;gap: 0px;opacity: 0px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Book an appointment</p>
                             </div>
                         </a>
                     </div>
@@ -348,15 +406,15 @@
     </div> -->
     <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
         <!-- Background layer with opacity -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle2.png'); background-size: cover; background-position: center; z-index: 0; filter: opacity(0.56);">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle2.png'); background-size: cover; background-position: center; z-index: 0; background-color: rgba(0, 0, 0, 0.56);">
         </div>
 
         <!-- Content Layer (Text and Image) -->
         <div style="position: relative; z-index: 1; padding: 0px;">
             <div class="container">
-                <div class="row align-items-center justify-content-between">
+                <div class="row align-items-center">
                     <div class="col-lg-7 mb-4 mb-lg-0">
-                        <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One'; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <h2 class="mb-3 mt-0 " style="font-family: 'Francois One';color:white; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left;">
                             Comprehensive<br>ALLERGY TESTS. 180+ tests with a Single Blood Specimen.
                             <br>
                             <span style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
@@ -365,12 +423,14 @@
                         </h2>
                     </div>
                     <div class="col-lg-4">
-                        <img src="http://localhost/allergy-test/public/images/whatsapp/189-allergens-13.png" alt="Contact Us" style="max-width: 100%;">
+                        <img src="http://localhost/allergy-test/public/images/whatsapp/189-allergens-13.png" alt="Contact Us" class="responsive-img2">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
 
     </div>
@@ -439,25 +499,25 @@
 
     <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
         <!-- Background layer with opacity -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; opacity: 0.56; z-index: 0;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.56); z-index: 0;">
         </div>
 
         <!-- Content Layer (Text and Image) -->
         <div style="position: relative; z-index: 1; padding: 20px;">
             <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-7 mb-4 mb-lg-0">
-                        <h2 class="mb-3 mt-0 " style="font-family: 'Francois One'; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left;">
-                            Allergy Treatment:<br>The best way to treat allergy, is by first knowing the cause.
+                <div class="row align-items-center ">
+                    <div class="mbr-white col-lg-6">
+                        <h1 class="mb-3 mt-0" style="font-family: Francois One;font-size: 32px;font-weight: 400;line-height: 38px;text-align: left; color:black">
+                            Allergy Treatment:<br><span style="font-family: Francois One;font-size: 22px;font-weight: 400;line-height: 29px;text-align: left;">The best way to treat allergy, is by first knowing the cause.</span>
                             <br>
                             <span style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
                                 <br>Skin Allergy: Skin allergy could be due to certain food, inhalants, or some contact items. It can be found out only through proper diagnosis. With a blood test, we can identify it. Once identified, you can get rid of most allergies without any medication.
                             </span>
-                        </h2>
+                        </h1>
                     </div>
                     <div class="col-lg-4">
                         <p class="mb-0">
-                            <img src="http://localhost/allergy-test/public/images/whatsapp/allergy-tests-chennai-1-649x3141.png" alt="Contact Us" style="max-width: 100%;">
+                            <img src="http://localhost/allergy-test/public/images/whatsapp/allergy-tests-chennai-1-649x3141.png" alt="Contact Us" class="responsive-img1">
                         </p>
                     </div>
                 </div>
@@ -760,7 +820,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-7 mb-4 mb-lg-0">
-                    <h2 class="mb-3 mt-0 text-white">Have questions or ready to schedule your appointment?
+                    <h2 class="mb-3 mt-0 text-white" style="font-family: Francois One;font-size: 25px;font-weight: 400;line-height: 45.38px;text-align: left;">Have questions or ready to schedule your appointment?
                         <br> Reach out to us today!
                     </h2>
 
@@ -876,7 +936,7 @@
         </div>
     </div>
     <div class="block-quick-info-2"
-        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
+        style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 0px 0;">
         <div class="container">
             <div>
                 <div class="row">
@@ -885,8 +945,8 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a class="align-items-center d-flex justify-content-center" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-whatsapp mr-3" style="color: green; font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px; color: #000;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;padding: 0px 0px 0.14px 0px;gap: 0px;opacity: 0px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -895,10 +955,10 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a href="tel:9746222668" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-phone mr-3" style="color: red; font-size: 24px;"></span>
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;gap: 0px;opacity: 0px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">Call us today</p>
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">+91 97462 22668</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">+91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -908,8 +968,8 @@
                     <div class="col-sm-12 col-md-4" style="text-align: center;">
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-home mr-3" style="font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px;">Book an appointment</p>
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;gap: 0px;opacity: 0px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Book an appointment</p>
                             </div>
                         </a>
                     </div>

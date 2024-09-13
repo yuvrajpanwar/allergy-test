@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Get rid of Allergy problems. Take a Comprehensive Allergy Test today.</title>
+    <title>Itching</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
@@ -19,6 +19,39 @@
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <style>
+        .custom-heading {
+            font-family: 'Francois One', sans-serif;
+            font-size: 28px;
+            /* Default for large screens */
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: left;
+            padding-left: 5rem;
+            /* Default padding for large screens */
+        }
+
+        /* Media Query for small devices (like smartphones) */
+        @media (max-width: 576px) {
+            .custom-heading {
+                font-size: 20px;
+                /* Adjust font size for small devices */
+                padding-left: 1rem;
+                /* Reduce padding for small screens */
+            }
+        }
+
+        /* Media Query for medium devices (like tablets) */
+        @media (max-width: 768px) {
+            .custom-heading {
+                font-size: 24px;
+                /* Adjust font size for medium devices */
+                padding-left: 2rem;
+                /* Adjust padding for medium screens */
+            }
+        }
+
+
+
         .error {
             color: red;
         }
@@ -175,15 +208,16 @@
     </header>
 
     <!-- Itching contents here -->
-    <div class="site-section block-services-1" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
+    <div class="site-section block-services-1 pt-3" style="background-image: url('http://localhost/allergy-test/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
         <div class="container" style="max-width: 100%; padding: 0 15px;">
             <div class="row align-items-left justify-content-between">
                 <!-- Title and Description -->
                 <div class="col-lg-7 mb-4 mb-lg-0">
-                    <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4; text-align: left;">
+                    <h2 class="mb-3 mt-0 text-dark custom-heading">
                         ALLERGY SYMPTOMS<br>Itching
                     </h2>
                 </div>
+
 
                 <!-- Contact Information -->
                 <div class="col-lg-4">
@@ -200,7 +234,7 @@
 
             <!-- Image Section -->
             <div class="text-center" style="margin-top: 20px;">
-                <img src="http://localhost/allergy-test/public/images/whatsapp/itching.png" alt="Itching Image" style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
+                <img src="http://localhost/allergy-test/public/images/whatsapp/itching480x320.png" alt="Itching Image" style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
             </div>
 
             <!-- Paragraph Content Below the Image -->
@@ -256,8 +290,8 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a class="align-items-center d-flex justify-content-center" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-whatsapp mr-3" style="color: green; font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px; color: #000;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;padding: 0px 0px 0.14px 0px;gap: 0px;opacity: 0px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -266,10 +300,10 @@
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
                         <a href="tel:9746222668" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-phone mr-3" style="color: red; font-size: 24px;"></span>
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;gap: 0px;opacity: 0px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">Call us today</p>
-                                    <p class="lead m-0" style="font-size: 16px; color: red;">+91 97462 22668</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">+91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -279,8 +313,8 @@
                     <div class="col-sm-12 col-md-4" style="text-align: center;">
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-home mr-3" style="font-size: 24px;"></span>
-                                <p class="lead m-0" style="font-size: 16px;">Book an appointment</p>
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;gap: 0px;opacity: 0px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Book an appointment</p>
                             </div>
                         </a>
                     </div>
