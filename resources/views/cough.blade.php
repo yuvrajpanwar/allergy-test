@@ -19,8 +19,38 @@
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <style>
+        /* For larger displays */
+        .quick-info-item {
+            text-align: center;
+            justify-content: center;
+        }
 
-.custom-heading {
+        /* For smaller displays */
+        @media (max-width: 768px) {
+            .quick-info-item {
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .quick-info-2 {
+                justify-content: flex-start;
+                /* Align content to the left */
+            }
+
+            .quick-info-link {
+                flex-direction: row;
+                /* Keep icon and text in the same row */
+                justify-content: flex-start;
+                /* Align the link content to the left */
+            }
+
+            .icon {
+                margin-right: 10px;
+                /* Space between icon and text */
+            }
+        }
+
+        .custom-heading {
             font-family: 'Francois One', sans-serif;
             font-size: 28px;
             /* Default for large screens */
@@ -50,6 +80,7 @@
                 /* Adjust padding for medium screens */
             }
         }
+
         .error {
             color: red;
         }
@@ -223,7 +254,7 @@
                     </p>
                     <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
                         Click here to <span style="font-weight: 700;">Chat
-                            <img src="{{asset('public/images/whatsapp/wappvector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
+                            <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
                 </div>
@@ -265,51 +296,51 @@
 
                 <br><br>
 
-
                 <!-- <button type="button" style="">All Allergy Symptoms</button> -->
             </div>
         </div>
     </div>
 
     <div class="block-quick-info-2"
-        style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; padding: 20px 0;">
+        style="background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png'); 
+background-repeat: no-repeat; 
+background-size: cover; 
+padding: 20px 0;">
         <div class="container">
             <div>
                 <div class="row">
-
                     <!-- WhatsApp Link -->
-                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
-                        <a class="align-items-center d-flex justify-content-center" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
-                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;padding: 0px 0px 0.14px 0px;gap: 0px;opacity: 0px;color: #016426;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Reach us on WhatsApp</p>
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
 
                     <!-- Call Us Link -->
-                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0" style="text-align: center;">
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
                         <a href="tel:9746222668" style="text-decoration: none;">
-                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;gap: 0px;opacity: 0px;"></span>
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Call us today</p>
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">+91 97462 22668</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
                     </div>
 
                     <!-- Book Appointment Link -->
-                    <div class="col-sm-12 col-md-4" style="text-align: center;">
+                    <div class="col-sm-12 col-md-4 quick-info-item">
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
-                            <div class="d-flex quick-info-2 align-items-center" style="justify-content: center;">
-                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;gap: 0px;opacity: 0px;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;text-align: left;">Book an appointment</p>
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
                             </div>
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>

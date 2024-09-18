@@ -18,6 +18,37 @@
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <style>
+        /* For larger displays */
+        .quick-info-item {
+            text-align: center;
+            justify-content: center;
+        }
+
+        /* For smaller displays */
+        @media (max-width: 768px) {
+            .quick-info-item {
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .quick-info-2 {
+                justify-content: flex-start;
+                /* Align content to the left */
+            }
+
+            .quick-info-link {
+                flex-direction: row;
+                /* Keep icon and text in the same row */
+                justify-content: flex-start;
+                /* Align the link content to the left */
+            }
+
+            .icon {
+                margin-right: 10px;
+                /* Space between icon and text */
+            }
+        }
+
         .error {
             color: red;
         }
@@ -56,45 +87,68 @@
             color: #F8F8F8 !important;
         }
 
-        .site-navbar .site-navigation .site-menu > li > a > span:hover{
-            color:red !important;
+        .site-navbar .site-navigation .site-menu>li>a>span:hover {
+            color: red !important;
         }
     </style>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11084201160"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11084201160"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'AW-11084201160');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PRZHMTSD');</script>
+        gtag('config', 'AW-11084201160');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PRZHMTSD');
+    </script>
 
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1121899502057242');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1121899502057242');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -202,48 +256,46 @@ src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1"
     </div>
 
 
-
-    <div class="block-quick-info-2">
+    <div class="block-quick-info-2"
+        style="background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    padding: 20px 0;">
         <div class="container">
-            <div class="block-quick-info-2-inner" style="background: #d3d3d3">
+            <div>
                 <div class="row">
-
-                    <div class="col-sm-6 col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <a class="align-items-center d-flex " href="https://wa.me/7358728170" target="blank">
-                            <div class="d-flex quick-info-2">
-                                <div class="text  align-items-center d-flex ">
-                                    <span class="icon icon-whatsapp mr-3" style="color: green"></span>
-                                    <p class="lead m-0"> Reach us on whatsapp </p>
-                                </div>
+                    <!-- WhatsApp Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <a href="tel:9746222668">
-                            <div class="d-flex quick-info-2">
-                                <span class="icon icon-phone mr-3 ml-2 d-flex align-items-center"></span>
+
+                    <!-- Call Us Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a href="tel:9746222668" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                                 <div class="text">
-                                    <strong class="d-block heading" style="color:red">
-                                        <p class="lead m-0"> Call us today</p>
-                                    </strong>
-                                    <span class="excerpt">
-                                        <p class="lead m-0" style="color: red"> +91 97462 22668</p>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 mb-3 mb-lg-0">
-                        <a href="{{ route('contact-us') }}">
-                            <div class="d-flex quick-info-2">
-                                <span class="icon icon-home mr-3"></span>
-                                <div class="text  align-items-center d-flex">
-                                    <p class="lead m-0"> Book an appointment </p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
                     </div>
 
+                    <!-- Book Appointment Link -->
+                    <div class="col-sm-12 col-md-4 quick-info-item">
+                        <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -335,8 +387,8 @@ src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1"
     <script src="{{ asset('public/js/main.js') }}"></script>
 
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>
