@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ asset('public/fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
         /* For larger displays */
         .quick-info-item {
@@ -174,7 +175,7 @@
                         <a href="{{ route('home') }}" class="text-white mb-0">
                             <img style="    max-height: 65px;
                             margin: 10px 0 10px 0;"
-                                src="{{ asset('public/images/whatsapp/logo-transparent.webp') }}" alt=""></a>
+                                src="{{ asset('public/images/whatsapp/mainlogo.png') }}" alt=""></a>
                     </h1>
                 </div>
                 <div class="col-12 col-md-8 d-none d-xl-block">

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('public/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
         /* For larger displays */
         .quick-info-item {
@@ -209,7 +210,7 @@
                         <a href="{{ route('home') }}" class="text-white mb-0">
                             <img style="    max-height: 65px;
                             margin: 10px 0 10px 0;"
-                                src="{{ asset('public/images/whatsapp/logo-transparent.webp') }}" alt="">
+                                src="{{ asset('public/images/whatsapp/mainlogo.png') }}" alt="">
                         </a>
                     </h1>
                 </div>
@@ -253,7 +254,7 @@
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
                     <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
-                        Click here to <span style="font-weight: 700;">Chat
+                        Click here to <span style="font-weight: 700;">Chat &nbsp;
                             <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
@@ -267,7 +268,7 @@
 
             <!-- Paragraph Content Below the Image -->
             <div class="text-center" style="margin-top: 20px;">
-                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left;">
+                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
                     Chest tightness: Seasonal allergies are extremely common and often uncomfortable, but when should you see a doctor? ... Even so, downplaying the condition can make it easy to ignore signs of serious allergies, such as chest tightness and difficulty breathing, which require medical attention. Asthma mainly affects your lungs, and may cause coughing, wheezing, chest tightness, shortness of breath or rapid breathing. Undetected allergy can cause asthma in the longterm.
                     <br><br>
                     Tightness in the chest can be caused by multiple issues. Reasons include infection, injury, anxiety, cardiovascular conditions, lung conditions, and digestive issues. If you feel like your chest is tightening, you may worry that you're having a heart attack.<br>
@@ -301,12 +302,33 @@
         </div>
     </div>
 
-    <div class="block-quick-info-2"
-        style="background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png'); 
-background-repeat: no-repeat; 
-background-size: cover; 
-padding: 20px 0;">
-        <div class="container">
+    <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
+        <!-- Background image -->
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    "></div>
+
+        <!-- White overlay -->
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
+        z-index: -1;
+    "></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
             <div>
                 <div class="row">
                     <!-- WhatsApp Link -->
@@ -345,6 +367,7 @@ padding: 20px 0;">
             </div>
         </div>
     </div>
+
 
 
     {{-- our location  --}}

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('public/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
         /* For larger displays */
         .quick-info-item {
@@ -240,7 +241,7 @@
                         <a href="{{ route('home') }}" class="text-white mb-0">
                             <img style="    max-height: 65px;
                             margin: 10px 0 10px 0;"
-                                src="{{ asset('public/images/whatsapp/logo-transparent.webp') }}" alt="">
+                                src="{{ asset('public/images/whatsapp/mainlogo.png') }}" alt="">
                         </a>
                     </h1>
                 </div>
@@ -284,7 +285,7 @@
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
                     <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
-                        Click here to <span style="font-weight: 700;">Chat
+                        Click here to <span style="font-weight: 700;">Chat &nbsp;
                             <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
@@ -298,7 +299,7 @@
 
             <!-- Paragraph Content Below the Image -->
             <div class="text-center" style="margin-top: 20px;">
-                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left;">
+                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
                     Swollen eyelids cause a puffy appearance to the eyes. Causes of swollen eyelids include fluid retention, allergies, eye infections and eye injuries. Virtually any cause of inflammation to the eye area may manifest as eyelid swelling, although allergic reactions are likely the most common cause. With allergic reactions, the eyes may also be red, itchy as well as swollen. Sometimes the swelling may be below the eyes on both sides.
                     <br><br>
                     A swollen eyelid is usually a symptom, not a condition. It's very common and is usually due to allergy, inflammation, infection, or injury. The skin of your eyelid is less than one milli meter thick. But, since the tissue is loose and stretchy, your eyelid is capable of swelling considerably.
@@ -341,12 +342,33 @@
     </div>
 
 
-    <div class="block-quick-info-2"
-        style="background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png'); 
-background-repeat: no-repeat; 
-background-size: cover; 
-padding: 20px 0;">
-        <div class="container">
+    <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
+        <!-- Background image -->
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    "></div>
+
+        <!-- White overlay -->
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
+        z-index: -1;
+    "></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
             <div>
                 <div class="row">
                     <!-- WhatsApp Link -->
@@ -385,6 +407,9 @@ padding: 20px 0;">
             </div>
         </div>
     </div>
+
+
+
     {{-- our location  --}}
     <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">

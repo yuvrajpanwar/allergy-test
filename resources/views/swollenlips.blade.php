@@ -18,39 +18,39 @@
     <link rel="stylesheet" href="{{ asset('public/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
-
-        
-
-
-
-
-/* For larger displays */
-.quick-info-item {
-        text-align: center;
-        justify-content: center;
-    }
-
-    /* For smaller displays */
-    @media (max-width: 768px) {
+        /* For larger displays */
         .quick-info-item {
-            text-align: left;
-            justify-content: flex-start;
+            text-align: center;
+            justify-content: center;
         }
 
-        .quick-info-2 {
-            justify-content: flex-start; /* Align content to the left */
+        /* For smaller displays */
+        @media (max-width: 768px) {
+            .quick-info-item {
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .quick-info-2 {
+                justify-content: flex-start;
+                /* Align content to the left */
+            }
+
+            .quick-info-link {
+                flex-direction: row;
+                /* Keep icon and text in the same row */
+                justify-content: flex-start;
+                /* Align the link content to the left */
+            }
+
+            .icon {
+                margin-right: 10px;
+                /* Space between icon and text */
+            }
         }
 
-        .quick-info-link {
-            flex-direction: row; /* Keep icon and text in the same row */
-            justify-content: flex-start; /* Align the link content to the left */
-        }
-
-        .icon {
-            margin-right: 10px; /* Space between icon and text */
-        }
-    }
         .custom-heading {
             font-family: 'Francois One', sans-serif;
             font-size: 28px;
@@ -210,7 +210,7 @@
                         <a href="{{ route('home') }}" class="text-white mb-0">
                             <img style="    max-height: 65px;
                             margin: 10px 0 10px 0;"
-                                src="{{ asset('public/images/whatsapp/logo-transparent.webp') }}" alt="">
+                                src="{{ asset('public/images/whatsapp/mainlogo.png') }}" alt="">
                         </a>
                     </h1>
                 </div>
@@ -254,7 +254,7 @@
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
                     <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
-                        Click here to <span style="font-weight: 700;">Chat
+                        Click here to <span style="font-weight: 700;">Chat &nbsp;
                             <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
@@ -268,7 +268,7 @@
 
             <!-- Paragraph Content Below the Image -->
             <div class="text-center" style="margin-top: 20px;">
-                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left;">
+                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
                     Swollen lips are caused by underlying inflammation or a build-up of fluid under the skin of your lips. Many things can cause swollen lips, from minor skin conditions to severe allergic reactions. Allergies to certain foods, medications, or the bite or sting of an insect are fairly common triggers for swollen lips and other symptoms. Foods often associated with allergies include, milk, eggs, peanuts, shellfish, soy, wheat etc..
                     <br><br>
                     When you encounter something you're allergic to, your body produces a chemical called histamine. The release of histamine can lead to classic allergy symptoms, such as sneezing, itchy skin, and inflammation. This inflammation may cause swollen lips.
@@ -306,50 +306,72 @@
     </div>
 
 
-    <div class="block-quick-info-2"
-style="background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png'); 
-background-repeat: no-repeat; 
-background-size: cover; 
-padding: 20px 0;">
-<div class="container">
-    <div>
-        <div class="row">
-            <!-- WhatsApp Link -->
-            <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
-                    <div class="d-flex quick-info-2 align-items-center">
-                        <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                        <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
-                    </div>
-                </a>
-            </div>
+    <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
+        <!-- Background image -->
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    "></div>
 
-            <!-- Call Us Link -->
-            <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                <a href="tel:9746222668" style="text-decoration: none;">
-                    <div class="d-flex quick-info-2 align-items-center">
-                        <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
-                        <div class="text">
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+        <!-- White overlay -->
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
+        z-index: -1;
+    "></div>
 
-            <!-- Book Appointment Link -->
-            <div class="col-sm-12 col-md-4 quick-info-item">
-                <a href="{{ route('contact-us') }}" style="text-decoration: none;">
-                    <div class="d-flex quick-info-2 align-items-center">
-                        <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                        <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div>
+                <div class="row">
+                    <!-- WhatsApp Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
+
+                    <!-- Call Us Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a href="tel:9746222668" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
+                                <div class="text">
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Book Appointment Link -->
+                    <div class="col-sm-12 col-md-4 quick-info-item">
+                        <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
+
     {{-- our location  --}}
     <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">

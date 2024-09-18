@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="{{ asset('public/fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
 
 
@@ -203,7 +204,7 @@
                         <a href="{{ route('home') }}" class="text-white mb-0">
                             <img style="    max-height: 65px;
                             margin: 10px 0 10px 0;"
-                                src="{{ asset('public/images/whatsapp/logo-transparent.webp') }}" alt="">
+                                src="{{ asset('public/images/whatsapp/mainlogo.png') }}" alt="">
                         </a>
                     </h1>
                 </div>
@@ -247,7 +248,7 @@
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
                     <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
-                        Click here to <span style="font-weight: 700;">Chat
+                        Click here to <span style="font-weight: 700;">Chat &nbsp;
                             <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
@@ -261,7 +262,7 @@
 
             <!-- Paragraph Content Below the Image -->
             <div class="text-center" style="margin-top: 20px;">
-                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left;">
+                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
                     A runny nose can be caused by anything that irritates or inflames the nasal tissues. Infections — such as the common cold and influenza — allergies and various irritants may all cause a runny nose. Excess drainage, ranging from a clear fluid to thick mucus, from the nose and nasal passages. A runny nose may be annoying and uncomfortable, but it usually clears up on its own. Occasionally, it can be a sign of a more serious problem. A runny nose may be serious in infants.
                     <br><br>
                     When a cold virus or an allergen such as pollen or dust first enters your body, it irritates the lining of your nose and sinuses (or air-filled pockets around the face) and your nose starts to make a lot of clear mucus. This mucus traps the bacteria, virus or allergens and helps flush them out of your nose and sinuses.
@@ -277,11 +278,11 @@
                     Mucus is needed to keep your airway moist and working properly. Not only does mucus stop harmful particles from getting into your lungs, but it also contains antibodies to help destroy bacteria. If too much mucus is produced, your body wants to get rid of it, leading to coughing and spitting the extra mucus out and blowing it out of your nose.
                     <br><br>
                     Why does a runny nose happen? What causes a runny nose?
-                    Your runny nose may have one or more of several causes. Possible causes include:
-                    • Allergies.
-                    • Cold temperatures.
-                    • Common cold.
-                    • Flu.
+                    Your runny nose may have one or more of several causes. Possible causes include:<br>
+                    • Allergies.<br>
+                    • Cold temperatures.<br>
+                    • Common cold.<br>
+                    • Flu.<br>
                     • Gustatory rhinitis, a form of nonallergic rhinitis that causes a runny nose when you eat certain foods.
                 </p><br>
                 <!-- Button 1: All Allergy Symptoms -->
@@ -311,49 +312,70 @@
     </div>
 
 
-    <div class="block-quick-info-2"
-style="background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png'); 
-background-repeat: no-repeat; 
-background-size: cover; 
-padding: 20px 0;">
-<div class="container">
-    <div>
-        <div class="row">
-            <!-- WhatsApp Link -->
-            <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
-                    <div class="d-flex quick-info-2 align-items-center">
-                        <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                        <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
-                    </div>
-                </a>
-            </div>
+    <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
+    <!-- Background image -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    "></div>
 
-            <!-- Call Us Link -->
-            <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                <a href="tel:9746222668" style="text-decoration: none;">
-                    <div class="d-flex quick-info-2 align-items-center">
-                        <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
-                        <div class="text">
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+    <!-- White overlay -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
+        z-index: -1;
+    "></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div>
+            <div class="row">
+                <!-- WhatsApp Link -->
+                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
+                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
 
-            <!-- Book Appointment Link -->
-            <div class="col-sm-12 col-md-4 quick-info-item">
-                <a href="{{ route('contact-us') }}" style="text-decoration: none;">
-                    <div class="d-flex quick-info-2 align-items-center">
-                        <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                        <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
-                    </div>
-                </a>
+                <!-- Call Us Link -->
+                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                    <a href="tel:9746222668" style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
+                            <div class="text">
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Book Appointment Link -->
+                <div class="col-sm-12 col-md-4 quick-info-item">
+                    <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
     {{-- our location  --}}
