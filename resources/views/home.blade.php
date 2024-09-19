@@ -21,6 +21,209 @@
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
 
     <style>
+        /* Icons Styling */
+        /* Icons Styling */
+        /* Icons Styling */
+        /* Icons Styling */
+        /* Icons Styling */
+        /* Icons Styling */
+        /* Icons Styling */
+        .fixed-icons11 {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .icon11 {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .icon-image11 {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .icon11:hover .icon-image11 {
+            transform: scale(1.1);
+        }
+
+        /* Modal Styling */
+        /* Modal Styling */
+        /* Modal Styling */
+        /* Modal Styles */
+        .modal11 {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            /* Ensure the modal is on top of all elements */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content11 {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* Adjust the modal positioning */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            /* Max width to ensure it doesn't stretch too much */
+            border-radius: 10px;
+            /* Rounded corners */
+            position: relative;
+            z-index: 10000;
+            /* Ensure content is on top of overlay */
+        }
+
+        .close11 {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close11:hover,
+        .close11:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+/* Ensure reCAPTCHA is visible and clickable */
+.g-recaptcha {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    transform: scale(0.76); /* Adjust scaling for better fit */
+    transform-origin: 0 0; /* Adjust scaling origin */
+    overflow: hidden; /* Hide any overflow */
+    z-index: 10000; /* Ensure it's on top */
+}
+
+
+        /* Form Styles */
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            width: calc(100% - 20px);
+            margin-top: 5px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .footer-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            /* Default for large screens */
+            flex-wrap: wrap;
+            /* Allow wrapping on smaller screens */
+        }
+
+        .footer-item {
+            flex: 1 1 30%;
+            /* Each item takes up 30% of the width on larger screens */
+            margin-bottom: 20px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 767px) {
+            .footer-section {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: stretch;
+                /* Full-width alignment */
+            }
+
+            .footer-item {
+                flex: 1 1 100%;
+                /* Each item takes up the full width */
+                text-align: left;
+                /* Align text to the left */
+            }
+        }
+
+        /* Additional styling to align "Follow Us" section to the right */
+        @media (min-width: 992px) {
+            .footer-item.follow-us {
+                justify-content: flex-end;
+                /* Align the "Follow Us" section to the right */
+                text-align: right;
+                /* Align content to the right */
+            }
+        }
+
+
+        /* Default styles for all screens */
+        .quick-info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Center items by default */
+        }
+
+        /* Media Query for Large Screens */
+        @media (min-width: 992px) {
+
+            /* Adjust breakpoint as needed */
+            .quick-info-item.book-appointment {
+                justify-content: flex-end;
+                /* Align items to the right */
+            }
+        }
+
         /* Ensure content is above background */
         .block-quick-info-2 {
             position: relative;
@@ -158,6 +361,8 @@
         }
     </style>
 
+
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11084201160"></script>
     <script>
@@ -263,6 +468,147 @@
 
 
 </header>
+
+
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<!-- Icons Section -->
+<div class="fixed-icons11">
+    <a href="https://wa.me/yourwhatsappnumber" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
+        <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+    </a>
+    <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
+        <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+    </div>
+</div>
+<!-- Contact Form Modal -->
+<div id="contactFormModal11" class="modal11" onclick="closeContactForm11(event)">
+    <div class="modal-content11" onclick="event.stopPropagation()">
+        <span class="close11" onclick="closeContactForm11()">&times;</span>
+        <h2>Contact Us</h2>
+        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>{{ session('success') }}</strong>
+            </div>
+            @endif
+            @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
+            <input type="hidden" name="_token" value="W5nxsdzTkvXuzifm1CEzVErqybTiwmtayUz97t8K">
+            <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <label class="text-black" for="name">Name</label>
+                    <input type="text" id="name11" name="name" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="text-black" for="phone_number">Phone Number</label>
+                    <input type="text" id="phone_number11" name="phone_number" class="form-control">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label class="text-black" for="email">Email</label>
+                    <input type="email" id="email11" name="email" class="form-control">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label class="text-black" for="location">Choose Collection Point</label>
+                    <select name="location" id="location11" class="form-control">
+                        <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Kochi">Kochi</option>
+                        <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label class="text-black" for="message">Message</label>
+                    <textarea name="message" id="message11" cols="30" rows="7" class="form-control" placeholder="Write your message or questions here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Add reCAPTCHA -->
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY" data-callback="enableSubmitBtn"></div>
+                <span class="help-block" id="recaptcha-error11" style="display: none;">
+                    <strong class="error">Please verify that you are not a robot.</strong>
+                </span>
+            </div>
+
+            <div class="row form-group mt-2">
+                <div class="col-md-12">
+                    <input disabled id="submitBtn11" type="submit" value="Send" class="btn btn-pill btn-primary btn-md text-white">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Include reCAPTCHA Script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- Include reCAPTCHA Script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+<!-- Include reCAPTCHA Script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+<!-- Include reCAPTCHA Script -->
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+ -->
+
+
+
+
+
+
+
+
+<!-- // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Add these in your HTML  or before this script -->
+
+
 
 
 <div class="site-section pt-0" style="padding-bottom:0;">
@@ -372,7 +718,7 @@
                 </div>
 
                 <!-- Book Appointment Link -->
-                <div class="col-sm-12 col-md-4 quick-info-item">
+                <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
                     <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
@@ -380,6 +726,7 @@
                         </div>
                     </a>
                 </div>
+
             </div>
         </div>
     </div>
@@ -555,11 +902,11 @@
     </div>
 </div>
 
-<div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
+<div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto; padding: 10px;">
     <!-- Background layer with opacity -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{asset(`/`) }}/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; z-index: 0;">
         <!-- Semi-transparent white overlay -->
-        <div style="width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.65);"></div>
+        <div style="width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85);"></div>
     </div>
 
     <!-- Content Layer (Text and Image) -->
@@ -891,7 +1238,7 @@
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-7 mb-4 mb-lg-0">
                 <h2 class="mb-3 mt-0 text-white" style="font-family: Francois One;font-size: 25px;font-weight: 400;line-height: 45.38px;text-align: left;">Have questions or ready to schedule your appointment?
-                    <br> Reach out to us today!
+                    Reach <br> out to us today!
                 </h2>
 
             </div>
@@ -1060,7 +1407,7 @@
                 </div>
 
                 <!-- Book Appointment Link -->
-                <div class="col-sm-12 col-md-4 quick-info-item">
+                <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
                     <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
@@ -1068,6 +1415,7 @@
                         </div>
                     </a>
                 </div>
+
             </div>
         </div>
     </div>
@@ -1214,50 +1562,57 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="row">
-
-                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
+                <div class="footer-section">
+                    <!-- Quick Links Section -->
+                    <div class="footer-item">
                         <h2 class="footer-heading mb-4 off-white">Quick Links</h2>
                         <ul class="list-unstyled">
                             <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
                             <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
-
                         </ul>
                     </div>
 
-
-
-                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
+                    <!-- Contact Section -->
+                    <div class="footer-item">
                         <h2 class="footer-heading mb-4 off-white">Contact</h2>
                         <ul class="list-unstyled">
-                            <li><a href="tel:9746222668">
-                                    <p class="lead off-white"> +91 97462 22668 </p>
-                                </a></li>
+                            <li>
+                                <a href="tel:9746222668">
+                                    <p class="lead off-white">+91 97462 22668</p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
-                        <h2 class="footer-heading mb-4 off-white">Follow Us</h2>
-                        <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3 "><span
-                                style="font-size:2rem" class="icon-facebook"></span></a>
-                        <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3"><span
-                                style="font-size:2rem" class="icon-youtube"></span></a>
-                        <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3"><span
-                                style="font-size:2rem" class="icon-instagram"></span></a>
+                    <!-- Follow Us Section -->
+                    <div class="footer-item follow-us">
+                        <div>
+                            <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                            <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
+                                <span style="font-size: 2rem;" class="icon-facebook"></span>
+                            </a>
+                            <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3">
+                                <span style="font-size: 2rem;" class="icon-youtube"></span>
+                            </a>
+                            <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3">
+                                <span style="font-size: 2rem;" class="icon-instagram"></span>
+                            </a>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
         <div class="row pt-5 mt-5">
             <div class="col-12 text-md-center text-left">
-                <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved
-                </p>
+                <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
             </div>
         </div>
     </div>
 </footer>
+
+
+
 
 </div>
 
@@ -1293,6 +1648,128 @@
   </script> --}}
 
 <script src="{{ asset('public/js/main.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+<script>
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Add these in your HTML <head> or before this script
+    // Open Contact Form Modal
+    // Open Contact Form Modal
+    // Initialize reCAPTCHA
+function initializeRecaptcha() {
+    if (typeof grecaptcha !== 'undefined') {
+        grecaptcha.render('recaptcha-container11', {
+            'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
+        });
+    }
+}
+
+// Call the initialize function when the document is ready
+$(document).ready(function() {
+    initializeRecaptcha();
+    $('#messageForm11').validate({
+        // Validation rules
+        submitHandler: function(form) {
+            if (grecaptcha.getResponse() === '') {
+                document.getElementById('recaptcha-error11').style.display = 'block';
+                return false;
+            } else {
+                form.submit();
+            }
+        }
+    });
+});
+function openContactForm11() {
+    document.getElementById('contactFormModal11').style.display = 'block';
+}
+
+// Close Contact Form Modal when clicked outside the modal content or on the close button
+function closeContactForm11(event) {
+    const modal = document.getElementById('contactFormModal11');
+    if (event.target === modal || event.type === 'click') {
+        modal.style.display = 'none';
+    }
+}
+
+// Enable submit button if reCAPTCHA is completed
+function enableSubmitBtn() {
+    document.getElementById('submitBtn11').disabled = false;
+}
+
+// Initialize form validation
+$(document).ready(function() {
+    $('#messageForm11').validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+            phone_number: {
+                required: true,
+                digits: true,
+                minlength: 10,
+                maxlength: 15
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            location: {
+                required: true
+            },
+            message: {
+                required: true,
+                minlength: 10
+            }
+        },
+        messages: {
+            name: {
+                required: "Please enter your name",
+                minlength: "Your name must consist of at least 2 characters"
+            },
+            phone_number: {
+                required: "Please enter your phone number",
+                digits: "Please enter a valid phone number",
+                minlength: "Your phone number must be at least 10 digits",
+                maxlength: "Your phone number cannot exceed 15 digits"
+            },
+            email: {
+                required: "Please enter your email address",
+                email: "Please enter a valid email address"
+            },
+            location: {
+                required: "Please select a collection point"
+            },
+            message: {
+                required: "Please enter your message",
+                minlength: "Your message must be at least 10 characters long"
+            }
+        },
+        submitHandler: function(form) {
+            if (grecaptcha.getResponse() === '') {
+                document.getElementById('recaptcha-error11').style.display = 'block';
+                return false;
+            } else {
+                form.submit();
+            }
+        }
+    });
+
+    // Adjust reCAPTCHA size on window resize
+    $(window).on('resize', function() {
+        grecaptcha.render();
+    });
+});
+
+
+</script>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"

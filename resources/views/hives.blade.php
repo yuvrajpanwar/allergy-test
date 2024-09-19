@@ -17,9 +17,69 @@
     <link rel="stylesheet" href="{{ asset('public/fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
-     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+
+.footer-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            /* Default for large screens */
+            flex-wrap: wrap;
+            /* Allow wrapping on smaller screens */
+        }
+
+        .footer-item {
+            flex: 1 1 30%;
+            /* Each item takes up 30% of the width on larger screens */
+            margin-bottom: 20px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 767px) {
+            .footer-section {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: stretch;
+                /* Full-width alignment */
+            }
+
+            .footer-item {
+                flex: 1 1 100%;
+                /* Each item takes up the full width */
+                text-align: left;
+                /* Align text to the left */
+            }
+        }
+
+        /* Additional styling to align "Follow Us" section to the right */
+        @media (min-width: 992px) {
+            .footer-item.follow-us {
+                justify-content: flex-end;
+                /* Align the "Follow Us" section to the right */
+                text-align: right;
+                /* Align content to the right */
+            }
+        }
+        /* Default styles for all screens */
+        .quick-info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Center items by default */
+        }
+
+        /* Media Query for Large Screens */
+        @media (min-width: 992px) {
+
+            /* Adjust breakpoint as needed */
+            .quick-info-item.book-appointment {
+                justify-content: flex-end;
+                /* Align items to the right */
+            }
+        }
+
         /* For larger displays */
         .quick-info-item {
             text-align: center;
@@ -313,8 +373,8 @@
 
 
     <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
-    <!-- Background image -->
-    <div style="
+        <!-- Background image -->
+        <div style="
         position: absolute;
         top: 0;
         left: 0;
@@ -327,8 +387,8 @@
         z-index: -1;
     "></div>
 
-    <!-- White overlay -->
-    <div style="
+        <!-- White overlay -->
+        <div style="
         position: absolute;
         top: 0;
         left: 0;
@@ -338,46 +398,46 @@
         z-index: -1;
     "></div>
 
-    <div class="container" style="position: relative; z-index: 1;">
-        <div>
-            <div class="row">
-                <!-- WhatsApp Link -->
-                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Call Us Link -->
-                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a href="tel:9746222668" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
-                            <div class="text">
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div>
+                <div class="row">
+                    <!-- WhatsApp Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <!-- Book Appointment Link -->
-                <div class="col-sm-12 col-md-4 quick-info-item">
-                    <a href="{{ route('contact-us') }}" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
-                        </div>
-                    </a>
+                    <!-- Call Us Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a href="tel:9746222668" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
+                                <div class="text">
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Book Appointment Link -->
+                    <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
+                        <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 
     {{-- our location  --}}
     <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
@@ -515,53 +575,57 @@
 
 
     <footer class="site-footer off-white" style="background: #000000">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-section">
+                    <!-- Quick Links Section -->
+                    <div class="footer-item">
+                        <h2 class="footer-heading mb-4 off-white">Quick Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
+                            <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                        </ul>
+                    </div>
 
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
-                            <h2 class="footer-heading mb-4 off-white">Quick Links</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{ route('about') }}">About</a></li>
-                                <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                    <!-- Contact Section -->
+                    <div class="footer-item">
+                        <h2 class="footer-heading mb-4 off-white">Contact</h2>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="tel:9746222668">
+                                    <p class="lead off-white">+91 97462 22668</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-                            </ul>
+                    <!-- Follow Us Section -->
+                    <div class="footer-item follow-us">
+                        <div>
+                            <h2 class="footer-heading mb-4 off-white" >Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                            <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
+                                <span style="font-size: 2rem;" class="icon-facebook"></span>
+                            </a>
+                            <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3">
+                                <span style="font-size: 2rem;" class="icon-youtube"></span>
+                            </a>
+                            <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3">
+                                <span style="font-size: 2rem;" class="icon-instagram"></span>
+                            </a>
                         </div>
-
-
-
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
-                            <h2 class="footer-heading mb-4 off-white">Contact</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="tel:9746222668">
-                                        <p class="lead off-white"> +91 97462 22668 </p>
-                                    </a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
-                            <h2 class="footer-heading mb-4 off-white">Follow Us</h2>
-                            <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3 "><span
-                                    style="font-size:2rem" class="icon-facebook"></span></a>
-                            <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3"><span
-                                    style="font-size:2rem" class="icon-youtube"></span></a>
-                            <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3"><span
-                                    style="font-size:2rem" class="icon-instagram"></span></a>
-                        </div>
-
                     </div>
                 </div>
             </div>
-            <div class="row pt-5 mt-5">
-                <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved
-                    </p>
-                </div>
+        </div>
+        <div class="row pt-5 mt-5">
+            <div class="col-12 text-md-center text-left">
+                <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     </div>
 
