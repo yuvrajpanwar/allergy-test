@@ -16,9 +16,51 @@
     <link rel="stylesheet" href="{{ asset('public/fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
-     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+        .footer-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            /* Default for large screens */
+            flex-wrap: wrap;
+            /* Allow wrapping on smaller screens */
+        }
+
+        .footer-item {
+            flex: 1 1 30%;
+            /* Each item takes up 30% of the width on larger screens */
+            margin-bottom: 20px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 767px) {
+            .footer-section {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: stretch;
+                /* Full-width alignment */
+            }
+
+            .footer-item {
+                flex: 1 1 100%;
+                /* Each item takes up the full width */
+                text-align: left;
+                /* Align text to the left */
+            }
+        }
+
+        /* Additional styling to align "Follow Us" section to the right */
+        @media (min-width: 992px) {
+            .footer-item.follow-us {
+                justify-content: flex-end;
+                /* Align the "Follow Us" section to the right */
+                text-align: right;
+                /* Align content to the right */
+            }
+        }
+
         .error {
             color: red;
         }
@@ -51,44 +93,67 @@
             color: #F8F8F8 !important;
         }
 
-        .site-navbar .site-navigation .site-menu > li > a > span:hover{
-            color:red !important;
+        .site-navbar .site-navigation .site-menu>li>a>span:hover {
+            color: red !important;
         }
     </style>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11084201160"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11084201160"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'AW-11084201160');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PRZHMTSD');</script>
+        gtag('config', 'AW-11084201160');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PRZHMTSD');
+    </script>
 
     <!-- Meta Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1121899502057242');
-    fbq('track', 'PageView');
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1121899502057242');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=1121899502057242&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 
 </head>
@@ -148,24 +213,24 @@
                 <div class="col-md-7 mb-5 aos-init aos-animate" data-aos="fade">
 
                     @if (session('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <strong>{{ session('success') }}</strong>
-                        </div>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
                     @endif
                     @if ($errors->any())
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
 
                     <form action="{{ route('send-contact-form') }}" class="p-5 bg-white" style=""
@@ -221,9 +286,9 @@
                         <!-- Add reCAPTCHA -->
                         {!! NoCaptcha::display(['data-callback' => 'enableSubmitBtn']) !!}
                         @if ($errors->has('g-recaptcha-response'))
-                            <span class="help-block">
-                                <strong class="error">{{ $errors->first('g-recaptcha-response') }}</strong>
-                            </span>
+                        <span class="help-block">
+                            <strong class="error">{{ $errors->first('g-recaptcha-response') }}</strong>
+                        </span>
                         @endif
 
 
@@ -274,51 +339,55 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="row">
-
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
+                    <div class="footer-section">
+                        <!-- Quick Links Section -->
+                        <div class="footer-item">
                             <h2 class="footer-heading mb-4 off-white">Quick Links</h2>
                             <ul class="list-unstyled">
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="{{ route('about') }}">About</a></li>
                                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
-
                             </ul>
                         </div>
 
-
-
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
+                        <!-- Contact Section -->
+                        <div class="footer-item">
                             <h2 class="footer-heading mb-4 off-white">Contact</h2>
                             <ul class="list-unstyled">
-                                <li><a href="tel:9746222668">
-                                        <p class="lead off-white"> +91 97462 22668 </p>
-                                    </a></li>
+                                <li>
+                                    <a href="tel:9746222668">
+                                        <p class="lead off-white">+91 97462 22668</p>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
 
-                        <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
-                            <h2 class="footer-heading mb-4 off-white">Follow Us</h2>
-                            <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3 "><span
-                                    style="font-size:2rem" class="icon-facebook"></span></a>
-                            <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3"><span
-                                    style="font-size:2rem" class="icon-youtube"></span></a>
-                            <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3"><span
-                                    style="font-size:2rem" class="icon-instagram"></span></a>
+                        <!-- Follow Us Section -->
+                        <div class="footer-item follow-us">
+                            <div>
+                                <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
+                                    <span style="font-size: 2rem;" class="icon-facebook"></span>
+                                </a>
+                                <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3">
+                                    <span style="font-size: 2rem;" class="icon-youtube"></span>
+                                </a>
+                                <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3">
+                                    <span style="font-size: 2rem;" class="icon-instagram"></span>
+                                </a>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div class="row pt-5 mt-5">
                 <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All
-                        rights reserved
-                    </p>
+                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
                 </div>
             </div>
         </div>
     </footer>
+
 
     </div>
 
@@ -402,8 +471,8 @@
     </script>
 
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>
