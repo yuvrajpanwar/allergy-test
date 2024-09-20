@@ -107,16 +107,20 @@
             cursor: pointer;
         }
 
-/* Ensure reCAPTCHA is visible and clickable */
-.g-recaptcha {
-    margin: 0 auto;
-    max-width: 100%;
-    width: 100%;
-    transform: scale(0.76); /* Adjust scaling for better fit */
-    transform-origin: 0 0; /* Adjust scaling origin */
-    overflow: hidden; /* Hide any overflow */
-    z-index: 10000; /* Ensure it's on top */
-}
+        /* Ensure reCAPTCHA is visible and clickable */
+        .g-recaptcha {
+            margin: 0 auto;
+            max-width: 100%;
+            width: 100%;
+            transform: scale(0.76);
+            /* Adjust scaling for better fit */
+            transform-origin: 0 0;
+            /* Adjust scaling origin */
+            overflow: hidden;
+            /* Hide any overflow */
+            z-index: 10000;
+            /* Ensure it's on top */
+        }
 
 
         /* Form Styles */
@@ -458,9 +462,10 @@
             </div>
 
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a
-                    href="#" class="site-menu-toggle js-menu-toggle text-white"><span
-                        class="icon-menu h3 text-black"></span></a></div>
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+                <a href="#" class="site-menu-toggle js-menu-toggle text-white">
+                    <span class="icon-menu h3 text-black"></span></a>
+            </div>
 
         </div>
 
@@ -481,7 +486,7 @@
 <!-- Icons Section -->
 <!-- Icons Section -->
 <div class="fixed-icons11">
-    <a href="https://wa.me/yourwhatsappnumber" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
+    <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
         <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
     </a>
     <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
@@ -491,7 +496,7 @@
 <!-- Contact Form Modal -->
 <div id="contactFormModal11" class="modal11" onclick="closeContactForm11(event)">
     <div class="modal-content11" onclick="event.stopPropagation()">
-        <span class="close11" onclick="closeContactForm11()">&times;</span>
+        <span class="close11" onclick="closeContactForm11(event)">&times;</span>
         <h2>Contact Us</h2>
         <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
             @if (session('success'))
@@ -578,11 +583,11 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <!-- Include reCAPTCHA Script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 
 
 <!-- Include reCAPTCHA Script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 
 
 <!-- Include reCAPTCHA Script -->
@@ -741,7 +746,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/1.jpeg') }}" alt="Image"
+                            src="{{ asset('public/images/whatsapp/11.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">25+ Years of Expertise in Allergy
                             Testing</a></h3>
@@ -752,7 +757,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/2.jpeg') }}" alt="Image"
+                            src="{{ asset('public/images/whatsapp/12.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">180+ Tests with a Single Blood
                             Specimen </a></h3>
@@ -763,7 +768,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/3.jpeg') }}" alt="Image"
+                            src="{{ asset('public/images/whatsapp/13.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">ISO Certified & NABL Accredited</a>
                     </h3>
@@ -775,7 +780,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/4.jpeg') }}" alt="Image"
+                            src="{{ asset('public/images/whatsapp/14.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">Presence in 7 locations in
                             India</a></h3>
@@ -1663,112 +1668,111 @@
     // Open Contact Form Modal
     // Open Contact Form Modal
     // Initialize reCAPTCHA
-function initializeRecaptcha() {
-    if (typeof grecaptcha !== 'undefined') {
-        grecaptcha.render('recaptcha-container11', {
-            'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
+    function initializeRecaptcha() {
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.render('recaptcha-container11', {
+                'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
+            });
+        }
+    }
+
+    // Call the initialize function when the document is ready
+    $(document).ready(function() {
+        initializeRecaptcha();
+        $('#messageForm11').validate({
+            // Validation rules
+            submitHandler: function(form) {
+                if (grecaptcha.getResponse() === '') {
+                    document.getElementById('recaptcha-error11').style.display = 'block';
+                    return false;
+                } else {
+                    form.submit();
+                }
+            }
         });
+    });
+
+    function openContactForm11() {
+        document.getElementById('contactFormModal11').style.display = 'block';
     }
-}
 
-// Call the initialize function when the document is ready
-$(document).ready(function() {
-    initializeRecaptcha();
-    $('#messageForm11').validate({
-        // Validation rules
-        submitHandler: function(form) {
-            if (grecaptcha.getResponse() === '') {
-                document.getElementById('recaptcha-error11').style.display = 'block';
-                return false;
-            } else {
-                form.submit();
-            }
+    // Close Contact Form Modal when clicked outside the modal content or on the close button
+    function closeContactForm11(event) {
+        const modal = document.getElementById('contactFormModal11');
+        if (event.target === modal || event.type === 'click') {
+            modal.style.display = 'none';
         }
-    });
-});
-function openContactForm11() {
-    document.getElementById('contactFormModal11').style.display = 'block';
-}
-
-// Close Contact Form Modal when clicked outside the modal content or on the close button
-function closeContactForm11(event) {
-    const modal = document.getElementById('contactFormModal11');
-    if (event.target === modal || event.type === 'click') {
-        modal.style.display = 'none';
     }
-}
 
-// Enable submit button if reCAPTCHA is completed
-function enableSubmitBtn() {
-    document.getElementById('submitBtn11').disabled = false;
-}
+    // Enable submit button if reCAPTCHA is completed
+    function enableSubmitBtn() {
+        document.getElementById('submitBtn11').disabled = false;
+    }
 
-// Initialize form validation
-$(document).ready(function() {
-    $('#messageForm11').validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
+    // Initialize form validation
+    $(document).ready(function() {
+        $('#messageForm11').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone_number: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 15
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                location: {
+                    required: true
+                },
+                message: {
+                    required: true,
+                    minlength: 10
+                }
             },
-            phone_number: {
-                required: true,
-                digits: true,
-                minlength: 10,
-                maxlength: 15
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Your name must consist of at least 2 characters"
+                },
+                phone_number: {
+                    required: "Please enter your phone number",
+                    digits: "Please enter a valid phone number",
+                    minlength: "Your phone number must be at least 10 digits",
+                    maxlength: "Your phone number cannot exceed 15 digits"
+                },
+                email: {
+                    required: "Please enter your email address",
+                    email: "Please enter a valid email address"
+                },
+                location: {
+                    required: "Please select a collection point"
+                },
+                message: {
+                    required: "Please enter your message",
+                    minlength: "Your message must be at least 10 characters long"
+                }
             },
-            email: {
-                required: true,
-                email: true
-            },
-            location: {
-                required: true
-            },
-            message: {
-                required: true,
-                minlength: 10
+            submitHandler: function(form) {
+                if (grecaptcha.getResponse() === '') {
+                    document.getElementById('recaptcha-error11').style.display = 'block';
+                    return false;
+                } else {
+                    form.submit();
+                }
             }
-        },
-        messages: {
-            name: {
-                required: "Please enter your name",
-                minlength: "Your name must consist of at least 2 characters"
-            },
-            phone_number: {
-                required: "Please enter your phone number",
-                digits: "Please enter a valid phone number",
-                minlength: "Your phone number must be at least 10 digits",
-                maxlength: "Your phone number cannot exceed 15 digits"
-            },
-            email: {
-                required: "Please enter your email address",
-                email: "Please enter a valid email address"
-            },
-            location: {
-                required: "Please select a collection point"
-            },
-            message: {
-                required: "Please enter your message",
-                minlength: "Your message must be at least 10 characters long"
-            }
-        },
-        submitHandler: function(form) {
-            if (grecaptcha.getResponse() === '') {
-                document.getElementById('recaptcha-error11').style.display = 'block';
-                return false;
-            } else {
-                form.submit();
-            }
-        }
+        });
+
+        // Adjust reCAPTCHA size on window resize
+        $(window).on('resize', function() {
+            grecaptcha.render();
+        });
     });
-
-    // Adjust reCAPTCHA size on window resize
-    $(window).on('resize', function() {
-        grecaptcha.render();
-    });
-});
-
-
 </script>
 
 <!-- Google Tag Manager (noscript) -->

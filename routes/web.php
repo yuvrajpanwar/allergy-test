@@ -51,3 +51,6 @@ route::get('/cough', [App\Http\Controllers\PageController::class, 'cough'])->nam
 
 //route for allergysymptoms page
 route::get('/allergysymptoms', [App\Http\Controllers\PageController::class, 'allergysymptoms'])->name('allergysymptoms');
+
+//route for allergypanel page
+route::get('/allergypanel', [App\Http\Controllers\PageController::class,'allergypanel'])->name('allergypanel');
