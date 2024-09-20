@@ -81,4 +81,11 @@ public function allergySymptoms()
 
 }
 
+//allergy-panels
+public function allergypanel()
+{
+    return view('allergypanel');
+}
+
+
 }
