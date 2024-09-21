@@ -860,21 +860,21 @@
 
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
-                    <a href="#" class="thumbnail-link d-block mb-4"><img
+                    <a href="allergypanel#features1-26" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/t1.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#"
-                            style="color: #666666;font-weight:700">VEG FOOD</a></h3>
+                    <h3 class="block-service-1-heading mb-3">
+                        <a href="allergypanel#features1-26" style="color: #666666;font-weight:700">VEG FOOD</a></h3>
 
                 </div>
             </div>
 
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
-                    <a href="#" class="thumbnail-link d-block mb-4"><img
+                    <a href="allergypanel#header2-28" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/t2.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#"
+                    <h3 class="block-service-1-heading mb-3"><a href="allergypanel#header2-28"
                             style="color: #666666;font-weight:700">NON-VEG FOOD</a></h3>
 
                 </div>
@@ -882,10 +882,10 @@
 
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
-                    <a href="#" class="thumbnail-link d-block mb-4"><img
+                    <a href="allergypanel#header2-2a" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/t3.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#"
+                    <h3 class="block-service-1-heading mb-3"><a href="allergypanel#header2-2a"
                             style="color: #666666;font-weight:700">INHALANTS</a>
                     </h3>
 
@@ -895,10 +895,10 @@
 
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
-                    <a href="#" class="thumbnail-link d-block mb-4"><img
+                    <a href="allergypanel#header2-2s" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/t4.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#"
+                    <h3 class="block-service-1-heading mb-3"><a href="allergypanel#header2-2s"
                             style="color: #666666;font-weight:700">CONTACT ALLERGY</a></h3>
                 </div>
             </div>

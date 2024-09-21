@@ -1137,6 +1137,7 @@
 
     </div>
 
+
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
     {{-- <script src="{{ asset('public/js/jquery-migrate-3.0.1.min.js') }}"></script> --}}
     <script src="{{ asset('public/js/jquery-ui.js') }}"></script>
@@ -1167,9 +1168,6 @@
       showCursor: true
     });
   </script> --}}
-
-
-
 
     <script src="{{ asset('public/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
@@ -1293,10 +1291,6 @@
             });
         });
     </script>
-
-
-
-    <script src="{{ asset('public/js/main.js') }}"></script>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"

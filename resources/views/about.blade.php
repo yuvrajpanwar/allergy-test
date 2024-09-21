@@ -19,10 +19,7 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
-        
-
-
-         /* Icons Styling */
+        /* Icons Styling */
         /* Icons Styling */
         /* Icons Styling */
         /* Icons Styling */
@@ -162,8 +159,8 @@
 
 
 
-/* Default styles for all screens */
-.quick-info-item {
+        /* Default styles for all screens */
+        .quick-info-item {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -179,6 +176,7 @@
                 /* Align items to the right */
             }
         }
+
         /* For larger displays */
         .quick-info-item {
             text-align: center;
@@ -387,131 +385,131 @@
 
 <body>
 
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<div class="fixed-icons11">
-    <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-        <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
-    </a>
-    <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-        <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
-    </div>
-</div>
-<!-- Contact Form Modal -->
-<div id="contactFormModal11" class="modal11" onclick="closeContactForm11(event)">
-    <div class="modal-content11" onclick="event.stopPropagation()">
-        <span class="close11" onclick="closeContactForm11(event)">&times;</span>
-        <h2>Contact Us</h2>
-        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-            @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>{{ session('success') }}</strong>
-            </div>
-            @endif
-            @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-
-            <input type="hidden" name="_token" value="W5nxsdzTkvXuzifm1CEzVErqybTiwmtayUz97t8K">
-            <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <label class="text-black" for="name">Name</label>
-                    <input type="text" id="name11" name="name" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label class="text-black" for="phone_number">Phone Number</label>
-                    <input type="text" id="phone_number11" name="phone_number" class="form-control">
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-md-12">
-                    <label class="text-black" for="email">Email</label>
-                    <input type="email" id="email11" name="email" class="form-control">
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-md-12">
-                    <label class="text-black" for="location">Choose Collection Point</label>
-                    <select name="location" id="location11" class="form-control">
-                        <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
-                        </option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Bengaluru">Bengaluru</option>
-                        <option value="Chennai">Chennai</option>
-                        <option value="Hyderabad">Hyderabad</option>
-                        <option value="Pune">Pune</option>
-                        <option value="Kochi">Kochi</option>
-                        <option value="Thiruvanathapuram">Thiruvanathapuram</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-md-12">
-                    <label class="text-black" for="message">Message</label>
-                    <textarea name="message" id="message11" cols="30" rows="7" class="form-control"
-                        placeholder="Write your message or questions here..."></textarea>
-                </div>
-            </div>
-
-            <!-- Add reCAPTCHA -->
-            <div class="form-group">
-                <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
-                    data-callback="enableSubmitBtn"></div>
-                <span class="help-block" id="recaptcha-error11" style="display: none;">
-                    <strong class="error">Please verify that you are not a robot.</strong>
-                </span>
-            </div>
-
-            <div class="row form-group mt-2">
-                <div class="col-md-12">
-                    <input disabled id="submitBtn11" type="submit" value="Send"
-                        class="btn btn-pill btn-primary btn-md text-white">
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-<!-- Include reCAPTCHA Script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
-
-
-<div class="site-wrap">
-
-    <div class="site-mobile-menu">
-        <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-                <span class="icon-close2 js-menu-toggle"></span>
-            </div>
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <!-- Icons Section -->
+    <div class="fixed-icons11">
+        <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
+            <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+        </a>
+        <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
+            <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
         </div>
-        <div class="site-mobile-menu-body"></div>
     </div>
-</div>
+    <!-- Contact Form Modal -->
+    <div id="contactFormModal11" class="modal11" onclick="closeContactForm11(event)">
+        <div class="modal-content11" onclick="event.stopPropagation()">
+            <span class="close11" onclick="closeContactForm11(event)">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+                @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>{{ session('success') }}</strong>
+                </div>
+                @endif
+                @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
+                <input type="hidden" name="_token" value="W5nxsdzTkvXuzifm1CEzVErqybTiwmtayUz97t8K">
+                <div class="row form-group">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label class="text-black" for="name">Name</label>
+                        <input type="text" id="name11" name="name" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="text-black" for="phone_number">Phone Number</label>
+                        <input type="text" id="phone_number11" name="phone_number" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="text-black" for="email">Email</label>
+                        <input type="email" id="email11" name="email" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="text-black" for="location">Choose Collection Point</label>
+                        <select name="location" id="location11" class="form-control">
+                            <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
+                            </option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Kochi">Kochi</option>
+                            <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="text-black" for="message">Message</label>
+                        <textarea name="message" id="message11" cols="30" rows="7" class="form-control"
+                            placeholder="Write your message or questions here..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Add reCAPTCHA -->
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
+                        data-callback="enableSubmitBtn"></div>
+                    <span class="help-block" id="recaptcha-error11" style="display: none;">
+                        <strong class="error">Please verify that you are not a robot.</strong>
+                    </span>
+                </div>
+
+                <div class="row form-group mt-2">
+                    <div class="col-md-12">
+                        <input disabled id="submitBtn11" type="submit" value="Send"
+                            class="btn btn-pill btn-primary btn-md text-white">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Include reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+    </div>
     <header class="site-navbar bg-light" role="banner">
 
         <div class="container">
@@ -605,8 +603,8 @@
 
 
     <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
-    <!-- Background image -->
-    <div style="
+        <!-- Background image -->
+        <div style="
         position: absolute;
         top: 0;
         left: 0;
@@ -619,8 +617,8 @@
         z-index: -1;
     "></div>
 
-    <!-- White overlay -->
-    <div style="
+        <!-- White overlay -->
+        <div style="
         position: absolute;
         top: 0;
         left: 0;
@@ -630,46 +628,46 @@
         z-index: -1;
     "></div>
 
-    <div class="container" style="position: relative; z-index: 1;">
-        <div>
-            <div class="row">
-                <!-- WhatsApp Link -->
-                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Call Us Link -->
-                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a href="tel:9746222668" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
-                            <div class="text">
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div>
+                <div class="row">
+                    <!-- WhatsApp Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
-                <!-- Book Appointment Link -->
-                <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
-                    <a href="{{ route('contact-us') }}" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
-                        </div>
-                    </a>
-                </div>
+                    <!-- Call Us Link -->
+                    <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                        <a href="tel:9746222668" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
+                                <div class="text">
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
+                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
+                    <!-- Book Appointment Link -->
+                    <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
+                        <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                            <div class="d-flex quick-info-2 align-items-center">
+                                <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <footer class="site-footer off-white" style="background: #000000">
@@ -759,138 +757,128 @@
     });
   </script> --}}
 
-
-
-
-
-  <script src="{{ asset('public/js/main.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-
-<script>
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Add these in your HTML <head> or before this script
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Initialize reCAPTCHA
-    function initializeRecaptcha() {
-        if (typeof grecaptcha !== 'undefined') {
-            grecaptcha.render('recaptcha-container11', {
-                'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
-            });
-        }
-    }
-
-    // Call the initialize function when the document is ready
-    $(document).ready(function () {
-        initializeRecaptcha();
-        $('#messageForm11').validate({
-            // Validation rules
-            submitHandler: function (form) {
-                if (grecaptcha.getResponse() === '') {
-                    document.getElementById('recaptcha-error11').style.display = 'block';
-                    return false;
-                } else {
-                    form.submit();
-                }
-            }
-        });
-    });
-
-    function openContactForm11() {
-        document.getElementById('contactFormModal11').style.display = 'block';
-    }
-
-    // Close Contact Form Modal when clicked outside the modal content or on the close button
-    function closeContactForm11(event) {
-        const modal = document.getElementById('contactFormModal11');
-        if (event.target === modal || event.type === 'click') {
-            modal.style.display = 'none';
-        }
-    }
-
-    // Enable submit button if reCAPTCHA is completed
-    function enableSubmitBtn() {
-        document.getElementById('submitBtn11').disabled = false;
-    }
-
-    // Initialize form validation
-    $(document).ready(function () {
-        $('#messageForm11').validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
-                phone_number: {
-                    required: true,
-                    digits: true,
-                    minlength: 10,
-                    maxlength: 15
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                location: {
-                    required: true
-                },
-                message: {
-                    required: true,
-                    minlength: 10
-                }
-            },
-            messages: {
-                name: {
-                    required: "Please enter your name",
-                    minlength: "Your name must consist of at least 2 characters"
-                },
-                phone_number: {
-                    required: "Please enter your phone number",
-                    digits: "Please enter a valid phone number",
-                    minlength: "Your phone number must be at least 10 digits",
-                    maxlength: "Your phone number cannot exceed 15 digits"
-                },
-                email: {
-                    required: "Please enter your email address",
-                    email: "Please enter a valid email address"
-                },
-                location: {
-                    required: "Please select a collection point"
-                },
-                message: {
-                    required: "Please enter your message",
-                    minlength: "Your message must be at least 10 characters long"
-                }
-            },
-            submitHandler: function (form) {
-                if (grecaptcha.getResponse() === '') {
-                    document.getElementById('recaptcha-error11').style.display = 'block';
-                    return false;
-                } else {
-                    form.submit();
-                }
-            }
-        });
-
-        // Adjust reCAPTCHA size on window resize
-        $(window).on('resize', function () {
-            grecaptcha.render();
-        });
-    });
-</script>
-
-
-
-
-
     <script src="{{ asset('public/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+    <script>
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Add these in your HTML <head> or before this script
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Initialize reCAPTCHA
+        function initializeRecaptcha() {
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.render('recaptcha-container11', {
+                    'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
+                });
+            }
+        }
+
+        // Call the initialize function when the document is ready
+        $(document).ready(function() {
+            initializeRecaptcha();
+            $('#messageForm11').validate({
+                // Validation rules
+                submitHandler: function(form) {
+                    if (grecaptcha.getResponse() === '') {
+                        document.getElementById('recaptcha-error11').style.display = 'block';
+                        return false;
+                    } else {
+                        form.submit();
+                    }
+                }
+            });
+        });
+
+        function openContactForm11() {
+            document.getElementById('contactFormModal11').style.display = 'block';
+        }
+
+        // Close Contact Form Modal when clicked outside the modal content or on the close button
+        function closeContactForm11(event) {
+            const modal = document.getElementById('contactFormModal11');
+            if (event.target === modal || event.type === 'click') {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Enable submit button if reCAPTCHA is completed
+        function enableSubmitBtn() {
+            document.getElementById('submitBtn11').disabled = false;
+        }
+
+        // Initialize form validation
+        $(document).ready(function() {
+            $('#messageForm11').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    phone_number: {
+                        required: true,
+                        digits: true,
+                        minlength: 10,
+                        maxlength: 15
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    location: {
+                        required: true
+                    },
+                    message: {
+                        required: true,
+                        minlength: 10
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "Please enter your name",
+                        minlength: "Your name must consist of at least 2 characters"
+                    },
+                    phone_number: {
+                        required: "Please enter your phone number",
+                        digits: "Please enter a valid phone number",
+                        minlength: "Your phone number must be at least 10 digits",
+                        maxlength: "Your phone number cannot exceed 15 digits"
+                    },
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address"
+                    },
+                    location: {
+                        required: "Please select a collection point"
+                    },
+                    message: {
+                        required: "Please enter your message",
+                        minlength: "Your message must be at least 10 characters long"
+                    }
+                },
+                submitHandler: function(form) {
+                    if (grecaptcha.getResponse() === '') {
+                        document.getElementById('recaptcha-error11').style.display = 'block';
+                        return false;
+                    } else {
+                        form.submit();
+                    }
+                }
+            });
+
+            // Adjust reCAPTCHA size on window resize
+            $(window).on('resize', function() {
+                grecaptcha.render();
+            });
+        });
+    </script>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
