@@ -20,7 +20,11 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
-        /* Icons Styling */
+
+.text-lg-right {
+    text-align: right;
+}
+/* Icons Styling */
         /* Icons Styling */
         /* Icons Styling */
         /* Icons Styling */
@@ -404,9 +408,10 @@
                 </div>
 
 
-                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a
-                        href="#" class="site-menu-toggle js-menu-toggle text-white"><span
-                            class="icon-menu h3 text-black"></span></a></div>
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+                    <a href="#" class="site-menu-toggle js-menu-toggle text-white">
+                        <span class="icon-menu h3 text-black"></span></a>
+                </div>
 
             </div>
 
@@ -414,6 +419,7 @@
 
 
     </header>
+
 
 
 
@@ -888,6 +894,7 @@
 
     </div>
 
+
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
     {{-- <script src="{{ asset('public/js/jquery-migrate-3.0.1.min.js') }}"></script> --}}
     <script src="{{ asset('public/js/jquery-ui.js') }}"></script>
@@ -918,9 +925,6 @@
       showCursor: true
     });
   </script> --}}
-
-
-
 
     <script src="{{ asset('public/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
@@ -1044,10 +1048,6 @@
             });
         });
     </script>
-
-
-
-    <script src="{{ asset('public/js/main.js') }}"></script>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"

@@ -51,6 +51,13 @@
     <link rel="stylesheet" href="{{ asset('public/css/mbr-additional.css') }}" type="text/css">
 
     <style>
+        /* Style for validation error messages */
+.error {
+    color: red; /* Set error messages to red */
+    font-size: 14px; /* Optional: Adjust the font size */
+    margin-top: 5px; /* Optional: Add some margin for spacing */
+}
+
         .footer-section {
             display: flex;
             align-items: flex-start;
@@ -452,61 +459,61 @@
     </div>
 
     <div class="site-wrap">
-    <div class="site-mobile-menu">
-        <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-                <span class="icon-close2 js-menu-toggle" onclick="toggleMobileMenu()"></span>
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle" onclick="toggleMobileMenu()"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body">
+                <ul class="mobile-menu-list">
+                    <li style="padding-bottom: 10px;">
+                        <a href="{{ route('home') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
+                    </li>
+                    <li style="padding-bottom: 10px;">
+                        <a href="{{ route('about') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('contact-us') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact Us</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="site-mobile-menu-body">
-            <ul class="mobile-menu-list">
-                <li style="padding-bottom: 10px;">
-                    <a href="{{ route('home') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
-                </li>
-                <li style="padding-bottom: 10px;">
-                    <a href="{{ route('about') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
-                </li>
-                <li>
-                    <a href="{{ route('contact-us') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <header class="site-navbar bg-light fixed-top" role="banner">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-11 col-xl-4">
-                    <h1 class="mb-0 site-logo">
-                        <a href="{{ route('home') }}" class="text-white mb-0">
-                            <img src="{{ asset('public/images/whatsapp/mainlogo.png') }}" alt="">
+        <header class="site-navbar bg-light fixed-top" role="banner">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-11 col-xl-4">
+                        <h1 class="mb-0 site-logo">
+                            <a href="{{ route('home') }}" class="text-white mb-0">
+                                <img src="{{ asset('public/images/whatsapp/mainlogo.png') }}" alt="">
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col-12 col-md-8 d-none d-xl-block">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                                <li class="active" style="padding-right: 20px;">
+                                    <a href="{{ route('home') }}" style="font-family: Rubik; color: red; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
+                                </li>
+                                <li style="padding-right: 20px;">
+                                    <a href="{{ route('about') }}" style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('contact-us') }}" style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+                        <a href="#" class="site-menu-toggle js-menu-toggle text-white" onclick="toggleMobileMenu()">
+                            <span class="icon-menu h3 text-black"></span>
                         </a>
-                    </h1>
-                </div>
-                <div class="col-12 col-md-8 d-none d-xl-block">
-                    <nav class="site-navigation position-relative text-right" role="navigation">
-                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                            <li class="active" style="padding-right: 20px;">
-                                <a href="{{ route('home') }}" style="font-family: Rubik; color: red; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
-                            </li>
-                            <li style="padding-right: 20px;">
-                                <a href="{{ route('about') }}" style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('contact-us') }}" style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
-                    <a href="#" class="site-menu-toggle js-menu-toggle text-white" onclick="toggleMobileMenu()">
-                        <span class="icon-menu h3 text-black"></span>
-                    </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-</div>
+        </header>
+    </div>
 
 
 
