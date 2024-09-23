@@ -24,6 +24,16 @@ Route::get('/success', function () {
     return redirect('/');
 })->name('success');
 
+Route::get('/food-intolerance', function () {
+    // if(session('success')){
+        return view('food-intolerance');
+    // }
+    return redirect('/');
+})->name('food-intolerance');
+
+
+
+
 // Route for Itching page
 Route::get('/itching', [App\Http\Controllers\PageController::class, 'itching'])->name('itching');
 // Route for hives page
@@ -54,3 +64,7 @@ route::get('/allergysymptoms', [App\Http\Controllers\PageController::class, 'all
 
 //route for allergypanel page
 route::get('/allergypanel', [App\Http\Controllers\PageController::class,'allergypanel'])->name('allergypanel');
+
+//route for food intolerance page
+// route::get('/food-intolerance', [App\Http\Controllers\PageController::class,'foodintolerance'])->name('foodintolerance');
+
