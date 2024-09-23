@@ -88,4 +88,11 @@ public function allergypanel()
 }
 
 
+//food-intolerance
+public function foodintolerance()
+{
+    return view('food-intolerance');
+
+}
+
 }

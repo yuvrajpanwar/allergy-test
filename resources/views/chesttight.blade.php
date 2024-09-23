@@ -20,13 +20,133 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
+        .custom-heading {
+            padding-left: 5%;
+            /* Use a percentage for responsive padding */
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .contact-info {
+            padding-left: 5%;
+            /* Use a percentage for responsive padding */
+            padding-right: 5%;
+            /* Use a percentage for responsive padding */
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        /* Adjust alignment for large displays */
+        @media (min-width: 1200px) {
+            .custom-heading {
+                padding-left: 10%;
+                /* Increase padding for large screens */
+                text-align: left;
+            }
+
+            .contact-info {
+                padding-left: 5%;
+                /* Adjust padding for large displays */
+                padding-right: 5%;
+                /* Adjust padding for large displays */
+            }
+        }
+
+        /* Adjustments for medium displays */
+        @media (max-width: 1199px) {
+
+            .custom-heading,
+            .contact-info {
+                padding-left: 8%;
+                /* Slightly larger padding for medium screens */
+                padding-right: 8%;
+                /* Slightly larger padding for medium screens */
+            }
+
+            .custom-heading h2 {
+                font-size: 24px;
+            }
+
+            .contact-info p {
+                font-size: 17px;
+            }
+        }
+
+        /* Stack content vertically on small screens */
+        @media (max-width: 767px) {
+
+            /* Adjusted breakpoint for small devices */
+            .custom-heading,
+            .contact-info {
+                padding: 0 5%;
+                /* Responsive padding */
+                text-align: left;
+                /* Align content to the left */
+            }
+
+            .custom-heading {
+                order: 1;
+                /* Ensure heading appears first */
+            }
+
+            .contact-info {
+                order: 2;
+                /* Ensure contact info appears below the heading */
+                margin-top: 10px;
+                /* Adjust spacing between sections */
+            }
+
+
+
+            .custom-heading h2 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            .contact-info p {
+                font-size: 16px;
+            }
+        }
+
+        .site-section {
+            padding-top: 0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .fixed-icons11 {
             position: fixed;
             bottom: 20px;
@@ -78,7 +198,11 @@
 
         .modal-content11 {
             background-color: #fefefe;
-            margin: 15% auto;
+            /* margin: 15% auto; */
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+            margin-left: auto;
+            margin-right: auto;
             /* Adjust the modal positioning */
             padding: 20px;
             border: 1px solid #888;
@@ -247,36 +371,7 @@
             }
         }
 
-        .custom-heading {
-            font-family: 'Francois One', sans-serif;
-            font-size: 28px;
-            /* Default for large screens */
-            font-weight: 400;
-            line-height: 1.4;
-            text-align: left;
-            padding-left: 5rem;
-            /* Default padding for large screens */
-        }
 
-        /* Media Query for small devices (like smartphones) */
-        @media (max-width: 576px) {
-            .custom-heading {
-                font-size: 20px;
-                /* Adjust font size for small devices */
-                padding-left: 1rem;
-                /* Reduce padding for small screens */
-            }
-        }
-
-        /* Media Query for medium devices (like tablets) */
-        @media (max-width: 768px) {
-            .custom-heading {
-                font-size: 24px;
-                /* Adjust font size for medium devices */
-                padding-left: 1rem;
-                /* Adjust padding for medium screens */
-            }
-        }
 
         .error {
             color: red;
@@ -415,6 +510,7 @@
 
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                             <li class="active"><a href="{{ route('home') }}"><span>Home</span></a></li>
+                            <li><a href="{{ route('food-intolerance') }}"><span>Food Intolerance</span></a></li>
                             <li><a href="{{ route('about') }}"><span>About</span></a></li>
                             <li><a href="{{ route('contact-us') }}"><span>Contact Us</span></a></li>
                         </ul>
@@ -551,21 +647,21 @@
     <!-- Itching contents here -->
     <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
         <div class="container" style="max-width: 100%; padding: 0 15px;">
-            <div class="row align-items-left justify-content-between">
+            <div class="row align-items-left justify-content-between flex-column flex-lg-row">
                 <!-- Title and Description -->
-                <div class="col-lg-7 mb-4 mb-lg-0 custom-heading">
-                    <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4; text-align: left;">
+                <div class="col-lg-7 col-md-12 mb-4 mb-lg-0 custom-heading">
+                    <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4;">
                         ALLERGY SYMPTOMS<br>Chest tightness
                     </h2>
                 </div>
 
                 <!-- Contact Information -->
-                <div class="col-lg-4">
-                    <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
+                <div class="col-lg-4 col-md-12 contact-info">
+                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
-                    <p style="color: #FF0000; font-family: Rubik, sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5;">
-                        Click here to <span style="font-weight: 700;">Chat &nbsp;
+                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
+                    <a href="https://wa.me/7358728170"> Click here to <span style="font-weight: 700;">Chat</a> &nbsp;
                             <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
                         </span>
                     </p>
@@ -605,7 +701,6 @@
                     Home
                 </a>
 
-                <br><br>
 
 
                 <!-- <button type="button" style="">All Allergy Symptoms</button> -->
@@ -829,6 +924,7 @@
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="{{ route('about') }}">About</a></li>
                                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                                <li><a href="{{ route('food-intolerance') }}">Food Intolerance</a></li>
                             </ul>
                         </div>
 

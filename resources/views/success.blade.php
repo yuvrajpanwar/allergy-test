@@ -194,6 +194,7 @@
 
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                             <li><a href="{{ route('home') }}"><span>Home</span></a></li>
+                            <li><a href="{{ route('food-intolerance') }}"><span>Food Intolerance</span></a></li>
                             <li><a href="{{ route('about') }}"><span>About</span></a></li>
                             <li><a href="{{ route('contact-us') }}"><span>Contact Us</span></a></li>
                         </ul>
@@ -254,6 +255,8 @@
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="{{ route('about') }}">About</a></li>
                                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                                <li><a href="{{ route('food-intolerance') }}">Food Intolerance</a></li>
+
                             </ul>
                         </div>
 

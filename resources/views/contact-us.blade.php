@@ -77,7 +77,11 @@
 
         .modal-content11 {
             background-color: #fefefe;
-            margin: 15% auto;
+            /* margin: 15% auto; */
+            margin-top: 0.5%;
+            margin-bottom: 0.5%;
+            margin-left: auto;
+            margin-right: auto;
             /* Adjust the modal positioning */
             padding: 20px;
             border: 1px solid #888;
@@ -322,6 +326,7 @@
 
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                             <li><a href="{{ route('home') }}"><span>Home</span></a></li>
+                            <li><a href="{{ route('food-intolerance') }}"><span>Food Intolerance</span></a></li>
                             <li><a href="{{ route('about') }}"><span>About</span></a></li>
                             <li class="active"><a href="{{ route('contact-us') }}"><span>Contact Us</span></a></li>
                         </ul>
@@ -596,6 +601,8 @@
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="{{ route('about') }}">About</a></li>
                                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                                <li><a href="{{ route('food-intolerance') }}">Food Intolerance</a></li>
+
                             </ul>
                         </div>
 
@@ -641,25 +648,25 @@
     </div>
 
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
-{{-- <script src="{{ asset('public/js/jquery-migrate-3.0.1.min.js') }}"></script> --}}
-<script src="{{ asset('public/js/jquery-ui.js') }}"></script>
-<script src="{{ asset('public/js/popper.min.js') }}"></script>
-<script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('public/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('public/js/jquery.stellar.min.js') }}"></script>
-<script src="{{ asset('public/js/jquery.countdown.min.js') }}"></script>
-<script src="{{ asset('public/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('public/js/jquery.animateNumber.min.js') }}"></script>
-<script src="{{ asset('public/js/jquery.waypoints.min.js') }}"></script>
+    {{-- <script src="{{ asset('public/js/jquery-migrate-3.0.1.min.js') }}"></script> --}}
+    <script src="{{ asset('public/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('public/js/popper.min.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.waypoints.min.js') }}"></script>
 
-<script src="{{ asset('public/js/bootstrap-datepicker.min.js') }}"></script>
-<script src="{{ asset('public/js/aos.js') }}"></script>
-<script src="{{ asset('public/js/rangeslider.min.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('public/js/aos.js') }}"></script>
+    <script src="{{ asset('public/js/rangeslider.min.js') }}"></script>
 
 
-<script src="{{ asset('public/js/typed.js') }}"></script>
+    <script src="{{ asset('public/js/typed.js') }}"></script>
 
-{{-- <script>
+    {{-- <script>
     var typed = new Typed('.typed-words', {
       strings: ["pain", " stress", " fatigue"],
       typeSpeed: 80,
@@ -671,133 +678,133 @@
     });
   </script> --}}
 
-<script src="{{ asset('public/js/main.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="{{ asset('public/js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
-<script>
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Add these in your HTML <head> or before this script
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Initialize reCAPTCHA
-    function initializeRecaptcha() {
-        if (typeof grecaptcha !== 'undefined') {
-            grecaptcha.render('recaptcha-container11', {
-                'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
+    <script>
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Add these in your HTML <head> or before this script
+        // Open Contact Form Modal
+        // Open Contact Form Modal
+        // Initialize reCAPTCHA
+        function initializeRecaptcha() {
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.render('recaptcha-container11', {
+                    'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
+                });
+            }
+        }
+
+        // Call the initialize function when the document is ready
+        $(document).ready(function() {
+            initializeRecaptcha();
+            $('#messageForm11').validate({
+                // Validation rules
+                submitHandler: function(form) {
+                    if (grecaptcha.getResponse() === '') {
+                        document.getElementById('recaptcha-error11').style.display = 'block';
+                        return false;
+                    } else {
+                        form.submit();
+                    }
+                }
             });
+        });
+
+        function openContactForm11() {
+            document.getElementById('contactFormModal11').style.display = 'block';
         }
-    }
 
-    // Call the initialize function when the document is ready
-    $(document).ready(function() {
-        initializeRecaptcha();
-        $('#messageForm11').validate({
-            // Validation rules
-            submitHandler: function(form) {
-                if (grecaptcha.getResponse() === '') {
-                    document.getElementById('recaptcha-error11').style.display = 'block';
-                    return false;
-                } else {
-                    form.submit();
-                }
+        // Close Contact Form Modal when clicked outside the modal content or on the close button
+        function closeContactForm11(event) {
+            const modal = document.getElementById('contactFormModal11');
+            if (event.target === modal || event.type === 'click') {
+                modal.style.display = 'none';
             }
-        });
-    });
-
-    function openContactForm11() {
-        document.getElementById('contactFormModal11').style.display = 'block';
-    }
-
-    // Close Contact Form Modal when clicked outside the modal content or on the close button
-    function closeContactForm11(event) {
-        const modal = document.getElementById('contactFormModal11');
-        if (event.target === modal || event.type === 'click') {
-            modal.style.display = 'none';
         }
-    }
 
-    // Enable submit button if reCAPTCHA is completed
-    function enableSubmitBtn() {
-        document.getElementById('submitBtn11').disabled = false;
-    }
+        // Enable submit button if reCAPTCHA is completed
+        function enableSubmitBtn() {
+            document.getElementById('submitBtn11').disabled = false;
+        }
 
-    // Initialize form validation
-    $(document).ready(function() {
-        $('#messageForm11').validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
+        // Initialize form validation
+        $(document).ready(function() {
+            $('#messageForm11').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    phone_number: {
+                        required: true,
+                        digits: true,
+                        minlength: 10,
+                        maxlength: 15
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    location: {
+                        required: true
+                    },
+                    message: {
+                        required: true,
+                        minlength: 10
+                    }
                 },
-                phone_number: {
-                    required: true,
-                    digits: true,
-                    minlength: 10,
-                    maxlength: 15
+                messages: {
+                    name: {
+                        required: "Please enter your name",
+                        minlength: "Your name must consist of at least 2 characters"
+                    },
+                    phone_number: {
+                        required: "Please enter your phone number",
+                        digits: "Please enter a valid phone number",
+                        minlength: "Your phone number must be at least 10 digits",
+                        maxlength: "Your phone number cannot exceed 15 digits"
+                    },
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address"
+                    },
+                    location: {
+                        required: "Please select a collection point"
+                    },
+                    message: {
+                        required: "Please enter your message",
+                        minlength: "Your message must be at least 10 characters long"
+                    }
                 },
-                email: {
-                    required: true,
-                    email: true
-                },
-                location: {
-                    required: true
-                },
-                message: {
-                    required: true,
-                    minlength: 10
+                submitHandler: function(form) {
+                    if (grecaptcha.getResponse() === '') {
+                        document.getElementById('recaptcha-error11').style.display = 'block';
+                        return false;
+                    } else {
+                        form.submit();
+                    }
                 }
-            },
-            messages: {
-                name: {
-                    required: "Please enter your name",
-                    minlength: "Your name must consist of at least 2 characters"
-                },
-                phone_number: {
-                    required: "Please enter your phone number",
-                    digits: "Please enter a valid phone number",
-                    minlength: "Your phone number must be at least 10 digits",
-                    maxlength: "Your phone number cannot exceed 15 digits"
-                },
-                email: {
-                    required: "Please enter your email address",
-                    email: "Please enter a valid email address"
-                },
-                location: {
-                    required: "Please select a collection point"
-                },
-                message: {
-                    required: "Please enter your message",
-                    minlength: "Your message must be at least 10 characters long"
-                }
-            },
-            submitHandler: function(form) {
-                if (grecaptcha.getResponse() === '') {
-                    document.getElementById('recaptcha-error11').style.display = 'block';
-                    return false;
-                } else {
-                    form.submit();
-                }
-            }
+            });
+
+            // Adjust reCAPTCHA size on window resize
+            $(window).on('resize', function() {
+                grecaptcha.render();
+            });
         });
+    </script>
 
-        // Adjust reCAPTCHA size on window resize
-        $(window).on('resize', function() {
-            grecaptcha.render();
-        });
-    });
-</script>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
 </body>
 
