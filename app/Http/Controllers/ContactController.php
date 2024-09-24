@@ -21,8 +21,8 @@ class ContactController extends Controller
 
         $data = $request->all();
 
-        Mail::to('yogipanwar173@gmail.com')->send(new ContactFormMail($data));
-        //Mail::to('admin@preventivecarelab.com')->send(new ContactFormMail($data));
+        //Mail::to('yogipanwar173@gmail.com')->send(new ContactFormMail($data));
+        Mail::to('admin@preventivecarelab.com')->send(new ContactFormMail($data));
 
        
 
