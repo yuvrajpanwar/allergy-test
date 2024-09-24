@@ -361,99 +361,12 @@
         <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
             <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
         </a>
-        <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
+        <!-- <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
             <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
-        </div>
+        </div> -->
     </div>
     <!-- Contact Form Modal -->
-    <div id="contactFormModal11" class="modal11" onclick="closeContactForm11(event)">
-        <div class="modal-content11" onclick="event.stopPropagation()">
-            <span class="close11" onclick="closeContactForm11(event)">&times;</span>
-            <h2>Contact Us</h2>
-            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-                @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>{{ session('success') }}</strong>
-                </div>
-                @endif
-                @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
 
-                <input type="hidden" name="_token" value="W5nxsdzTkvXuzifm1CEzVErqybTiwmtayUz97t8K">
-                <div class="row form-group">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <label class="text-black" for="name">Name</label>
-                        <input type="text" id="name11" name="name" class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="text-black" for="phone_number">Phone Number</label>
-                        <input type="text" id="phone_number11" name="phone_number" class="form-control">
-                    </div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label class="text-black" for="email">Email</label>
-                        <input type="email" id="email11" name="email" class="form-control">
-                    </div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label class="text-black" for="location">Choose Collection Point</label>
-                        <select name="location" id="location11" class="form-control">
-                            <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
-                            </option>
-                            <option value="Mumbai">Mumbai</option>
-                            <option value="Bengaluru">Bengaluru</option>
-                            <option value="Chennai">Chennai</option>
-                            <option value="Hyderabad">Hyderabad</option>
-                            <option value="Pune">Pune</option>
-                            <option value="Kochi">Kochi</option>
-                            <option value="Thiruvanathapuram">Thiruvanathapuram</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label class="text-black" for="message">Message</label>
-                        <textarea name="message" id="message11" cols="30" rows="7" class="form-control"
-                            placeholder="Write your message or questions here..."></textarea>
-                    </div>
-                </div>
-
-                <!-- Add reCAPTCHA -->
-                <div class="form-group">
-                    <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
-                        data-callback="enableSubmitBtn"></div>
-                    <span class="help-block" id="recaptcha-error11" style="display: none;">
-                        <strong class="error">Please verify that you are not a robot.</strong>
-                    </span>
-                </div>
-
-                <div class="row form-group mt-2">
-                    <div class="col-md-12">
-                        <input disabled id="submitBtn11" type="submit" value="Send"
-                            class="btn btn-pill btn-primary btn-md text-white">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Include reCAPTCHA Script -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -732,7 +645,8 @@
 
         // Enable submit button if reCAPTCHA is completed
         function enableSubmitBtn() {
-            document.getElementById('submitBtn11').disabled = false;
+            document.getElementById('submitBtn').disabled = false;
+
         }
 
         // Initialize form validation
