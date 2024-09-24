@@ -412,8 +412,9 @@
         <div class="modal-content11" onclick="event.stopPropagation()">
             <span class="close11" onclick="closeContactForm11(event)">&times;</span>
             <h2>Contact Us</h2>
-            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-                @if (session('success'))
+        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+            @csrf
+            @if (session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -434,7 +435,7 @@
                 </div>
                 @endif
 
-                <input type="hidden" name="_token" value="W5nxsdzTkvXuzifm1CEzVErqybTiwmtayUz97t8K">
+        
                 <div class="row form-group">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <label class="text-black" for="name">Name</label>
