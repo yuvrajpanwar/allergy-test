@@ -19,13 +19,18 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
+        /* Initial grey state */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Active blue state after reCAPTCHA success */
+        .active-btn {
+            background-color: blue;
+            cursor: pointer;
+        }
+
         .fixed-icons11 {
             position: fixed;
             bottom: 20px;
@@ -359,10 +364,10 @@
     <!-- Icons Section -->
     <div class="fixed-icons11">
         <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-            <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
         </a>
         <!-- <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-            <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame375.png') }}" alt="Contact Us" class="icon-image11">
         </div> -->
     </div>
     <!-- Contact Form Modal -->
@@ -380,24 +385,24 @@
                 <div class="col-md-7 mb-5 aos-init aos-animate" data-aos="fade">
 
                     @if (session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <strong>{{ session('success') }}</strong>
-                    </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>{{ session('success') }}</strong>
+                        </div>
                     @endif
                     @if ($errors->any())
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
 
                     <form action="{{ route('send-contact-form') }}" class="p-5 bg-white" style=""
@@ -453,16 +458,16 @@
                         <!-- Add reCAPTCHA -->
                         {!! NoCaptcha::display(['data-callback' => 'enableSubmitBtn']) !!}
                         @if ($errors->has('g-recaptcha-response'))
-                        <span class="help-block">
-                            <strong class="error">{{ $errors->first('g-recaptcha-response') }}</strong>
-                        </span>
+                            <span class="help-block">
+                                <strong class="error">{{ $errors->first('g-recaptcha-response') }}</strong>
+                            </span>
                         @endif
 
 
 
                         <div class="row form-group mt-2">
                             <div class="col-md-12">
-                                <input disabled id="submitBtn" type="submit" value="Send"
+                                <input disabled id="submitBtn" type="submit" value="Submit"
                                     class="btn btn-pill btn-primary btn-md text-white"
                                     style=" font-size: 18px;
                                             font-weight: bold;
@@ -534,7 +539,9 @@
                         <!-- Follow Us Section -->
                         <div class="footer-item follow-us">
                             <div>
-                                <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                <h2 class="footer-heading mb-4 off-white">Follow
+                                    Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </h2>
                                 <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
                                     <span style="font-size: 2rem;" class="icon-facebook"></span>
                                 </a>
@@ -551,7 +558,8 @@
             </div>
             <div class="row pt-5 mt-5">
                 <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
+                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All
+                        rights reserved</p>
                 </div>
             </div>
         </div>
@@ -716,8 +724,8 @@
     </script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>

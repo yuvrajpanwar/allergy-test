@@ -20,6 +20,18 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+        /* Initial grey state */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Active blue state after reCAPTCHA success */
+        .active-btn {
+            background-color: blue;
+            cursor: pointer;
+        }
+
         .custom-heading {
             padding-left: 5%;
             /* Use a percentage for responsive padding */
@@ -494,10 +506,10 @@
     <!-- Icons Section -->
     <div class="fixed-icons11">
         <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-            <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
         </a>
         <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-            <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame375.png') }}" alt="Contact Us" class="icon-image11">
         </div>
     </div>
     <!-- Contact Form Modal -->
@@ -505,30 +517,30 @@
         <div class="modal-content11" onclick="event.stopPropagation()">
             <span class="close11" onclick="closeContactForm11(event)">&times;</span>
             <h2>Contact Us</h2>
-        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-            @csrf
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>{{ session('success') }}</strong>
-                </div>
+            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+                @csrf
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
                 @endif
                 @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 @endif
 
-        
+
                 <div class="row form-group">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <label class="text-black" for="name">Name</label>
@@ -551,7 +563,8 @@
                     <div class="col-md-12">
                         <label class="text-black" for="location">Choose Collection Point</label>
                         <select name="location" id="location11" class="form-control">
-                            <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
+                            <option class="text-center" value="" selected="" disabled="">---- Choose
+                                Collection Point ----
                             </option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Bengaluru">Bengaluru</option>
@@ -581,10 +594,11 @@
                     </span>
                 </div>
 
+                <!-- Submit button -->
                 <div class="row form-group mt-2">
                     <div class="col-md-12">
-                        <input disabled id="submitBtn11" type="submit" value="Send"
-                            class="btn btn-pill btn-primary btn-md text-white">
+                        <input disabled id="submitBtn11" type="submit" value="Submit"
+                            class="btn btn-pill btn-md text-white disabled-btn">
                     </div>
                 </div>
             </form>
@@ -599,24 +613,30 @@
 
 
     <!-- Wheezing contents here -->
-    <div class="site-section block-services-1" style="background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Group35.png'); height: auto; background-repeat: no-repeat; background-size: cover;">
+    <div class="site-section block-services-1"
+        style="background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Group35.png'); height: auto; background-repeat: no-repeat; background-size: cover;">
         <div class="container" style="max-width: 100%; padding: 0 15px;">
             <div class="row align-items-left justify-content-between flex-column flex-lg-row">
                 <!-- Title and Description -->
                 <div class="col-lg-7 col-md-12 mb-4 mb-lg-0 custom-heading">
-                    <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4;">
+                    <h2 class="mb-3 mt-0 text-dark"
+                        style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4;">
                         ALLERGY SYMPTOMS<br>Wheezing
                     </h2>
                 </div>
 
                 <!-- Contact Information -->
                 <div class="col-lg-4 col-md-12 contact-info">
-                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
+                    <p
+                        style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
-                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
-                        <a href="https://wa.me/7358728170"> Click here to <span style="font-weight: 700;">Chat</a> &nbsp;
-                            <img src="{{ asset('public/images/whatsapp/wappVector.png') }}" alt="Chat" style="width: 30px; height: 30px;">
+                    <p
+                        style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
+                        <a href="https://wa.me/7358728170"> Click here to <span style="font-weight: 700;">Chat</a>
+                        &nbsp;
+                        <img src="{{ asset('public/images/whatsapp/wappVector.png') }}" alt="Chat"
+                            style="width: 30px; height: 30px;">
                         </span>
                     </p>
                 </div>
@@ -624,29 +644,43 @@
 
             <!-- Image Section -->
             <div class="text-center" style="margin-top: 20px;">
-                <img src="{{ asset('/public/images/whatsapp/wheezing480x320.png') }}" alt="Wheezing Image" style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
+                <img src="{{ asset('/public/images/whatsapp/wheezing480x320.png') }}" alt="Wheezing Image"
+                    style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
             </div>
 
             <!-- Paragraph Content Below the Image -->
             <div class="text-center" style="margin-top: 20px;">
-                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
-                    Wheezing happens when the airways are tightened, blocked, or inflamed, making a person's breathing sound like whistling or squeaking. Common causes include a cold, asthma, allergies, or more serious conditions, such as chronic obstructive pulmonary disease (COPD). Wheezing is a high-pitched, coarse whistling sound when you breathe. Many people with respiratory allergies know that wheezing often comes with hay fever season.
+                <p
+                    style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
+                    Wheezing happens when the airways are tightened, blocked, or inflamed, making a person's breathing
+                    sound like whistling or squeaking. Common causes include a cold, asthma, allergies, or more serious
+                    conditions, such as chronic obstructive pulmonary disease (COPD). Wheezing is a high-pitched, coarse
+                    whistling sound when you breathe. Many people with respiratory allergies know that wheezing often
+                    comes with hay fever season.
                     <br><br>
-                    Wheezing is the shrill whistle or coarse rattle you hear when your airway is partially blocked. It might be blocked because of an allergic reaction, a cold, bronchitis or allergies. Wheezing is also a symptom of asthma, pneumonia, heart failure and more. It could go away on its own, or it could be a sign of a serious condition.
+                    Wheezing is the shrill whistle or coarse rattle you hear when your airway is partially blocked. It
+                    might be blocked because of an allergic reaction, a cold, bronchitis or allergies. Wheezing is also
+                    a symptom of asthma, pneumonia, heart failure and more. It could go away on its own, or it could be
+                    a sign of a serious condition.
                     <br><br>
                     Causes:
-                    Inflammation and narrowing of the airway in any location, from your throat out into your lungs, can result in wheezing.
+                    Inflammation and narrowing of the airway in any location, from your throat out into your lungs, can
+                    result in wheezing.
                     <br><br>
-                    The most common causes of recurrent wheezing are asthma and chronic obstructive pulmonary disease (COPD), which both cause narrowing and spasms (bronchospasms) in the small airways of your lungs.
+                    The most common causes of recurrent wheezing are asthma and chronic obstructive pulmonary disease
+                    (COPD), which both cause narrowing and spasms (bronchospasms) in the small airways of your lungs.
                     <br><br>
-                    However, any inflammation in your throat or larger airways can cause wheezing. Common causes include infection, an allergic reaction or a physical obstruction, such as a tumor or a foreign object that's been inhaled.
+                    However, any inflammation in your throat or larger airways can cause wheezing. Common causes include
+                    infection, an allergic reaction or a physical obstruction, such as a tumor or a foreign object
+                    that's been inhaled.
                     <br><br>
                     All of the following conditions can lead to wheezing:
                     <br><br>
                     Allergies<br>
                     Anaphylaxis (a severe allergic reaction, such as to an insect bite or medication)<br>
                     Asthma<br>
-                    Bronchiectasis (a chronic lung condition in which abnormal widening of bronchial tubes inhibits mucus clearing)<br>
+                    Bronchiectasis (a chronic lung condition in which abnormal widening of bronchial tubes inhibits
+                    mucus clearing)<br>
                     Bronchiolitis (especially in young children)<br>
                     Bronchitis<br>
                     Childhood asthma<br>
@@ -670,13 +704,17 @@
                 </p><br>
 
                 <!-- Buttons -->
-                <a href="{{ route('allergysymptoms') }}" style="font-family: 'Francois One', sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5; text-align: left; background-color: white; border: none; padding: 10px 20px; color: red; border-radius: 5px; width: auto; max-width: 300px; display: inline-block; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" class="btn btn-primary active">
+                <a href="{{ route('allergysymptoms') }}"
+                    style="font-family: 'Francois One', sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5; text-align: left; background-color: white; border: none; padding: 10px 20px; color: red; border-radius: 5px; width: auto; max-width: 300px; display: inline-block; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);"
+                    class="btn btn-primary active">
                     All Allergy Symptoms
                 </a>
 
                 &nbsp;&nbsp;&nbsp;
 
-                <a href="{{ route('home') }}" style="font-family: 'Francois One', sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5; text-align: left; background-color: #0099ff; color: white; border: none; padding: 10px 20px; border-radius: 5px; width: auto; max-width: 300px; display: inline-block; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);" class="btn btn-primary active">
+                <a href="{{ route('home') }}"
+                    style="font-family: 'Francois One', sans-serif; font-size: 22px; font-weight: 400; line-height: 1.5; text-align: left; background-color: #0099ff; color: white; border: none; padding: 10px 20px; border-radius: 5px; width: auto; max-width: 300px; display: inline-block; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);"
+                    class="btn btn-primary active">
                     Home
                 </a>
             </div>
@@ -685,21 +723,24 @@
 
     <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
         <!-- Background image -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <!-- White overlay -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
@@ -707,17 +748,22 @@
         height: 100%;
         background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <div class="container" style="position: relative; z-index: 1;">
             <div>
                 <div class="row">
                     <!-- WhatsApp Link -->
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                            target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
-                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3"
+                                    style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -728,8 +774,12 @@
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        Call us today</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        +91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -740,7 +790,9 @@
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Book an appointment</p>
                             </div>
                         </a>
                     </div>
@@ -752,7 +804,8 @@
 
 
     {{-- our location  --}}
-    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
+    <div class="site-section block-services-1"
+        style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
@@ -918,7 +971,9 @@
                         <!-- Follow Us Section -->
                         <div class="footer-item follow-us">
                             <div>
-                                <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                <h2 class="footer-heading mb-4 off-white">Follow
+                                    Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </h2>
                                 <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
                                     <span style="font-size: 2rem;" class="icon-facebook"></span>
                                 </a>
@@ -935,7 +990,8 @@
             </div>
             <div class="row pt-5 mt-5">
                 <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
+                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All
+                        rights reserved</p>
                 </div>
             </div>
         </div>
@@ -1030,7 +1086,11 @@
 
         // Enable submit button if reCAPTCHA is completed
         function enableSubmitBtn() {
-            document.getElementById('submitBtn11').disabled = false;
+            // Enable the submit button
+            const submitBtn = document.getElementById('submitBtn11');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('disabled-btn');
+            submitBtn.classList.add('active-btn');
         }
 
         // Initialize form validation
@@ -1100,8 +1160,8 @@
     </script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>

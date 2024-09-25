@@ -19,9 +19,22 @@
     <link rel="stylesheet" href="{{ asset('public/css/rangeslider.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Dosis:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Dosis:wght@400&display=swap"
+        rel="stylesheet">
 
     <style>
+        /* Initial grey state */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Active blue state after reCAPTCHA success */
+        .active-btn {
+            background-color: blue;
+            cursor: pointer;
+        }
+
         .custom-heading {
             padding-left: 5%;
             /* Use a percentage for responsive padding */
@@ -519,10 +532,10 @@
     <!-- Icons Section -->
     <div class="fixed-icons11">
         <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-            <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
         </a>
         <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-            <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame375.png') }}" alt="Contact Us" class="icon-image11">
         </div>
     </div>
     <!-- Contact Form Modal -->
@@ -530,30 +543,30 @@
         <div class="modal-content11" onclick="event.stopPropagation()">
             <span class="close11" onclick="closeContactForm11(event)">&times;</span>
             <h2>Contact Us</h2>
-        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-            @csrf
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>{{ session('success') }}</strong>
-                </div>
+            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+                @csrf
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
                 @endif
                 @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 @endif
 
-        
+
                 <div class="row form-group">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <label class="text-black" for="name">Name</label>
@@ -576,7 +589,8 @@
                     <div class="col-md-12">
                         <label class="text-black" for="location">Choose Collection Point</label>
                         <select name="location" id="location11" class="form-control">
-                            <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
+                            <option class="text-center" value="" selected="" disabled="">---- Choose
+                                Collection Point ----
                             </option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Bengaluru">Bengaluru</option>
@@ -606,10 +620,11 @@
                     </span>
                 </div>
 
+                <!-- Submit button -->
                 <div class="row form-group mt-2">
                     <div class="col-md-12">
-                        <input disabled id="submitBtn11" type="submit" value="Send"
-                            class="btn btn-pill btn-primary btn-md text-white">
+                        <input disabled id="submitBtn11" type="submit" value="Submit"
+                            class="btn btn-pill btn-md text-white disabled-btn">
                     </div>
                 </div>
             </form>
@@ -623,24 +638,32 @@
 
 
     <!-- Itching contents here -->
-    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');  height: auto; background-repeat: no-repeat; background-size: cover;">
+    <div class="site-section block-services-1"
+        style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png');  height: auto; background-repeat: no-repeat; background-size: cover;">
         <div class="container" style="max-width: 100%; padding: 0 15px;">
             <div class="row align-items-left justify-content-between flex-column flex-lg-row">
                 <!-- Title and Description -->
                 <div class="col-lg-7 col-md-12 mb-4 mb-lg-0 custom-heading">
-                    <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4;">
-                        ALLERGY SYMPTOMS<br><span style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 31.76px;text-align: center;">Some of the common allergy symptoms are are given below</span>
+                    <h2 class="mb-3 mt-0 text-dark"
+                        style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4;">
+                        ALLERGY SYMPTOMS<br><span
+                            style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 31.76px;text-align: center;">Some
+                            of the common allergy symptoms are are given below</span>
                     </h2>
                 </div>
 
                 <!-- Contact Information -->
                 <div class="col-lg-4 col-md-12 contact-info">
-                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
+                    <p
+                        style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
-                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
-                    <a href="https://wa.me/7358728170">Click here to <span style="font-weight: 700;">Chat</a> &nbsp;
-                            <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
+                    <p
+                        style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
+                        <a href="https://wa.me/7358728170">Click here to <span style="font-weight: 700;">Chat</a>
+                        &nbsp;
+                        <img src="{{ asset('public/images/whatsapp/wappVector.png') }}" alt="Chat"
+                            style="width: 30px; height: 30px;">
                         </span>
                     </p>
                 </div>
@@ -662,15 +685,19 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('itching') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/itching2.png') }}" alt="Veg Food Image" class="img-fluid" style="max-width: 100%; height: auto; padding-bottom: 15px;">
+                                    <img src="{{ asset('public/images/whatsapp/itching2.png') }}"
+                                        alt="Veg Food Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto; padding-bottom: 15px;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('itching') }}" style="font-family: 'Francois One', sans-serif; font-size: 22.4px; font-weight: 400; line-height: 38px; text-align: left;">ITCHING</a>
+                                    <a href="{{ route('itching') }}"
+                                        style="font-family: 'Francois One', sans-serif; font-size: 22.4px; font-weight: 400; line-height: 38px; text-align: left;">ITCHING</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Itching is an irritating sensation that makes you want
                                     to scratch your skin. Sometimes it can feel like pain,
                                     but it is different. Often, you feel itchy in one area
@@ -686,15 +713,19 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('hives') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png') }}" alt="Non-Veg Food Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png') }}"
+                                        alt="Non-Veg Food Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('hives') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">HIVES</a>
+                                    <a href="{{ route('hives') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">HIVES</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Hives are raised welts on the skin that appear in
                                     varying shapes and sizes. Although hives are very
                                     common, their cause is often elusive. Hives can
@@ -709,15 +740,19 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('sneezing') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 3.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 3.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('sneezing') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SNEEZING</a>
+                                    <a href="{{ route('sneezing') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SNEEZING</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Sneezing is your body's way of removing irritants from your
                                     nose or throat. A sneeze is a powerful, involuntary expulsion
                                     of air. Sneezing often happens suddenly and without warning.
@@ -732,15 +767,20 @@
                         <div class="mb-4 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('runnynose') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png') }}" alt="Contact Allergy Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png') }}"
+                                        alt="Contact Allergy Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('runnynose') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">RUNNY NOSE</a>
+                                    <a href="{{ route('runnynose') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">RUNNY
+                                        NOSE</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     A runny nose can be caused by anything that
                                     irritates or inflames the nasal tissues.
                                     Infections — such as the common cold and influenza
@@ -750,7 +790,7 @@
                                     A runny nose may be annoying and uncomfortable,
                                     but it usually clears up on its own. Occasionally,
                                     it can be a sign of a more serious problem. A runny
-                                    nose may be serious in infants. 
+                                    nose may be serious in infants.
                                 </p>
                             </div>
                         </div>
@@ -758,15 +798,19 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('wheezing') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('wheezing') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">WHEEZING</a>
+                                    <a href="{{ route('wheezing') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">WHEEZING</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Wheezing happens when the airways are tightened,
                                     blocked, or inflamed, making a person's breathing
                                     sound like whistling or squeaking. Common causes include a
@@ -774,7 +818,7 @@
                                     such as chronic obstructive pulmonary disease (COPD).
                                     Wheezing is a high-pitched, coarse whistling sound when
                                     you breathe. Many people with respiratory allergies
-                                    know that wheezing often comes with hay fever season. 
+                                    know that wheezing often comes with hay fever season.
                                 </p>
                             </div>
                         </div>
@@ -782,15 +826,20 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('chesttight') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('chesttight') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">CHEST TIGHTNESS</a>
+                                    <a href="{{ route('chesttight') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">CHEST
+                                        TIGHTNESS</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Chest tightness: Seasonal allergies are extremely common and
                                     often uncomfortable, but when should you see a doctor? ...
                                     Even so, downplaying the condition can make it easy to
@@ -805,15 +854,20 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('shortnessbreath') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2563.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2563.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('shortnessbreath') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SHORTNESS OF BREATH</a>
+                                    <a href="{{ route('shortnessbreath') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SHORTNESS
+                                        OF BREATH</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Shortness of breath may be triggered by some common foods
                                     that some people are allergic to such as eggs, milk, nuts,
                                     shellfish, and wheat. Things in the air that can set off your
@@ -828,15 +882,19 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('cough') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('cough') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">COUGH</a>
+                                    <a href="{{ route('cough') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">COUGH</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Asthma and allergy coughs are typically caused by
                                     swelling or irritation of the airways. Allergies
                                     like hay fever can cause a chronic dry cough. If
@@ -851,15 +909,20 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('swollenlips') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2562.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2562.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('swollenlips') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN LIPS</a>
+                                    <a href="{{ route('swollenlips') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN
+                                        LIPS</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Swollen lips are caused by underlying inflammation
                                     or a build-up of fluid under the skin of your lips.
                                     Many things can cause swollen lips, from minor skin
@@ -874,15 +937,20 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('swolleneye') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 2.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 2.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('swolleneye') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN EYES</a>
+                                    <a href="{{ route('swolleneye') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN
+                                        EYES</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Swollen eyelids cause a puffy appearance to the eyes.
                                     Causes of swollen eyelids include fluid retention, allergies
                                     , eye infections and eye injuries. Virtually any cause of
@@ -896,15 +964,20 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%; padding: 15px;">
                                 <a href="{{ route('skinrashes') }}" class="thumbnail-link d-block mb-3">
-                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 6.png') }}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 6.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('skinrashes') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SKIN RASHES</a>
+                                    <a href="{{ route('skinrashes') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SKIN
+                                        RASHES</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     Skin rashes can occur from a variety of factors,
                                     including infections, heat, allergens, immune system
                                     disorders and medications. One of the most common skin
@@ -919,15 +992,20 @@
                         <div class="mb-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4 text-center">
                             <div class="block-service-1-card" style="max-width: 100%;  padding: 10px;"">
                                 <a href=" {{ route('swollenface') }}" class="thumbnail-link d-block mb-3">
-                                <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256 5.png')}}" alt="Inhalants Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                    <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 5.png') }}"
+                                        alt="Inhalants Image" class="img-fluid"
+                                        style="max-width: 100%; height: auto;">
                                 </a>
                                 <h3 class="block-service-1-heading mb-2">
-                                    <a href="{{ route('swollenface') }}" style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN FACE</a>
+                                    <a href="{{ route('swollenface') }}"
+                                        style="font-family: Francois One;font-size: 22.4px;font-weight: 400;line-height: 38px;text-align: left;">SWOLLEN
+                                        FACE</a>
                                 </h3>
                                 <div class="card-underline align-center">
                                     <div class="line"></div>
                                 </div>
-                                <p class="block-service-1-text" style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
+                                <p class="block-service-1-text"
+                                    style="font-family: 'Dosis', sans-serif; font-size: 16px; font-weight: 400; line-height: 25px; text-align: justify;color: #000000; padding: 15px 0;">
                                     A swollen face due to an allergic reaction may be accompanied
                                     by other symptoms. These are the symptoms of anaphylaxis,
                                     a serious allergic reaction. Seasonal allergies, or hay fever,
@@ -950,21 +1028,24 @@
 
     <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
         <!-- Background image -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <!-- White overlay -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
@@ -972,17 +1053,22 @@
         height: 100%;
         background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <div class="container" style="position: relative; z-index: 1;">
             <div>
                 <div class="row">
                     <!-- WhatsApp Link -->
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                            target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
-                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3"
+                                    style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -993,8 +1079,12 @@
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        Call us today</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        +91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -1005,7 +1095,9 @@
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Book an appointment</p>
                             </div>
                         </a>
                     </div>
@@ -1018,7 +1110,8 @@
 
 
     {{-- our location  --}}
-    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
+    <div class="site-section block-services-1"
+        style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
@@ -1184,7 +1277,9 @@
                         <!-- Follow Us Section -->
                         <div class="footer-item follow-us">
                             <div>
-                                <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                <h2 class="footer-heading mb-4 off-white">Follow
+                                    Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </h2>
                                 <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
                                     <span style="font-size: 2rem;" class="icon-facebook"></span>
                                 </a>
@@ -1201,7 +1296,8 @@
             </div>
             <div class="row pt-5 mt-5">
                 <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
+                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All
+                        rights reserved</p>
                 </div>
             </div>
         </div>
@@ -1296,7 +1392,11 @@
 
         // Enable submit button if reCAPTCHA is completed
         function enableSubmitBtn() {
-            document.getElementById('submitBtn11').disabled = false;
+            // Enable the submit button
+            const submitBtn = document.getElementById('submitBtn11');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('disabled-btn');
+            submitBtn.classList.add('active-btn');
         }
 
         // Initialize form validation
@@ -1366,8 +1466,8 @@
     </script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>

@@ -21,13 +21,39 @@
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
 
     <style>
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
+        /* Initial grey state */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Active blue state after reCAPTCHA success */
+        .active-btn {
+            background-color: blue;
+            cursor: pointer;
+        }
+
+
+        .bxtitle {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 8px;
+            /* Combine padding rules */
+            font-family: 'Francois One', sans-serif;
+            /* Add a fallback font */
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.5;
+            /* More appropriate for readability with a font size of 22px */
+            text-align: left;
+        }
+
+
+
         .fixed-icons11 {
             position: fixed;
             bottom: 20px;
@@ -36,7 +62,7 @@
             flex-direction: column;
             gap: 10px;
             z-index: 1000;
-           
+
         }
 
         .icon11 {
@@ -47,7 +73,7 @@
             align-items: center;
             cursor: pointer;
             transition: transform 0.3s;
-            
+
         }
 
         .icon-image11 {
@@ -56,7 +82,7 @@
             border-radius: 50%;
             object-fit: cover;
             transition: transform 0.3s;
-            
+
         }
 
         .icon11:hover .icon-image11 {
@@ -495,10 +521,10 @@
 <!-- Icons Section -->
 <div class="fixed-icons11">
     <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-        <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+        <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
     </a>
     <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-        <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+        <img src="{{ asset('public/images/whatsapp/frame375.png') }}" alt="Contact Us" class="icon-image11">
     </div>
 </div>
 <!-- Contact Form Modal -->
@@ -509,27 +535,27 @@
         <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
             @csrf
             @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>{{ session('success') }}</strong>
-            </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>{{ session('success') }}</strong>
+                </div>
             @endif
             @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
 
-    
+
             <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                     <label class="text-black" for="name">Name</label>
@@ -552,7 +578,9 @@
                 <div class="col-md-12">
                     <label class="text-black" for="location">Choose Collection Point</label>
                     <select name="location" id="location11" class="form-control">
-                        <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----</option>
+                        <option class="text-center" value="" selected="" disabled="">---- Choose
+                            Collection Point ----
+                        </option>
                         <option value="Mumbai">Mumbai</option>
                         <option value="Bengaluru">Bengaluru</option>
                         <option value="Chennai">Chennai</option>
@@ -567,21 +595,25 @@
             <div class="row form-group">
                 <div class="col-md-12">
                     <label class="text-black" for="message">Message</label>
-                    <textarea name="message" id="message11" cols="30" rows="7" class="form-control" placeholder="Write your message or questions here..."></textarea>
+                    <textarea name="message" id="message11" cols="30" rows="7" class="form-control"
+                        placeholder="Write your message or questions here..."></textarea>
                 </div>
             </div>
 
             <!-- Add reCAPTCHA -->
             <div class="form-group">
-                <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY" data-callback="enableSubmitBtn"></div>
+                <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
+                    data-callback="enableSubmitBtn"></div>
                 <span class="help-block" id="recaptcha-error11" style="display: none;">
                     <strong class="error">Please verify that you are not a robot.</strong>
                 </span>
             </div>
 
+            <!-- Submit button -->
             <div class="row form-group mt-2">
                 <div class="col-md-12">
-                    <input disabled id="submitBtn11" type="submit" value="Send" class="btn btn-pill btn-primary btn-md text-white">
+                    <input disabled id="submitBtn11" type="submit" value="Submit"
+                        class="btn btn-pill btn-md text-white disabled-btn">
                 </div>
             </div>
         </form>
@@ -681,21 +713,24 @@
 
 <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
     <!-- Background image -->
-    <div style="
+    <div
+        style="
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         z-index: -1;
-    "></div>
+    ">
+    </div>
 
     <!-- White overlay -->
-    <div style="
+    <div
+        style="
         position: absolute;
         top: 0;
         left: 0;
@@ -703,17 +738,22 @@
         height: 100%;
         background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
         z-index: -1;
-    "></div>
+    ">
+    </div>
 
     <div class="container" style="position: relative; z-index: 1;">
         <div>
             <div class="row">
                 <!-- WhatsApp Link -->
                 <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                        target="_blank" style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
+                            <span class="icon icon-whatsapp mr-3"
+                                style="width: 48px;height: 48px;color: #016426;"></span>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach
+                                us on WhatsApp</p>
                         </div>
                     </a>
                 </div>
@@ -724,8 +764,12 @@
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                             <div class="text">
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Call us today</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    +91 97462 22668</p>
                             </div>
                         </div>
                     </a>
@@ -736,7 +780,9 @@
                     <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book
+                                an appointment</p>
                         </div>
                     </a>
                 </div>
@@ -757,7 +803,8 @@
                     <a href="#" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/11.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">25+ Years of Expertise in Allergy
+                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">25+ Years of
+                            Expertise in Allergy
                             Testing</a></h3>
 
                 </div>
@@ -768,7 +815,8 @@
                     <a href="#" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/12.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">180+ Tests with a Single Blood
+                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">180+ Tests with
+                            a Single Blood
                             Specimen </a></h3>
 
                 </div>
@@ -779,7 +827,8 @@
                     <a href="#" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/13.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">ISO Certified & NABL Accredited</a>
+                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">ISO Certified &
+                            NABL Accredited</a>
                     </h3>
 
 
@@ -791,7 +840,8 @@
                     <a href="#" class="thumbnail-link d-block mb-4"><img
                             src="{{ asset('public/images/whatsapp/14.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
-                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">Presence in 7 locations in
+                    <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">Presence in 7
+                            locations in
                             India</a></h3>
 
                 </div>
@@ -822,7 +872,8 @@
     </div> -->
 <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
     <!-- Background layer with opacity -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Rectangle2.png'); background-size: cover; background-position: center; z-index: 0;">
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Rectangle2.png'); background-size: cover; background-position: center; z-index: 0;">
         <!-- Semi-transparent overlay -->
         <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.56);"></div>
     </div>
@@ -832,16 +883,22 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 mb-4 mb-lg-0">
-                    <h2 class="mb-3 mt-0" style="font-family: 'Francois One'; color: white; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left;">
+                    <h2 class="mb-3 mt-0"
+                        style="font-family: 'Francois One'; color: white; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left;">
                         Comprehensive<br>ALLERGY TESTS. 180+ tests with a Single Blood Specimen.
                         <br>
-                        <span style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
-                            <br>Allergies are much more than a minor inconvenience; studies have shown that untreated allergies can contribute to a plethora of chronic illnesses including asthma, sinus infections, upper respiratory infections, ear infections, and general susceptibility to illness.
+                        <span
+                            style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
+                            <br>Allergies are much more than a minor inconvenience; studies have shown that untreated
+                            allergies can contribute to a plethora of chronic illnesses including asthma, sinus
+                            infections, upper respiratory infections, ear infections, and general susceptibility to
+                            illness.
                         </span>
                     </h2>
                 </div>
                 <div class="col-lg-4">
-                    <img src="{{ asset('public/images/whatsapp/189-allergens-13.png') }}" alt="Contact Us" class="responsive-img2">
+                    <img src="{{ asset('public/images/whatsapp/189-allergens-13.png') }}" alt="Contact Us"
+                        class="responsive-img2">
                 </div>
             </div>
         </div>
@@ -873,7 +930,8 @@
                             src="{{ asset('public/images/whatsapp/t1.jpeg') }}" alt="Image"
                             class="img-fluid"></a>
                     <h3 class="block-service-1-heading mb-3">
-                        <a href="allergypanel#features1-26" style="color: #666666;font-weight:700">VEG FOOD</a></h3>
+                        <a href="allergypanel#features1-26" style="color: #666666;font-weight:700">VEG FOOD</a>
+                    </h3>
 
                 </div>
             </div>
@@ -918,7 +976,8 @@
 
 <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto; padding: 10px;">
     <!-- Background layer with opacity -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{asset(`/`) }}/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; z-index: 0;">
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle15.png'); background-size: cover; background-position: center; z-index: 0;">
         <!-- Semi-transparent white overlay -->
         <div style="width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85);"></div>
     </div>
@@ -928,20 +987,26 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
-                    <h1 class="mb-3 mt-0" style="font-family: Francois One; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left; color: black;">
+                    <h1 class="mb-3 mt-0"
+                        style="font-family: Francois One; font-size: 32px; font-weight: 400; line-height: 38px; text-align: left; color: black;">
                         Allergy Treatment:<br>
-                        <span style="font-family: Francois One; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
+                        <span
+                            style="font-family: Francois One; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
                             The best way to treat allergy is by first knowing the cause.
                         </span>
                         <br>
-                        <span style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
-                            <br>Skin Allergy: Skin allergy could be due to certain food, inhalants, or some contact items. It can be found out only through proper diagnosis. With a blood test, we can identify it. Once identified, you can get rid of most allergies without any medication.
+                        <span
+                            style="font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 29px; text-align: left;">
+                            <br>Skin Allergy: Skin allergy could be due to certain food, inhalants, or some contact
+                            items. It can be found out only through proper diagnosis. With a blood test, we can identify
+                            it. Once identified, you can get rid of most allergies without any medication.
                         </span>
                     </h1>
                 </div>
                 <div class="col-lg-4">
                     <p class="mb-0">
-                        <img src="{{ asset('public/images/whatsapp/allergy-tests-chennai-1-649x3141.png') }}" alt="Contact Us" class="responsive-img1">
+                        <img src="{{ asset('public/images/whatsapp/allergy-tests-chennai-1-649x3141.png') }}"
+                            alt="Contact Us" class="responsive-img1">
                     </p>
                 </div>
             </div>
@@ -958,7 +1023,12 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-12 text-center">
-                <h2 class="site-section-heading text-center font-secondary" style="font-family: 'Francois One';font-size: 32px;font-weight: 400;line-height: 24px;text-align: center;">ALLERGY SYMPTOMS <br><span style="font-family: 'Francois One';font-size: 22px;font-weight: 400;line-height: 24px;text-align: center;">If you experience any of the following, then you may take an Allergy Test at the earliest.</span></h2>
+                <h2 class="site-section-heading text-center font-secondary"
+                    style="font-family: 'Francois One';font-size: 32px;font-weight: 400;line-height: 24px;text-align: center;">
+                    ALLERGY SYMPTOMS <br><span
+                        style="font-family: 'Francois One';font-size: 22px;font-weight: 400;line-height: 24px;text-align: center;">If
+                        you experience any of the following, then you may take an Allergy Test at the earliest.</span>
+                </h2>
             </div>
         </div>
     </div>
@@ -967,10 +1037,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'itching' route -->
-                    <a href="{{ route('itching') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/itching2.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('itching') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/itching2.png') }}" alt="Image"
+                            class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle"style="">
                             Itching
                         </span>
                     </a>
@@ -981,10 +1053,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'hives' route -->
-                    <a href="{{ route('hives') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('hives') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Hives
                         </span>
                     </a>
@@ -994,10 +1068,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'sneeze' route -->
-                    <a href="{{ route('sneezing') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 3.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('sneezing') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 3.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Sneeze
                         </span>
                     </a>
@@ -1008,10 +1084,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'running_nose' route -->
-                    <a href="{{ route('runnynose') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('runnynose') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Running Nose
                         </span>
                     </a>
@@ -1022,10 +1100,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'wheezing' route -->
-                    <a href="{{ route('wheezing') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('wheezing') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Wheezing
                         </span>
                     </a>
@@ -1036,10 +1116,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'swollen_lips' route -->
-                    <a href="{{ route('swollenlips') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_2.png') }}" alt="Image" style="width: 100%; height: 100%; display: block;" class="image-fluid">
+                    <a href="{{ route('swollenlips') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_2.png') }}"
+                            alt="Image" style="width: 100%; height: 100%; display: block;" class="image-fluid">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Swollen Lips
                         </span>
                     </a>
@@ -1050,10 +1132,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'shortness_of_breath' route -->
-                    <a href="{{ route('shortnessbreath') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_3.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('shortnessbreath') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_3.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Shortness of Breath
                         </span>
                     </a>
@@ -1064,10 +1148,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'chest_tightness' route -->
-                    <a href="{{ route('chesttight') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('chesttight') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Chest Tightness
                         </span>
                     </a>
@@ -1077,10 +1163,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'cough' route -->
-                    <a href="{{ route('cough') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('cough') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Cough
                         </span>
                     </a>
@@ -1091,10 +1179,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'swollen-eyes' route -->
-                    <a href="{{ route('swolleneye') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 2.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('swolleneye') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 2.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Swollen Eyes
                         </span>
                     </a>
@@ -1105,10 +1195,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'skin-rashes' route -->
-                    <a href="{{ route('skinrashes') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 6.png') }}" alt="Image" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('skinrashes') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 6.png') }}"
+                            alt="Image" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Skin Rashes
                         </span>
                     </a>
@@ -1119,10 +1211,12 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'swollen-face' route -->
-                    <a href="{{ route('swollenface') }}" class="thumbnail-link d-block mb-4" style="position: relative; display: block; width: 100%; height: 100%;">
-                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 5.png') }}" alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
+                    <a href="{{ route('swollenface') }}" class="thumbnail-link d-block mb-4"
+                        style="position: relative; display: block; width: 100%; height: 100%;">
+                        <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256 5.png') }}"
+                            alt="Image" class="img-fluid" style="width: 100%; height: 100%; display: block;">
                         <!-- Text at the bottom of the image -->
-                        <span style="position: absolute; bottom: 0; left: 0; right: 0; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px; font-family: 'Francois One'; font-size: 22px; font-weight: 400; line-height: 38px; text-align: left;">
+                        <span class="bxtitle">
                             Swollen Face
                         </span>
                     </a>
@@ -1132,16 +1226,16 @@
 
             <!-- Add this script for onclick interaction and animation -->
             <!-- <script>
-                        function handleClick() {
-                            // Navigation logic (change URL or load a new page)
-                            window.location.href = 'file://Desktop%20-%2011'; // Change the path to your desired navigation destination.
+                function handleClick() {
+                    // Navigation logic (change URL or load a new page)
+                    window.location.href = 'file://Desktop%20-%2011'; // Change the path to your desired navigation destination.
 
-                            // Smart animate logic (fade-in effect)
-                            const element = document.querySelector('.block-service-1-card');
-                            element.style.transition = 'opacity 300ms ease-out';
-                            element.style.opacity = '1'; // Fade in by setting opacity to 1
-                        }
-                    </script> -->
+                    // Smart animate logic (fade-in effect)
+                    const element = document.querySelector('.block-service-1-card');
+                    element.style.transition = 'opacity 300ms ease-out';
+                    element.style.opacity = '1'; // Fade in by setting opacity to 1
+                }
+            </script> -->
 
         </div>
 
@@ -1165,8 +1259,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/f8.jpg') }}" alt="Image"
-                            class="img-fluid"></a>
+                            src="{{ asset('public/images/whatsapp/f8.jpg') }}" alt="Image" class="img-fluid"></a>
 
                 </div>
             </div>
@@ -1175,8 +1268,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/f3.jpg') }}" alt="Image"
-                            class="img-fluid"></a>
+                            src="{{ asset('public/images/whatsapp/f3.jpg') }}" alt="Image" class="img-fluid"></a>
                     </h3>
                 </div>
             </div>
@@ -1184,8 +1276,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/f6.jpg') }}" alt="Image"
-                            class="img-fluid"></a>
+                            src="{{ asset('public/images/whatsapp/f6.jpg') }}" alt="Image" class="img-fluid"></a>
                 </div>
             </div>
 
@@ -1193,8 +1284,7 @@
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
-                            src="{{ asset('public/images/whatsapp/f7.jpg') }}" alt="Image"
-                            class="img-fluid"></a>
+                            src="{{ asset('public/images/whatsapp/f7.jpg') }}" alt="Image" class="img-fluid"></a>
 
                 </div>
             </div>
@@ -1251,8 +1341,10 @@
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-7 mb-4 mb-lg-0">
-                <h2 class="mb-3 mt-0 text-white" style="font-family: Francois One;font-size: 25px;font-weight: 400;line-height: 45.38px;text-align: left;">Have questions or ready to schedule your appointment?
-                    Reach <br> out to us today!
+                <h2 class="mb-3 mt-0 text-white"
+                    style="font-family: Francois One;font-size: 25px;font-weight: 400;line-height: 45.38px;text-align: left;">
+                    Have questions or ready to schedule your appointment?
+                    Reach out to us today!
                 </h2>
 
             </div>
@@ -1370,21 +1462,24 @@
 
 <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
     <!-- Background image -->
-    <div style="
+    <div
+        style="
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         z-index: -1;
-    "></div>
+    ">
+    </div>
 
     <!-- White overlay -->
-    <div style="
+    <div
+        style="
         position: absolute;
         top: 0;
         left: 0;
@@ -1392,17 +1487,22 @@
         height: 100%;
         background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
         z-index: -1;
-    "></div>
+    ">
+    </div>
 
     <div class="container" style="position: relative; z-index: 1;">
         <div>
             <div class="row">
                 <!-- WhatsApp Link -->
                 <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                        target="_blank" style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
+                            <span class="icon icon-whatsapp mr-3"
+                                style="width: 48px;height: 48px;color: #016426;"></span>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach
+                                us on WhatsApp</p>
                         </div>
                     </a>
                 </div>
@@ -1413,8 +1513,12 @@
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                             <div class="text">
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Call us today</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    +91 97462 22668</p>
                             </div>
                         </div>
                     </a>
@@ -1425,7 +1529,9 @@
                     <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                            <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book
+                                an appointment</p>
                         </div>
                     </a>
                 </div>
@@ -1438,7 +1544,8 @@
 
 
 {{-- our location  --}}
-<div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
+<div class="site-section block-services-1"
+    style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png');">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-12 text-center">
@@ -1603,7 +1710,9 @@
                     <!-- Follow Us Section -->
                     <div class="footer-item follow-us">
                         <div>
-                            <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                            <h2 class="footer-heading mb-4 off-white">Follow
+                                Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </h2>
                             <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
                                 <span style="font-size: 2rem;" class="icon-facebook"></span>
                             </a>
@@ -1620,7 +1729,8 @@
         </div>
         <div class="row pt-5 mt-5">
             <div class="col-12 text-md-center text-left">
-                <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
+                <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights
+                    reserved</p>
             </div>
         </div>
     </div>
@@ -1716,7 +1826,11 @@
 
     // Enable submit button if reCAPTCHA is completed
     function enableSubmitBtn() {
-        document.getElementById('submitBtn11').disabled = false;
+        // Enable the submit button
+        const submitBtn = document.getElementById('submitBtn11');
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('disabled-btn');
+        submitBtn.classList.add('active-btn');
     }
 
     // Initialize form validation
@@ -1786,8 +1900,8 @@
 </script>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 </body>
