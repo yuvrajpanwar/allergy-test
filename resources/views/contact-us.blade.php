@@ -27,7 +27,7 @@
 
         /* Active blue state after reCAPTCHA success */
         .active-btn {
-            background-color: blue;
+            background-color: #32bdd2;
             cursor: pointer;
         }
 
