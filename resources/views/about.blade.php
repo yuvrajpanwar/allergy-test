@@ -19,13 +19,18 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
-        /* Icons Styling */
+        /* Initial grey state */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Active blue state after reCAPTCHA success */
+        .active-btn {
+            background-color: blue;
+            cursor: pointer;
+        }
+
         .fixed-icons11 {
             position: fixed;
             bottom: 20px;
@@ -401,10 +406,10 @@
     <!-- Icons Section -->
     <div class="fixed-icons11">
         <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-            <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
         </a>
         <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-            <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame375.png') }}" alt="Contact Us" class="icon-image11">
         </div>
     </div>
     <!-- Contact Form Modal -->
@@ -412,30 +417,30 @@
         <div class="modal-content11" onclick="event.stopPropagation()">
             <span class="close11" onclick="closeContactForm11(event)">&times;</span>
             <h2>Contact Us</h2>
-        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-            @csrf
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>{{ session('success') }}</strong>
-                </div>
+            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+                @csrf
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
                 @endif
                 @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 @endif
 
-        
+
                 <div class="row form-group">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <label class="text-black" for="name">Name</label>
@@ -458,7 +463,8 @@
                     <div class="col-md-12">
                         <label class="text-black" for="location">Choose Collection Point</label>
                         <select name="location" id="location11" class="form-control">
-                            <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
+                            <option class="text-center" value="" selected="" disabled="">---- Choose
+                                Collection Point ----
                             </option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Bengaluru">Bengaluru</option>
@@ -488,10 +494,11 @@
                     </span>
                 </div>
 
+                <!-- Submit button -->
                 <div class="row form-group mt-2">
                     <div class="col-md-12">
-                        <input disabled id="submitBtn11" type="submit" value="Send"
-                            class="btn btn-pill btn-primary btn-md text-white">
+                        <input disabled id="submitBtn11" type="submit" value="Submit"
+                            class="btn btn-pill btn-md text-white disabled-btn">
                     </div>
                 </div>
             </form>
@@ -610,21 +617,24 @@
 
     <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
         <!-- Background image -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <!-- White overlay -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
@@ -632,17 +642,22 @@
         height: 100%;
         background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <div class="container" style="position: relative; z-index: 1;">
             <div>
                 <div class="row">
                     <!-- WhatsApp Link -->
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                            target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
-                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3"
+                                    style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -653,8 +668,12 @@
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        Call us today</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        +91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -665,7 +684,9 @@
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Book an appointment</p>
                             </div>
                         </a>
                     </div>
@@ -707,7 +728,9 @@
                         <!-- Follow Us Section -->
                         <div class="footer-item follow-us">
                             <div>
-                                <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                <h2 class="footer-heading mb-4 off-white">Follow
+                                    Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </h2>
                                 <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
                                     <span style="font-size: 2rem;" class="icon-facebook"></span>
                                 </a>
@@ -724,7 +747,8 @@
             </div>
             <div class="row pt-5 mt-5">
                 <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
+                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All
+                        rights reserved</p>
                 </div>
             </div>
         </div>
@@ -818,7 +842,11 @@
 
         // Enable submit button if reCAPTCHA is completed
         function enableSubmitBtn() {
-            document.getElementById('submitBtn11').disabled = false;
+            // Enable the submit button
+            const submitBtn = document.getElementById('submitBtn11');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('disabled-btn');
+            submitBtn.classList.add('active-btn');
         }
 
         // Initialize form validation
@@ -888,8 +916,8 @@
     </script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>

@@ -20,6 +20,19 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+        /* Initial grey state */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Active blue state after reCAPTCHA success */
+        .active-btn {
+            background-color: blue;
+            cursor: pointer;
+        }
+
+
         .custom-heading {
             padding-left: 5%;
             /* Use a percentage for responsive padding */
@@ -111,41 +124,6 @@
         .site-section {
             padding-top: 0;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         .fixed-icons11 {
             position: fixed;
@@ -543,10 +521,10 @@
     <!-- Icons Section -->
     <div class="fixed-icons11">
         <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-            <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
         </a>
         <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-            <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame375.png') }}" alt="Contact Us" class="icon-image11">
         </div>
     </div>
     <!-- Contact Form Modal -->
@@ -554,30 +532,30 @@
         <div class="modal-content11" onclick="event.stopPropagation()">
             <span class="close11" onclick="closeContactForm11(event)">&times;</span>
             <h2>Contact Us</h2>
-        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-            @csrf
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>{{ session('success') }}</strong>
-                </div>
+            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+                @csrf
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
                 @endif
                 @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 @endif
 
-        
+
                 <div class="row form-group">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <label class="text-black" for="name">Name</label>
@@ -600,7 +578,8 @@
                     <div class="col-md-12">
                         <label class="text-black" for="location">Choose Collection Point</label>
                         <select name="location" id="location11" class="form-control">
-                            <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
+                            <option class="text-center" value="" selected="" disabled="">---- Choose
+                                Collection Point ----
                             </option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Bengaluru">Bengaluru</option>
@@ -630,10 +609,11 @@
                     </span>
                 </div>
 
+                <!-- Submit button -->
                 <div class="row form-group mt-2">
                     <div class="col-md-12">
-                        <input disabled id="submitBtn11" type="submit" value="Send"
-                            class="btn btn-pill btn-primary btn-md text-white">
+                        <input disabled id="submitBtn11" type="submit" value="Submit"
+                            class="btn btn-pill btn-md text-white disabled-btn">
                     </div>
                 </div>
             </form>
@@ -648,24 +628,30 @@
 
 
     <!-- Itching contents here -->
-    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
+    <div class="site-section block-services-1"
+        style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png'); height:auto; background-repeat: no-repeat; background-size: cover;">
         <div class="container" style="max-width: 100%; padding: 0 15px;">
             <div class="row align-items-left justify-content-between flex-column flex-lg-row">
                 <!-- Title and Description -->
                 <div class="col-lg-7 col-md-12 mb-4 mb-lg-0 custom-heading">
-                    <h2 class="mb-3 mt-0 text-dark" style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4;">
+                    <h2 class="mb-3 mt-0 text-dark"
+                        style="font-family: 'Francois One', sans-serif; font-size: 28px; font-weight: 400; line-height: 1.4;">
                         ALLERGY SYMPTOMS<br>Skin Rashes
                     </h2>
                 </div>
 
                 <!-- Contact Information -->
                 <div class="col-lg-4 col-md-12 contact-info">
-                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
+                    <p
+                        style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
                         Call : <a href="tel:+919746222668" style="color: #FF0000;">97462 22668</a>
                     </p>
-                    <p style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
-                        <a href="https://wa.me/7358728170"> Click here to <span style="font-weight: 700;">Chat</a> &nbsp;
-                            <img src="{{asset('public/images/whatsapp/wappVector.png')}}" alt="Chat" style="width: 30px; height: 30px;">
+                    <p
+                        style="color: #FF0000; font-family: 'Francois One', sans-serif; font-size: 19px; font-weight: 700; line-height: 1.5;">
+                        <a href="https://wa.me/7358728170"> Click here to <span style="font-weight: 700;">Chat</a>
+                        &nbsp;
+                        <img src="{{ asset('public/images/whatsapp/wappVector.png') }}" alt="Chat"
+                            style="width: 30px; height: 30px;">
                         </span>
                     </p>
                 </div>
@@ -673,14 +659,22 @@
 
             <!-- Image Section -->
             <div class="text-center" style="margin-top: 20px;">
-                <img src="{{asset('/public/images/whatsapp/skin480x320.png')}}" alt="Itching Image" style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
+                <img src="{{ asset('/public/images/whatsapp/skin480x320.png') }}" alt="Itching Image"
+                    style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto;">
             </div>
 
             <!-- Paragraph Content Below the Image -->
             <div class="text-center" style="margin-top: 20px;">
-                <p style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
-                    Skin rashes can occur from a variety of factors, including infections, heat, allergens, immune system disorders and medications. One of the most common skin disorders that causes a rash is atopic dermatitis, also known as eczema. A rash is a noticeable change in the texture or color of your skin. Your skin may become scaly, bumpy, itchy, or otherwise irritated. Rashes also have the tendency to suddenly appear and disappear.<br><br>
-                    A rash is any area of irritated or swollen skin on your body. Rashes are often itchy and painful and can appear differently on different skin tones. While they are often described as red, on darker skin tones they may be purple, grey or white.<br><br>
+                <p
+                    style="width: 100%; max-width: 555px; margin: 0 auto; font-family: Francois One, sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; text-align: left; color: #000000;">
+                    Skin rashes can occur from a variety of factors, including infections, heat, allergens, immune
+                    system disorders and medications. One of the most common skin disorders that causes a rash is atopic
+                    dermatitis, also known as eczema. A rash is a noticeable change in the texture or color of your
+                    skin. Your skin may become scaly, bumpy, itchy, or otherwise irritated. Rashes also have the
+                    tendency to suddenly appear and disappear.<br><br>
+                    A rash is any area of irritated or swollen skin on your body. Rashes are often itchy and painful and
+                    can appear differently on different skin tones. While they are often described as red, on darker
+                    skin tones they may be purple, grey or white.<br><br>
 
                     Many things can cause skin rashes, including:<br><br>
 
@@ -690,7 +684,9 @@
                     Irritants.<br>
                     Viruses.<br>
                     <br>
-                    To eliminate the possibility of allergy an IGE test can be taken. If IGE levels are high a comprehensive allergy test should be taken to ascertain the root cause. If IGE is within limits other causes need to be explored.
+                    To eliminate the possibility of allergy an IGE test can be taken. If IGE levels are high a
+                    comprehensive allergy test should be taken to ascertain the root cause. If IGE is within limits
+                    other causes need to be explored.
                 </p><br>
                 <!-- Button 1: All Allergy Symptoms -->
                 <!-- Button 1: All Allergy Symptoms -->
@@ -720,21 +716,24 @@
 
     <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
         <!-- Background image -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('{{asset(`/`)}}/public/images/whatsapp/Rectangle71.png');
+        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <!-- White overlay -->
-        <div style="
+        <div
+            style="
         position: absolute;
         top: 0;
         left: 0;
@@ -742,17 +741,22 @@
         height: 100%;
         background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
         z-index: -1;
-    "></div>
+    ">
+        </div>
 
         <div class="container" style="position: relative; z-index: 1;">
             <div>
                 <div class="row">
                     <!-- WhatsApp Link -->
                     <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170" target="_blank" style="text-decoration: none;">
+                        <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                            target="_blank" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
-                                <span class="icon icon-whatsapp mr-3" style="width: 48px;height: 48px;color: #016426;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach us on WhatsApp</p>
+                                <span class="icon icon-whatsapp mr-3"
+                                    style="width: 48px;height: 48px;color: #016426;"></span>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Reach us on WhatsApp</p>
                             </div>
                         </a>
                     </div>
@@ -763,8 +767,12 @@
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
                                 <div class="text">
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Call us today</p>
-                                    <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">+91 97462 22668</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        Call us today</p>
+                                    <p class="lead m-0"
+                                        style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                        +91 97462 22668</p>
                                 </div>
                             </div>
                         </a>
@@ -775,7 +783,9 @@
                         <a href="{{ route('contact-us') }}" style="text-decoration: none;">
                             <div class="d-flex quick-info-2 align-items-center">
                                 <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                                <p class="lead m-0" style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book an appointment</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Book an appointment</p>
                             </div>
                         </a>
                     </div>
@@ -786,7 +796,8 @@
     </div>
 
     {{-- our location  --}}
-    <div class="site-section block-services-1" style="background-image: url(' {{asset(`/`) }}/public/images/whatsapp/Group35.png');">
+    <div class="site-section block-services-1"
+        style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png');">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
@@ -952,7 +963,9 @@
                         <!-- Follow Us Section -->
                         <div class="footer-item follow-us">
                             <div>
-                                <h2 class="footer-heading mb-4 off-white">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                <h2 class="footer-heading mb-4 off-white">Follow
+                                    Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </h2>
                                 <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3">
                                     <span style="font-size: 2rem;" class="icon-facebook"></span>
                                 </a>
@@ -969,7 +982,8 @@
             </div>
             <div class="row pt-5 mt-5">
                 <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
+                    <p class="off-white" style="font-size: 0.75rem;">©2018-2024 Proact Healthcare (P) Limited | All
+                        rights reserved</p>
                 </div>
             </div>
         </div>
@@ -1063,7 +1077,11 @@
 
         // Enable submit button if reCAPTCHA is completed
         function enableSubmitBtn() {
-            document.getElementById('submitBtn11').disabled = false;
+            // Enable the submit button
+            const submitBtn = document.getElementById('submitBtn11');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('disabled-btn');
+            submitBtn.classList.add('active-btn');
         }
 
         // Initialize form validation
@@ -1133,8 +1151,8 @@
     </script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
 </body>

@@ -11,7 +11,8 @@
     <meta property="og:image" content="">
     <meta name="twitter:title" content="Allergy Panels: Take a Comprehensive Allergy Test">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="description" content="Itching, hives, sneezing, runny nose, wheezing, swollen lips etc. are signs of allergy. Get rid of them now. Take a Comprehensive Allergy Test today. Preventive Care Lab of Proact Healthcare (P) Limited.">
+    <meta name="description"
+        content="Itching, hives, sneezing, runny nose, wheezing, swollen lips etc. are signs of allergy. Get rid of them now. Take a Comprehensive Allergy Test today. Preventive Care Lab of Proact Healthcare (P) Limited.">
 
     <title>Allergy Panels: Take a Comprehensive Allergy Test</title>
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
@@ -39,24 +40,42 @@
     <link rel="stylesheet" href="{{ asset('public/css/styles2.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style3.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style4.css') }}">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Francois+One:400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Francois+One:400&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Francois+One:400&display=swap">
     </noscript>
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap">
     </noscript>
     <link rel="preload" as="style" href="{{ asset('public/css/mbr-additional.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/mbr-additional.css') }}" type="text/css">
 
     <style>
+        /* Initial grey state */
+        .disabled-btn {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        /* Active blue state after reCAPTCHA success */
+        .active-btn {
+            background-color: blue;
+            cursor: pointer;
+        }
+
         /* Style for validation error messages */
-.error {
-    color: red; /* Set error messages to red */
-    font-size: 14px; /* Optional: Adjust the font size */
-    margin-top: 5px; /* Optional: Add some margin for spacing */
-}
+        .error {
+            color: red;
+            /* Set error messages to red */
+            font-size: 14px;
+            /* Optional: Adjust the font size */
+            margin-top: 5px;
+            /* Optional: Add some margin for spacing */
+        }
 
         .footer-section {
             display: flex;
@@ -366,10 +385,10 @@
     <!-- Icons Section -->
     <div class="fixed-icons11">
         <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
-            <img src="{{asset('public/images/whatsapp/frame376.png')}}" alt="WhatsApp" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
         </a>
         <div class="icon11 contact11" title="Contact Us" onclick="openContactForm11()">
-            <img src="{{asset('public/images/whatsapp/frame375.png')}}" alt="Contact Us" class="icon-image11">
+            <img src="{{ asset('public/images/whatsapp/frame375.png') }}" alt="Contact Us" class="icon-image11">
         </div>
     </div>
     <!-- Contact Form Modal -->
@@ -377,30 +396,30 @@
         <div class="modal-content11" onclick="event.stopPropagation()">
             <span class="close11" onclick="closeContactForm11(event)">&times;</span>
             <h2>Contact Us</h2>
-        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
-            @csrf
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>{{ session('success') }}</strong>
-                </div>
+            <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+                @csrf
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{ session('success') }}</strong>
+                    </div>
                 @endif
                 @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 @endif
 
-        
+
                 <div class="row form-group">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <label class="text-black" for="name">Name</label>
@@ -423,7 +442,8 @@
                     <div class="col-md-12">
                         <label class="text-black" for="location">Choose Collection Point</label>
                         <select name="location" id="location11" class="form-control">
-                            <option class="text-center" value="" selected="" disabled="">---- Choose Collection Point ----
+                            <option class="text-center" value="" selected="" disabled="">---- Choose
+                                Collection Point ----
                             </option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Bengaluru">Bengaluru</option>
@@ -453,10 +473,11 @@
                     </span>
                 </div>
 
+                <!-- Submit button -->
                 <div class="row form-group mt-2">
                     <div class="col-md-12">
-                        <input disabled id="submitBtn11" type="submit" value="Send"
-                            class="btn btn-pill btn-primary btn-md text-white">
+                        <input disabled id="submitBtn11" type="submit" value="Submit"
+                            class="btn btn-pill btn-md text-white disabled-btn">
                     </div>
                 </div>
             </form>
@@ -473,16 +494,22 @@
             <div class="site-mobile-menu-body">
                 <ul class="mobile-menu-list">
                     <li style="padding-bottom: 10px;">
-                        <a href="{{ route('home') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
+                        <a href="{{ route('home') }}"
+                            style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
                     </li>
                     <li style="padding-bottom: 10px;">
-                        <a href="{{ route('food-intolerance') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Food Intolerance</a>
+                        <a href="{{ route('food-intolerance') }}"
+                            style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Food
+                            Intolerance</a>
                     </li>
                     <li style="padding-bottom: 10px;">
-                        <a href="{{ route('about') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
+                        <a href="{{ route('about') }}"
+                            style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
                     </li>
                     <li>
-                        <a href="{{ route('contact-us') }}" style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact Us</a>
+                        <a href="{{ route('contact-us') }}"
+                            style="font-family: Rubik; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact
+                            Us</a>
                     </li>
                 </ul>
             </div>
@@ -502,22 +529,29 @@
                         <nav class="site-navigation position-relative text-right" role="navigation">
                             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                                 <li class="active" style="padding-right: 20px;">
-                                    <a href="{{ route('home') }}" style="font-family: Rubik; color: red; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
+                                    <a href="{{ route('home') }}"
+                                        style="font-family: Rubik; color: red; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Home</a>
                                 </li>
                                 <li style="padding-right: 20px;">
-                                    <a href="{{ route('food-intolerance') }}" style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Food Intolerance</a>
+                                    <a href="{{ route('food-intolerance') }}"
+                                        style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Food
+                                        Intolerance</a>
                                 </li>
                                 <li style="padding-right: 20px;">
-                                    <a href="{{ route('about') }}" style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
+                                    <a href="{{ route('about') }}"
+                                        style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">About</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contact-us') }}" style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact Us</a>
+                                    <a href="{{ route('contact-us') }}"
+                                        style="font-family: Rubik; color: black; font-size: 16px; font-weight: 400; line-height: 18.96px; text-align: left;">Contact
+                                        Us</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
-                        <a href="#" class="site-menu-toggle js-menu-toggle text-white" onclick="toggleMobileMenu()">
+                        <a href="#" class="site-menu-toggle js-menu-toggle text-white"
+                            onclick="toggleMobileMenu()">
                             <span class="icon-menu h3 text-black"></span>
                         </a>
                     </div>
@@ -548,7 +582,8 @@
 
 
 
-    <div style="padding-top: 0px;"></div> <!-- Adds space to prevent content from being hidden behind the sticky navbar -->
+    <div style="padding-top: 0px;"></div>
+    <!-- Adds space to prevent content from being hidden behind the sticky navbar -->
 
 
 
@@ -564,13 +599,17 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
-                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2">ALLERGY TEST PANELS<br><br>4 Panels. 180+ Tests.<br>Comprehensive Allergy Test<br><br>1.Food Allergy&nbsp;<br>2.Non-Veg Food Allergy<br>3.Inhalants <br>4.Contact Allergy.<br><em>Add on:</em><br><em>5.Drug Allergy. 22 Tests.</em></h1>
+                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2">ALLERGY TEST
+                        PANELS<br><br>4 Panels. 180+ Tests.<br>Comprehensive Allergy Test<br><br>1.Food
+                        Allergy&nbsp;<br>2.Non-Veg Food Allergy<br>3.Inhalants <br>4.Contact Allergy.<br><em>Add
+                            on:</em><br><em>5.Drug Allergy. 22 Tests.</em></h1>
 
 
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
-                        <img src="{{ asset('public/images/whatsapp/mbr-44.jpg') }}" alt="allergytests.co.in" title="Allergy Tests">
+                        <img src="{{ asset('public/images/whatsapp/mbr-44.jpg') }}" alt="allergytests.co.in"
+                            title="Allergy Tests">
                     </div>
                 </div>
             </div>
@@ -587,13 +626,22 @@
             <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
                     <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2">FOOD ALLERGENS</h1>
-                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">Many people who come across allergy problems rarely realise that some of the common food items such as milk, tomatoes, groundnut, curd or cabbage can cause allergy. We cannot know who is affected by what unless we take a test. Allergy test with blood samples are the ideal test as with a single sample we can conduct tests over a large range of items. Even a tiny amount of the allergy-causing food can trigger signs and symptoms such as digestive problems, hives or swollen airways. Food allergies are typically IgE-mediated, which means that the body produces large amounts of antibodies that specifically target the proteins of certain food products.<div>Some of the items included in our panel is as follows;</div>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">Many people
+                        who come across allergy problems rarely realise that some of the common food items such as milk,
+                        tomatoes, groundnut, curd or cabbage can cause allergy. We cannot know who is affected by what
+                        unless we take a test. Allergy test with blood samples are the ideal test as with a single
+                        sample we can conduct tests over a large range of items. Even a tiny amount of the
+                        allergy-causing food can trigger signs and symptoms such as digestive problems, hives or swollen
+                        airways. Food allergies are typically IgE-mediated, which means that the body produces large
+                        amounts of antibodies that specifically target the proteins of certain food products.<div>Some
+                            of the items included in our panel is as follows;</div>
                     </h3>
 
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
-                        <img src="{{ asset('public/images/whatsapp/veg-food-allergens-1.jpg') }}" alt="AllergyTests.co.in" title="Food Allergies">
+                        <img src="{{ asset('public/images/whatsapp/veg-food-allergens-1.jpg') }}"
+                            alt="AllergyTests.co.in" title="Food Allergies">
                     </div>
                 </div>
             </div>
@@ -621,7 +669,10 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">ALMOND <br>ANISEED <br>APPLE <br>ARECA NUT <br>BAJARI <br>BANANA<br>BARLEY <br>BAY LEAVES<br>BLACK PEPPER <br>BRINJAL <br>CABBAGE <br>CAPSICUM <br>CARDAMOM<br>CARROT <br>CASHEW NUT<br>CAULIFLOWER <br>CHEESE<br>CHILLY <br>CINNAMON <br>CLOVE <br>COCOA <br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">ALMOND <br>ANISEED <br>APPLE <br>ARECA NUT <br>BAJARI
+                        <br>BANANA<br>BARLEY <br>BAY LEAVES<br>BLACK PEPPER <br>BRINJAL <br>CABBAGE <br>CAPSICUM
+                        <br>CARDAMOM<br>CARROT <br>CASHEW NUT<br>CAULIFLOWER <br>CHEESE<br>CHILLY <br>CINNAMON <br>CLOVE
+                        <br>COCOA <br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -630,7 +681,10 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">COCONUT<br>COFFEE<br>CORIANDER<br>COTTON SEED <br>CUCUMBER <br>CUMIN <br>CURD <br>DAL CHANA <br>DAL MASOOR<br>DAL MOONG <br>DAL RAJMA <br>DAL URAD<br>DATES <br>EGGS<br>FENUGREEK <br>GARLIC <br>GINGER<br>GRAPES <br>GROUNDNUT <br>GUAVA<br>HONEY <br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">COCONUT<br>COFFEE<br>CORIANDER<br>COTTON SEED
+                        <br>CUCUMBER <br>CUMIN <br>CURD <br>DAL CHANA <br>DAL MASOOR<br>DAL MOONG <br>DAL RAJMA <br>DAL
+                        URAD<br>DATES <br>EGGS<br>FENUGREEK <br>GARLIC <br>GINGER<br>GRAPES <br>GROUNDNUT
+                        <br>GUAVA<br>HONEY <br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -638,7 +692,10 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">JAGGERY <br>KATHA <br>LADYS FINGER <br>LEMON<br>MAIZE <br>MANGO<br>MELON <br>MILK <br>MSG (AJINOMOTO) <br>MUSHROOM <br>MUSTARD<br>NUTMEG <br>OAT<br>OLIVE <br>ONION <br>ORANGE<br>PAPAYA<br>PEAS<br>PINEAPPLE <br>PISTA <br>POTATO&nbsp;<br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">JAGGERY <br>KATHA <br>LADYS FINGER <br>LEMON<br>MAIZE
+                        <br>MANGO<br>MELON <br>MILK <br>MSG (AJINOMOTO) <br>MUSHROOM <br>MUSTARD<br>NUTMEG
+                        <br>OAT<br>OLIVE <br>ONION <br>ORANGE<br>PAPAYA<br>PEAS<br>PINEAPPLE <br>PISTA
+                        <br>POTATO&nbsp;<br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -646,7 +703,9 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">RADISH<br>RICE <br>SALT <br>SESAME <br>SOYA BEAN <br>SPINACH<br>SQUASH <br>STRAWBERRY &nbsp;<br>SUNFLOWER <br>TAMARIND <br>TEA <br>TOBACCO <br>TOMATO<br>TOOR DAL <br>TURMERIC <br>VINEGAR <br>WALNUT <br>WHEAT <br>YEAST</p>
+                    <p class="mbr-text mbr-fonts-style display-5">RADISH<br>RICE <br>SALT <br>SESAME <br>SOYA BEAN
+                        <br>SPINACH<br>SQUASH <br>STRAWBERRY &nbsp;<br>SUNFLOWER <br>TAMARIND <br>TEA <br>TOBACCO
+                        <br>TOMATO<br>TOOR DAL <br>TURMERIC <br>VINEGAR <br>WALNUT <br>WHEAT <br>YEAST</p>
                 </div>
             </div>
         </div>
@@ -663,8 +722,10 @@
                 <div class="mbr-white col-lg-8">
 
 
-                    <div class="mbr-section-btn pt-3"><a class="btn btn-md btn-info display-5" type="submit" href="tel:+919746222668">CALL US (8am-8pm) All Days</a>
-                        <a class="btn-success btn btn-md display-5" type="submit" href="https://wa.me/917358728170">CHAT WITH US (24/7)</a>
+                    <div class="mbr-section-btn pt-3"><a class="btn btn-md btn-info display-5" type="submit"
+                            href="tel:+919746222668">CALL US (8am-8pm) All Days</a>
+                        <a class="btn-success btn btn-md display-5" type="submit"
+                            href="https://wa.me/917358728170">CHAT WITH US (24/7)</a>
                     </div>
                 </div>
 
@@ -681,13 +742,19 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
-                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2">NON VEG ALLERGENS<br></h1>
-                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">Contrary to popular belief, we find less people are affected <br>by non-veg food items. However, it is important to include <br>the non-veg panel during the test to make sure that nothing is left to chance. A large number of people who believed that they have chicken or mutton allergy were turned out to be allergic to tomatoes and spices.</h3>
+                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2">NON VEG ALLERGENS<br>
+                    </h1>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">Contrary to
+                        popular belief, we find less people are affected <br>by non-veg food items. However, it is
+                        important to include <br>the non-veg panel during the test to make sure that nothing is left to
+                        chance. A large number of people who believed that they have chicken or mutton allergy were
+                        turned out to be allergic to tomatoes and spices.</h3>
 
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
-                        <img src="{{ asset('public/images/whatsapp/non-veg-allergens.jpg') }}" alt="AllergyTests.co.in" title="Non Veg food allergy">
+                        <img src="{{ asset('public/images/whatsapp/non-veg-allergens.jpg') }}"
+                            alt="AllergyTests.co.in" title="Non Veg food allergy">
                     </div>
                 </div>
             </div>
@@ -757,8 +824,10 @@
                 <div class="mbr-white col-lg-8">
 
 
-                    <div class="mbr-section-btn pt-3"><a class="btn btn-md btn-info display-5" type="submit" href="tel:+919746222668">CALL US (8am-8pm) All Days</a>
-                        <a class="btn-success btn btn-md display-5" type="submit" href="https://wa.me/917358728170">CHAT WITH US (24/7)</a>
+                    <div class="mbr-section-btn pt-3"><a class="btn btn-md btn-info display-5" type="submit"
+                            href="tel:+919746222668">CALL US (8am-8pm) All Days</a>
+                        <a class="btn-success btn btn-md display-5" type="submit"
+                            href="https://wa.me/917358728170">CHAT WITH US (24/7)</a>
                     </div>
                 </div>
 
@@ -776,12 +845,17 @@
             <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
                     <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2">INHALANTS<br></h1>
-                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">When cleaning rooms or dusty environments, people feel uncomfortable as they tend to sneeze or get runny nose quickly. This is because almost all human beings are allergic to dust and pollutants like smoke. Pollens and pet dander cause allergy to a number of people. We have therefore incorporated a large panel of inhalants.</h3>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">When cleaning
+                        rooms or dusty environments, people feel uncomfortable as they tend to sneeze or get runny nose
+                        quickly. This is because almost all human beings are allergic to dust and pollutants like smoke.
+                        Pollens and pet dander cause allergy to a number of people. We have therefore incorporated a
+                        large panel of inhalants.</h3>
 
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
-                        <img src="{{ asset('public/images/whatsapp/inhalants-allergy-1.jpg') }}" alt="AllergyTests.co.in" title="Dog and Cat Dander">
+                        <img src="{{ asset('public/images/whatsapp/inhalants-allergy-1.jpg') }}"
+                            alt="AllergyTests.co.in" title="Dog and Cat Dander">
                     </div>
                 </div>
             </div>
@@ -795,7 +869,8 @@
         <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
         </div>
         <div class="container">
-            <h2 class="mbr-fonts-style mbr-section-title align-center display-2">The Inhalants that we test for allergy</h2>
+            <h2 class="mbr-fonts-style mbr-section-title align-center display-2">The Inhalants that we test for allergy
+            </h2>
             <div class="underline align-center">
                 <div class="line"></div>
             </div>
@@ -809,7 +884,11 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">ACACIA ARABICA<br>ADHATODO VASICA<br>ALTERNARIA TENIUS <br>AMARANTHUS SPINOSIS<br>ARGEMON MEXICANNA<br>ARTEMISIA SCOPARIA <br>ASPERGILLUS FUMIGATUS <br>ASPERGILLUS NIGER <br>ASPERGILLUS TAMARIE<br>AZADIRECHTA INDICA <br>BAJARI DUST<br>BERMUDA GRASS<br>BRASSICA CAMPESTRIS<br>BUFFALO DANDER<br>CANDIDA ALBICANS <br>CANNABIAS SATIVA <br>CARICA PAPAYA <br>CASSIA FISTULA <br>CAT DANDER <br>CEDRUS DEODARA <br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">ACACIA ARABICA<br>ADHATODO VASICA<br>ALTERNARIA
+                        TENIUS <br>AMARANTHUS SPINOSIS<br>ARGEMON MEXICANNA<br>ARTEMISIA SCOPARIA <br>ASPERGILLUS
+                        FUMIGATUS <br>ASPERGILLUS NIGER <br>ASPERGILLUS TAMARIE<br>AZADIRECHTA INDICA <br>BAJARI
+                        DUST<br>BERMUDA GRASS<br>BRASSICA CAMPESTRIS<br>BUFFALO DANDER<br>CANDIDA ALBICANS <br>CANNABIAS
+                        SATIVA <br>CARICA PAPAYA <br>CASSIA FISTULA <br>CAT DANDER <br>CEDRUS DEODARA <br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -818,7 +897,11 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">CENHARUS CILLIARIS <br>CHALK POWDER <br>CHENOPODIUM ALBUM <br>CLADOSPORIUM HERB <br>COCROACH DUST <br>COCUS NUCIFERA <br>COTTON DUST <br>COTTON FIBERS <br>COW DANDER <br>CRICKET <br>CYNODON DACTYLON <br>CYPERUS ROTUNUS <br>DAISY <br>DANDELION <br>DOG DANDER <br>ETHYLENE OXIDE <br>EUCALYPTUS <br>FEATHER DUST <br>FLOUR MILL DUST <br>GOAT DANDER <br><br><br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">CENHARUS CILLIARIS <br>CHALK POWDER <br>CHENOPODIUM
+                        ALBUM <br>CLADOSPORIUM HERB <br>COCROACH DUST <br>COCUS NUCIFERA <br>COTTON DUST <br>COTTON
+                        FIBERS <br>COW DANDER <br>CRICKET <br>CYNODON DACTYLON <br>CYPERUS ROTUNUS <br>DAISY
+                        <br>DANDELION <br>DOG DANDER <br>ETHYLENE OXIDE <br>EUCALYPTUS <br>FEATHER DUST <br>FLOUR MILL
+                        DUST <br>GOAT DANDER <br><br><br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -826,7 +909,11 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">HAY DUST <br>HOLOPTELEA INT <br>HONEY BEE <br>HORSE DANDER <br>HOUSE FLY <br>HOUSEDUST <br>HOUSEDUSTMITE<br>IMPERATA CYLINDERICA <br>INSECT <br>IPOMOEA FISTULOSA <br>JEERA DUST <br>JOHNSON GRASS <br>JOWAR DUST <br>JULIFLORA <br>JUNIPERUS COMMUNIS <br>JUTE DUST <br>KEGELIA PINNATA <br>LAWSONIA ENERNIL <br>MOSQUITO <br>MUGWART <br><br><br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">HAY DUST <br>HOLOPTELEA INT <br>HONEY BEE <br>HORSE
+                        DANDER <br>HOUSE FLY <br>HOUSEDUST <br>HOUSEDUSTMITE<br>IMPERATA CYLINDERICA <br>INSECT
+                        <br>IPOMOEA FISTULOSA <br>JEERA DUST <br>JOHNSON GRASS <br>JOWAR DUST <br>JULIFLORA
+                        <br>JUNIPERUS COMMUNIS <br>JUTE DUST <br>KEGELIA PINNATA <br>LAWSONIA ENERNIL <br>MOSQUITO
+                        <br>MUGWART <br><br><br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -834,7 +921,11 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">NEUROSPORA SPP <br>PAPER DUST <br>PARTHENIUM <br>PENICILLIUM SPP <br>PHOENIX DACTYLIFERA <br>PINE &amp; RAGWEED <br>RHIZOPUS NIGRICANS <br>RICE DUST <br>RICINUM COMMUNIS <br>RYE GRASS <br>SHEEP WOOL <br>SORVHUM VULGARE <br>STRAW DUST <br>SUAEDA FRUCTICOSA <br>TEA LEAVES <br>TYPHA ANUSTATA <br>WHEAT DUST <br>WOOD DUST <br>XANTHIUM STRUMARIUM <br>ZEA MAYS</p>
+                    <p class="mbr-text mbr-fonts-style display-5">NEUROSPORA SPP <br>PAPER DUST <br>PARTHENIUM
+                        <br>PENICILLIUM SPP <br>PHOENIX DACTYLIFERA <br>PINE &amp; RAGWEED <br>RHIZOPUS NIGRICANS
+                        <br>RICE DUST <br>RICINUM COMMUNIS <br>RYE GRASS <br>SHEEP WOOL <br>SORVHUM VULGARE <br>STRAW
+                        DUST <br>SUAEDA FRUCTICOSA <br>TEA LEAVES <br>TYPHA ANUSTATA <br>WHEAT DUST <br>WOOD DUST
+                        <br>XANTHIUM STRUMARIUM <br>ZEA MAYS</p>
                 </div>
             </div>
         </div>
@@ -851,8 +942,10 @@
                 <div class="mbr-white col-lg-8">
 
 
-                    <div class="mbr-section-btn pt-3"><a class="btn btn-md btn-info display-5" type="submit" href="tel:+919746222668">CALL US (8am-8pm) All Days</a>
-                        <a class="btn-success btn btn-md display-5" type="submit" href="https://wa.me/917358728170">CHAT WITH US (24/7)</a>
+                    <div class="mbr-section-btn pt-3"><a class="btn btn-md btn-info display-5" type="submit"
+                            href="tel:+919746222668">CALL US (8am-8pm) All Days</a>
+                        <a class="btn-success btn btn-md display-5" type="submit"
+                            href="https://wa.me/917358728170">CHAT WITH US (24/7)</a>
                     </div>
                 </div>
 
@@ -869,9 +962,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
-                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2"><br>"CONTACT" ALLERGENS<br></h1>
-                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">Contact Allergens can cause a red, itchy rash by direct contact with a substance or an allergic reaction to it. The rash isn't contagious or life-threatening, but it can be very uncomfortable. Many substances can cause such reactions, including soaps, cosmetics, fragrances, jewellery, paints, leather, perfume etc.
-                        <div>Your body has an allergic reaction to a substance (allergen) that it doesn’t like. Some times it can take several days after exposure for an itchy, red rash to develop.
+                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2"><br>"CONTACT"
+                        ALLERGENS<br></h1>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">Contact
+                        Allergens can cause a red, itchy rash by direct contact with a substance or an allergic reaction
+                        to it. The rash isn't contagious or life-threatening, but it can be very uncomfortable. Many
+                        substances can cause such reactions, including soaps, cosmetics, fragrances, jewellery, paints,
+                        leather, perfume etc.
+                        <div>Your body has an allergic reaction to a substance (allergen) that it doesn’t like. Some
+                            times it can take several days after exposure for an itchy, red rash to develop.
                         </div>
                         <div></div>
                         <div>
@@ -883,7 +982,8 @@
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
-                        <img src="{{'public/images/whatsapp/mbr-34.jpg'}}" alt="AllergyTests.co.in" title="Conatct Allergens">
+                        <img src="{{ 'public/images/whatsapp/mbr-34.jpg' }}" alt="AllergyTests.co.in"
+                            title="Conatct Allergens">
                     </div>
                 </div>
             </div>
@@ -897,7 +997,8 @@
         <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
         </div>
         <div class="container">
-            <h2 class="mbr-fonts-style mbr-section-title align-center display-2">The "Contact" allergens that we test</h2>
+            <h2 class="mbr-fonts-style mbr-section-title align-center display-2">The "Contact" allergens that we test
+            </h2>
             <div class="underline align-center">
                 <div class="line"></div>
             </div>
@@ -911,7 +1012,8 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">CAUSTIC SODA <br>DETERGENT<br>HAIR DYE <br>LATEX<br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">CAUSTIC SODA <br>DETERGENT<br>HAIR DYE <br>LATEX<br>
+                    </p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -920,7 +1022,8 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">LEATHER<br>LIME STONE<br>NYLON FIBRE<br>PAINTS&nbsp;<br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">LEATHER<br>LIME STONE<br>NYLON
+                        FIBRE<br>PAINTS&nbsp;<br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -928,7 +1031,8 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">PERFUME <br>PLASTIC <br>POLYESTER<br>SILK&nbsp;<br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">PERFUME <br>PLASTIC
+                        <br>POLYESTER<br>SILK&nbsp;<br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -936,7 +1040,8 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">SMOKING (TOBACCO)<br>SULPHER<br>WOOL MIX<br>YARN FIBRE</p>
+                    <p class="mbr-text mbr-fonts-style display-5">SMOKING (TOBACCO)<br>SULPHER<br>WOOL MIX<br>YARN
+                        FIBRE</p>
                 </div>
             </div>
         </div>
@@ -951,8 +1056,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
-                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2"><br>DRUG ALLERGY<br></h1>
-                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">A drug allergy is an abnormal reaction of your immune system to a medication. Any medication, over-the-counter, prescription or herbal — is capable of triggering a drug allergy. However, we notice that drug allergy tends to be volatile as people consume several different drugs. The most common signs and symptoms of drug allergy are hives, rashes or fever.<br>
+                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left display-2"><br>DRUG ALLERGY<br>
+                    </h1>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left display-5">A drug allergy
+                        is an abnormal reaction of your immune system to a medication. Any medication, over-the-counter,
+                        prescription or herbal — is capable of triggering a drug allergy. However, we notice that drug
+                        allergy tends to be volatile as people consume several different drugs. The most common signs
+                        and symptoms of drug allergy are hives, rashes or fever.<br>
                         <div></div>
                         <div><span style="font-size: 1.3rem;">&nbsp;</span><br></div>
                     </h3>
@@ -960,7 +1070,8 @@
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
-                        <img src="{{ asset('public/images/whatsapp/mbr-13.jpg') }}" alt="AllergyTests.co.in" title="Conatct Allergens">
+                        <img src="{{ asset('public/images/whatsapp/mbr-13.jpg') }}" alt="AllergyTests.co.in"
+                            title="Conatct Allergens">
                     </div>
                 </div>
             </div>
@@ -974,7 +1085,8 @@
         <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(0, 0, 0);">
         </div>
         <div class="container">
-            <h2 class="mbr-fonts-style mbr-section-title align-center display-2">The Drugs that are included in our panel&nbsp;</h2>
+            <h2 class="mbr-fonts-style mbr-section-title align-center display-2">The Drugs that are included in our
+                panel&nbsp;</h2>
             <div class="underline align-center">
                 <div class="line"></div>
             </div>
@@ -988,7 +1100,8 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">AMOXYCILLIN <br>AMPICILLIN <br>ASPIRIN <br>BRUFEN <br>CEFIXIME <br>CIPROFLOXACIN <br>&nbsp;<br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">AMOXYCILLIN <br>AMPICILLIN <br>ASPIRIN <br>BRUFEN
+                        <br>CEFIXIME <br>CIPROFLOXACIN <br>&nbsp;<br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -997,7 +1110,8 @@
                     </div>
 
 
-                    <p class="mbr-text mbr-fonts-style display-5">CLOXACILLIN <br>CEFUROXIME <br>DICLOFENAC <br>DOXYCYCLIN <br>ERYTHROMYCIN <br><br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">CLOXACILLIN <br>CEFUROXIME <br>DICLOFENAC
+                        <br>DOXYCYCLIN <br>ERYTHROMYCIN <br><br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -1005,7 +1119,8 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">METAMIZOL&nbsp;<br>NIMESULIDE <br>NORFLOXACIN <br>PARACETAMOL <br>OFLOXACIN <br>&nbsp;<br><br>&nbsp;<br><br></p>
+                    <p class="mbr-text mbr-fonts-style display-5">METAMIZOL&nbsp;<br>NIMESULIDE <br>NORFLOXACIN
+                        <br>PARACETAMOL <br>OFLOXACIN <br>&nbsp;<br><br>&nbsp;<br><br></p>
                 </div>
 
                 <div class="col-md-6 row-item col-lg-3">
@@ -1013,7 +1128,8 @@
 
                     </div>
 
-                    <p class="mbr-text mbr-fonts-style display-5">OXACILLIN <br>PENICILLIN<br>SULPHA <br>TETRACYCLINE <br>TINIDAZOLE <br>XYLOCAIN</p>
+                    <p class="mbr-text mbr-fonts-style display-5">OXACILLIN <br>PENICILLIN<br>SULPHA <br>TETRACYCLINE
+                        <br>TINIDAZOLE <br>XYLOCAIN</p>
                 </div>
             </div>
         </div>
@@ -1029,23 +1145,36 @@
                     <div class="footer-section">
                         <!-- Quick Links Section -->
                         <div class="footer-item">
-                            <h2 class="footer-heading mb-4 off-white" style="color:white; font-size:1.2rem; font-family: 'Francois One', Arial;">Quick Links</h2>
+                            <h2 class="footer-heading mb-4 off-white"
+                                style="color:white; font-size:1.2rem; font-family: 'Francois One', Arial;">Quick Links
+                            </h2>
                             <ul class="list-unstyled">
-                                <li style="color:white;"><a href="{{ route('home') }}" style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">Home</a></li>
-                                <li style="color:white;"><a href="{{ route('about') }}" style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">About</a></li>
-                                <li style="color:white;"><a href="{{ route('contact-us') }}" style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">Contact Us</a></li>
-                                <li style="color:white;"><a href="{{ route('food-intolerance') }}" style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">Food Tolerance</a></li>
+                                <li style="color:white;"><a href="{{ route('home') }}"
+                                        style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">Home</a>
+                                </li>
+                                <li style="color:white;"><a href="{{ route('about') }}"
+                                        style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">About</a>
+                                </li>
+                                <li style="color:white;"><a href="{{ route('contact-us') }}"
+                                        style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">Contact
+                                        Us</a></li>
+                                <li style="color:white;"><a href="{{ route('food-intolerance') }}"
+                                        style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">Food
+                                        Tolerance</a></li>
 
                             </ul>
                         </div>
 
                         <!-- Contact Section -->
                         <div class="footer-item">
-                            <h2 class="footer-heading mb-4 off-white" style="color:white; font-size:1.2rem; font-family: 'Francois One', Arial;">Contact</h2>
+                            <h2 class="footer-heading mb-4 off-white"
+                                style="color:white; font-size:1.2rem; font-family: 'Francois One', Arial;">Contact</h2>
                             <ul class="list-unstyled">
                                 <li>
                                     <a href="tel:9746222668">
-                                        <p class="lead off-white" style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">+91 97462 22668</p>
+                                        <p class="lead off-white"
+                                            style="color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">
+                                            +91 97462 22668</p>
                                     </a>
                                 </li>
                             </ul>
@@ -1054,14 +1183,20 @@
                         <!-- Follow Us Section -->
                         <div class="footer-item follow-us">
                             <div>
-                                <h2 class="footer-heading mb-4 off-white" style="color:white; font-size:1.2rem; font-family: 'Francois One', Arial;">Follow Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-                                <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3" style="color:white;">
+                                <h2 class="footer-heading mb-4 off-white"
+                                    style="color:white; font-size:1.2rem; font-family: 'Francois One', Arial;">Follow
+                                    Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </h2>
+                                <a href="https://www.facebook.com/PreventiveCareLab" class="pl-0 pr-3"
+                                    style="color:white;">
                                     <span style="font-size: 2rem;" class="icon-facebook"></span>
                                 </a>
-                                <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3" style="color:white;">
+                                <a href="https://www.youtube.com/@proacthealthcareindia" class="pl-3 pr-3"
+                                    style="color:white;">
                                     <span style="font-size: 2rem;" class="icon-youtube"></span>
                                 </a>
-                                <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3" style="color:white;">
+                                <a href="https://www.instagram.com/proacthealthcare1/" class="pl-3 pr-3"
+                                    style="color:white;">
                                     <span style="font-size: 2rem;" class="icon-instagram"></span>
                                 </a>
                             </div>
@@ -1071,7 +1206,9 @@
             </div>
             <div class="row pt-5 mt-5">
                 <div class="col-12 text-md-center text-left">
-                    <p class="off-white" style="font-size: 0.75rem; color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
+                    <p class="off-white"
+                        style="font-size: 0.75rem; color:white; font-family: Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;">
+                        ©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
                 </div>
             </div>
         </div>
@@ -1123,8 +1260,8 @@
     <script src="{{ asset('public/js/typed.js') }}"></script>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
@@ -1169,7 +1306,11 @@
 
         // Enable submit button if reCAPTCHA is completed
         function enableSubmitBtn() {
-            document.getElementById('submitBtn11').disabled = false;
+            // Enable the submit button
+            const submitBtn = document.getElementById('submitBtn11');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('disabled-btn');
+            submitBtn.classList.add('active-btn');
         }
 
         // Initialize form validation
