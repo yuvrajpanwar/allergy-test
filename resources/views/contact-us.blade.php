@@ -579,41 +579,14 @@
     <script src="{{ asset('public/js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('public/js/jquery.animateNumber.min.js') }}"></script>
     <script src="{{ asset('public/js/jquery.waypoints.min.js') }}"></script>
-
     <script src="{{ asset('public/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('public/js/aos.js') }}"></script>
     <script src="{{ asset('public/js/rangeslider.min.js') }}"></script>
-
-
     <script src="{{ asset('public/js/typed.js') }}"></script>
-
-    {{-- <script>
-    var typed = new Typed('.typed-words', {
-      strings: ["pain", " stress", " fatigue"],
-      typeSpeed: 80,
-      backSpeed: 80,
-      backDelay: 4000,
-      startDelay: 1000,
-      loop: true,
-      showCursor: true
-    });
-  </script> --}}
-
     <script src="{{ asset('public/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-
     <script>
-        // Open Contact Form Modal
-        // Open Contact Form Modal
-        // Open Contact Form Modal
-        // Open Contact Form Modal
-        // Open Contact Form Modal
-        // Open Contact Form Modal
-        // Open Contact Form Modal
-        // Open Contact Form Modal
-        // Add these in your HTML <head> or before this script
-        // Open Contact Form Modal
-        // Open Contact Form Modal
+
         // Initialize reCAPTCHA
         function initializeRecaptcha() {
             if (typeof grecaptcha !== 'undefined') {
@@ -677,11 +650,12 @@
                     },
                     location: {
                         required: true
-                    },
-                    message: {
-                        required: true,
-                        minlength: 10
                     }
+                    //,
+                    // message: {
+                    //     required: true,
+                    //     minlength: 10
+                    // }
                 },
                 messages: {
                     name: {
@@ -700,11 +674,12 @@
                     },
                     location: {
                         required: "Please select a collection point"
-                    },
-                    message: {
-                        required: "Please enter your message",
-                        minlength: "Your message must be at least 10 characters long"
                     }
+                    //,
+                    // message: {
+                    //     required: "Please enter your message",
+                    //     minlength: "Your message must be at least 10 characters long"
+                    // }
                 },
                 submitHandler: function(form) {
                     if (grecaptcha.getResponse() === '') {

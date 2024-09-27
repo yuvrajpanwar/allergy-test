@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('public/fonts/icomoon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/magnific-popup.css') }}">
@@ -20,13 +21,31 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+
+.cid-toMW46ZFU7 .mbr-section-title {
+    padding-bottom: 2rem;
+    color: #3e4555;
+}
+.lg-fnt{
+    font-size: 3.5rem;
+
+}
+.md-fnt{
+    font-size
+}
+
+@media (max-width: 1199px) {
+  .cid-toMW46ZFU7 .mbr-figure img {
+    width: 100%;
+  }
+}
         h1,
         h2,
         h3,
         h4,
         h5,
         h6 {
-            font-family: 'Francois One', Arial;
+            font-family: 'Jost';
         }
         .site-navbar {
             position: sticky;
@@ -52,11 +71,12 @@
 
 
         .text-content {
+            font-family: 'Jost';
     text-align: right;
     font-size: 20px;
-    /* make bold */
+    line-height: 1.5;
     font-weight: bold;
-    
+
 }
 
 .text-content a {
@@ -71,15 +91,23 @@
 
 @media only screen and (max-width: 767px) {
     .text-content {
-        text-align: center;
+        text-align: left;
         margin-top: 10px;
-        font-size: 14px; /* Adjust font size for smaller displays */
+        font-size: 16px; /* Adjust font size for smaller displays */
+        line-height: 1.8;
+        font-weight: bold;
     }
-    
+
+    .text-content p {
+        display: flex;
+        flex-direction: column;
+    }
+
     .site-logo {
         text-align: center;
     }
 }
+
 
 
 
@@ -167,6 +195,25 @@
     
     </div>
     </div>
+
+    <section class="header2 cid-toMW46ZFU7" id="header2-1e">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="mbr-white col-lg-6">
+                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong>problems.<br>Take Action, Today.</h1>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">Itching, hives, sneezing, runny nose, wheezing, chest tightness, shortness of breath, cough, swollen lips etc. are signs of allergy.<br><em><br></em><div><em>If you have any of these symptoms, take an allergy test immediately and know the cause.</em></div></h3>
+                    <div class="mbr-section-btn"><a class="btn btn-md btn-primary md-fnt" type="submit" href="customer-reviews.html">See recent Reviews</a> <a class="btn btn-md btn-danger display-5" type="submit" href="faq.html">FAQ</a></div>
+                </div>
+                <div class="col-lg-6 align-left img-block">
+                    <div class="mbr-figure">
+                        <img src="assets/images/screenshot-2024-04-02-at-11.03.43-am.png" alt="Doctor-Allergy Tests" title="Allergy Test">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('public/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('public/js/popper.min.js') }}"></script>
