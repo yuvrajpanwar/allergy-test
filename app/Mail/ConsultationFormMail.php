@@ -5,14 +5,12 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactFormMail extends Mailable
+class ConsultationFormMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $data;
-
     /**
      * Create a new message instance.
      *
@@ -23,16 +21,10 @@ class ContactFormMail extends Mailable
         $this->data = $data;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
-        return $this->from($this->data['email'], $this->data['name'])
-            ->view('emails.contact')
-            ->subject('New Message Details')
+        return $this->subject('New Consultation Request')
+            ->view('emails.consultationForm')
             ->with('data', $this->data);
     }
 }

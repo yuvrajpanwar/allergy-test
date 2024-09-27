@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ConsultationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Models\Consultation;
 
 Route::post('/send-contact-form', [ContactController::class, 'sendContactForm'])->name('send-contact-form');
 
@@ -67,4 +69,7 @@ route::get('/allergypanel', [App\Http\Controllers\PageController::class,'allergy
 
 //route for food intolerance page
 // route::get('/food-intolerance', [App\Http\Controllers\PageController::class,'foodintolerance'])->name('foodintolerance');
+
+//for consultation
+Route::post('/send-consultation-form', [ConsultationController::class, 'sendConsultationForm'])->name('send-consultation-form');
 
