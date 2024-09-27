@@ -22,6 +22,7 @@ class ConsultationController extends Controller
         $data = $request->all();
 
         // Send an email with the consultation data
+        //Mail::to('syedasgarahmed11@gmail.com')->send(new ConsultationFormMail($data));
         Mail::to('admin@preventivecarelab.com')->send(new ConsultationFormMail($data));
 
         // Redirect with a success message

@@ -1123,11 +1123,12 @@
                     },
                     location: {
                         required: true
-                    },
-                    message: {
-                        required: true,
-                        minlength: 10
                     }
+                    //,
+                    // message: {
+                    //     required: true,
+                    //     minlength: 10
+                    // }
                 },
                 messages: {
                     name: {
@@ -1146,11 +1147,12 @@
                     },
                     location: {
                         required: "Please select a collection point"
-                    },
-                    message: {
-                        required: "Please enter your message",
-                        minlength: "Your message must be at least 10 characters long"
                     }
+                    //,
+                    // message: {
+                    //     required: "Please enter your message",
+                    //     minlength: "Your message must be at least 10 characters long"
+                    // }
                 },
                 submitHandler: function(form) {
                     if (grecaptcha.getResponse() === '') {
