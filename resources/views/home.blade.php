@@ -21,6 +21,102 @@
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
 
     <style>
+        /* Popup Container */
+        .popup-container-22 {
+            display: none;
+            /* Hidden by default */
+            position: absolute;
+            /* Adjust the position relative to its parent */
+            top: 100%;
+            /* Position right below the trigger link */
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-start;
+            /* Aligns the popup to the starting point of the viewport */
+        }
+
+        /* Popup Content */
+        .popup-content-22 {
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            position: relative;
+            z-index: 1001;
+            margin-left: auto;
+            margin-top: 20px;
+        }
+
+        /* Close Button */
+        .close-btn-22 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Input Styling */
+        .popup-input-22 {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Submit Button */
+        .popup-btn-22 {
+            background-color: #016426;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Popup Title */
+        .popup-title-22 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .popup-content-22 {
+                margin-right: auto;
+
+                width: 90%;
+                padding: 15px;
+                /* top: 20px; */
+                /* left: 20px; */
+            }
+
+            .popup-input-22 {}
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /* Initial grey state */
         .disabled-btn {
             background-color: grey;
@@ -149,7 +245,7 @@
             /* Adjust scaling for better fit */
             transform-origin: 0 0;
             /* Adjust scaling origin */
-            overflow: hidden;
+            /* overflow: hidden; */
             /* Hide any overflow */
             z-index: 10000;
             /* Ensure it's on top */
@@ -186,19 +282,6 @@
         form button:hover {
             background-color: #0056b3;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         .footer-section {
             display: flex;
@@ -508,16 +591,6 @@
 
 </header>
 
-
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
-<!-- Icons Section -->
 <!-- Icons Section -->
 <div class="fixed-icons11">
     <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
@@ -621,41 +694,6 @@
 </div>
 
 <!-- Include reCAPTCHA Script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<!-- Include reCAPTCHA Script -->
-<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-
-
-<!-- Include reCAPTCHA Script -->
-<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-
-
-<!-- Include reCAPTCHA Script -->
-<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
- -->
-
-
-
-
-
-
-
-
-<!-- // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Add these in your HTML  or before this script -->
-
-
-
 
 <div class="site-section pt-0" style="padding-bottom:0;">
     <div class="container">
@@ -709,36 +747,16 @@
 
 
 
+{{-- //fro free consultation --}}
 
-
+<!-- Book a Free Consultation Section -->
 <div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
-    <!-- Background image -->
+    <!-- Background image and white overlay -->
     <div
-        style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        z-index: -1;
-    ">
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; background-position: center; z-index: -1;">
     </div>
-
-    <!-- White overlay -->
     <div
-        style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
-        z-index: -1;
-    ">
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.65); z-index: -1;">
     </div>
 
     <div class="container" style="position: relative; z-index: 1;">
@@ -775,18 +793,114 @@
                     </a>
                 </div>
 
-                <!-- Book Appointment Link -->
+                <!-- Book Consultation Popup Trigger -->
                 <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
-                    <a href="{{ route('contact-us') }}" style="text-decoration: none;">
+                    <a href="javascript:void(0);" class="open-consult-22" onclick="openConsultForm()"
+                        style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
                             <p class="lead m-0"
-                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book
-                                an appointment</p>
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book a
+                                free Consultation!</p>
                         </div>
                     </a>
                 </div>
+            </div>
+        </div>
+        <!-- Floating Popup -->
+        <div class="popup-container-22" id="ConsultForm22">
+            <div class="popup-content-22">
+                <span class="close-btn-22" onclick="closeConsultForm(event)">&times;</span>
+                <h4 class="popup-title-22">Book a Free Consultation</h4>
 
+                <form id="consultationForm22" action="{{ route('send-consultation-form') }}"
+                    name="consultationForm22" method="POST">
+                    @csrf
+                    @if (session('success'))
+                        {{-- add code to open ConsultForm22 model --}}
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Open the consultation modal when a success message is present
+                                var popup = document.getElementById("ConsultForm22");
+                                popup.style.display = "block";
+                            });
+                        </script>
+
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>{{ session('success') }}</strong>
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <!-- Name input -->
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            {{-- <label class="text-black" for="name22"></label> --}}
+                            <input type="text" id="name22" name="name" placeholder="Your Name"
+                                class="form-control" placeholder="Your Name">
+                        </div>
+                    </div>
+
+                    <!-- Phone Number input -->
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
+                            <input type="tel" id="phone_number22" name="phone_number" placeholder="Phone Number"
+                                class="form-control" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <!-- Collection Point selection -->
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            {{-- <label class="text-black" for="location22">Choose Service Location</label> --}}
+                            <select name="location" id="location22" aria-placeholder="Choose Service Location"
+                                class="form-control" required>
+                                <option value="" selected disabled>---- Select Service Location ----</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Kochi">Kochi</option>
+                                <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Google reCAPTCHA -->
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
+                            data-callback="enableConsultbtn"></div>
+                        <span class="help-block" id="recaptcha-error22" style="display: none;">
+                            <strong class="error">Please verify that you are not a robot.</strong>
+                        </span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="row form-group mt-2">
+                        <div class="col-md-12">
+                            <button disabled id="consultsub22" type="submit"
+                                class="btn btn-pill btn-md text-white disabled-btn">
+                                Call me back
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -794,10 +908,11 @@
 
 
 
+
+
 <div class="block-services-1 py-5">
     <div class="container">
         <div class="row">
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
@@ -806,10 +921,8 @@
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">25+ Years of
                             Expertise in Allergy
                             Testing</a></h3>
-
                 </div>
             </div>
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
@@ -818,10 +931,8 @@
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">180+ Tests with
                             a Single Blood
                             Specimen </a></h3>
-
                 </div>
             </div>
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
@@ -830,11 +941,8 @@
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">ISO Certified &
                             NABL Accredited</a>
                     </h3>
-
-
                 </div>
             </div>
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="#" class="thumbnail-link d-block mb-4"><img
@@ -843,33 +951,11 @@
                     <h3 class="block-service-1-heading mb-3"><a href="#" style="color: #666666">Presence in 7
                             locations in
                             India</a></h3>
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
-<!-- <div class="block-half-content-1 d-block d-lg-flex mt-5">
-
-         <div class="block-half-content-text bg-light w-100">
-            <div class="block-half-content-text-inner">
-                <h1 class="block-half-content-heading mb-4 text-center"
-                    style="    color: #666666;
-                    font-family: 'Francois One', Arial;
-                    font-weight: 700;
-                    vertical-align: baseline;font-size: 25.0pt;
-                    word-wrap: none;">
-
-                    You don’t have to suffer Allergies
-                    or Food Intolerance anymore!</h1>
-
-            </div>
-
-
-        </div>
-    </div> -->
 <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto;">
     <!-- Background layer with opacity -->
     <div
@@ -877,7 +963,6 @@
         <!-- Semi-transparent overlay -->
         <div style="width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.56);"></div>
     </div>
-
     <!-- Content Layer (Text and Image) -->
     <div style="position: relative; z-index: 1; padding: 0px;">
         <div class="container">
@@ -904,15 +989,8 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 </div>
 </div>
-
-
 <div class="site-section">
     <div class="container">
         <div class="row mb-5">
@@ -923,7 +1001,6 @@
     </div>
     <div class="container">
         <div class="row">
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="allergypanel#features1-26" class="thumbnail-link d-block mb-4"><img
@@ -935,7 +1012,6 @@
 
                 </div>
             </div>
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="allergypanel#header2-28" class="thumbnail-link d-block mb-4"><img
@@ -946,7 +1022,6 @@
 
                 </div>
             </div>
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <a href="allergypanel#header2-2a" class="thumbnail-link d-block mb-4"><img
@@ -955,8 +1030,6 @@
                     <h3 class="block-service-1-heading mb-3"><a href="allergypanel#header2-2a"
                             style="color: #666666;font-weight:700">INHALANTS</a>
                     </h3>
-
-
                 </div>
             </div>
 
@@ -973,7 +1046,6 @@
         </div>
     </div>
 </div>
-
 <div class="mt-5 block-cta-1" style="position: relative; width: 100%; height: auto; padding: 10px;">
     <!-- Background layer with opacity -->
     <div
@@ -981,7 +1053,6 @@
         <!-- Semi-transparent white overlay -->
         <div style="width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85);"></div>
     </div>
-
     <!-- Content Layer (Text and Image) -->
     <div style="position: relative; z-index: 1; padding: 20px;">
         <div class="container">
@@ -1013,12 +1084,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
 <div class="site-section">
     <div class="container">
         <div class="row mb-5">
@@ -1048,8 +1113,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'hives' route -->
@@ -1064,7 +1127,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'sneeze' route -->
@@ -1079,8 +1141,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'running_nose' route -->
@@ -1095,8 +1155,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'wheezing' route -->
@@ -1111,8 +1169,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'swollen_lips' route -->
@@ -1127,8 +1183,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'shortness_of_breath' route -->
@@ -1143,8 +1197,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'chest_tightness' route -->
@@ -1159,7 +1211,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'cough' route -->
@@ -1174,8 +1225,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'swollen-eyes' route -->
@@ -1190,8 +1239,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'skin-rashes' route -->
@@ -1206,8 +1253,6 @@
                     </a>
                 </div>
             </div>
-
-
             <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
                 <div class="block-service-1-card">
                     <!-- Link pointing to the 'swollen-face' route -->
@@ -1222,29 +1267,12 @@
                     </a>
                 </div>
             </div>
-
-
-            <!-- Add this script for onclick interaction and animation -->
-            <!-- <script>
-                function handleClick() {
-                    // Navigation logic (change URL or load a new page)
-                    window.location.href = 'file://Desktop%20-%2011'; // Change the path to your desired navigation destination.
-
-                    // Smart animate logic (fade-in effect)
-                    const element = document.querySelector('.block-service-1-card');
-                    element.style.transition = 'opacity 300ms ease-out';
-                    element.style.opacity = '1'; // Fade in by setting opacity to 1
-                }
-            </script> -->
-
         </div>
 
 
     </div>
 </div>
 </div>
-
-
 
 <div class="block-services-1 py-5 bg-light">
     <div class="container mb-1">
@@ -1288,54 +1316,11 @@
 
                 </div>
             </div>
-            <!-- <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-                    <div class="block-service-1-card">
-                        <a href="#" class="thumbnail-link d-block mb-4"><img
-                                src="{{ asset('public/images/whatsapp/f1.jpg') }}" alt="Image"
-                                class="img-fluid"></a>
-                    </div>
-                </div> -->
-
-            <!-- <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-                    <div class="block-service-1-card">
-                        <a href="#" class="thumbnail-link d-block mb-4"><img
-                                src="{{ asset('public/images/whatsapp/f2.jpg') }}" alt="Image"
-                                class="img-fluid"></a>
-                    </div>
-                </div> -->
-
-
-
-            <!-- <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-                    <div class="block-service-1-card">
-                        <a href="#" class="thumbnail-link d-block mb-4"><img
-                                src="{{ asset('public/images/whatsapp/f4.jpg') }}" alt="Image"
-                                class="img-fluid"></a>
-                    </div>
-                </div> -->
-
-
-
         </div>
-        <!-- <div class="row mt-5">
-
-                <div class="mb-4 mb-lg-0 col-sm-6 col-md-6 col-lg-3">
-                    <div class="block-service-1-card">
-                        <a href="#" class="thumbnail-link d-block mb-4"><img
-                                src="{{ asset('public/images/whatsapp/f5.jpg') }}" alt="Image"
-                                class="img-fluid"></a>
-                    </div>
-                </div> -->
-
-
-
-
 
     </div>
 </div>
 </div>
-
-
 
 <div class="mt-5 block-cta-1" style="background: red">
     <div class="container">
@@ -1357,10 +1342,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 <div class="site-section bg-light mb-3">
     <div class="container">
@@ -1541,8 +1522,6 @@
     </div>
 </div>
 
-
-
 {{-- our location  --}}
 <div class="site-section block-services-1"
     style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png');">
@@ -1672,12 +1651,9 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
-
 
 <footer class="site-footer off-white" style="background: #000000">
     <div class="container">
@@ -1735,14 +1711,9 @@
         </div>
     </div>
 </footer>
-
-
-
-
 </div>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
-{{-- <script src="{{ asset('public/js/jquery-migrate-3.0.1.min.js') }}"></script> --}}
 <script src="{{ asset('public/js/jquery-ui.js') }}"></script>
 <script src="{{ asset('public/js/popper.min.js') }}"></script>
 <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
@@ -1752,42 +1723,14 @@
 <script src="{{ asset('public/js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('public/js/jquery.animateNumber.min.js') }}"></script>
 <script src="{{ asset('public/js/jquery.waypoints.min.js') }}"></script>
-
 <script src="{{ asset('public/js/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('public/js/aos.js') }}"></script>
 <script src="{{ asset('public/js/rangeslider.min.js') }}"></script>
-
-
 <script src="{{ asset('public/js/typed.js') }}"></script>
-
-{{-- <script>
-    var typed = new Typed('.typed-words', {
-      strings: ["pain", " stress", " fatigue"],
-      typeSpeed: 80,
-      backSpeed: 80,
-      backDelay: 4000,
-      startDelay: 1000,
-      loop: true,
-      showCursor: true
-    });
-  </script> --}}
-
 <script src="{{ asset('public/js/main.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
 <script>
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Add these in your HTML <head> or before this script
-    // Open Contact Form Modal
-    // Open Contact Form Modal
-    // Initialize reCAPTCHA
     function initializeRecaptcha() {
         if (typeof grecaptcha !== 'undefined') {
             grecaptcha.render('recaptcha-container11', {
@@ -1804,6 +1747,17 @@
             submitHandler: function(form) {
                 if (grecaptcha.getResponse() === '') {
                     document.getElementById('recaptcha-error11').style.display = 'block';
+                    return false;
+                } else {
+                    form.submit();
+                }
+            }
+        });
+        $('#consultationForm22').validate({
+            // Validation rules
+            submitHandler: function(form) {
+                if (grecaptcha.getResponse() === '') {
+                    document.getElementById('recaptcha-error22').style.display = 'block';
                     return false;
                 } else {
                     form.submit();
@@ -1897,6 +1851,104 @@
             grecaptcha.render();
         });
     });
+    // Initialize reCAPTCHA for both forms
+    function initializeRecaptcha() {
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.render('recaptcha-container11', {
+                'sitekey': '6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY'
+            });
+        }
+    }
+</script>
+<script>
+    // Call the initialize function when the document is ready
+    $(document).ready(function() {
+        initializeRecaptcha();
+
+        // Validate #consultationForm22 form
+        $('#consultationForm22').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone_number: {
+                    required: true,
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 15
+                },
+                location: {
+                    required: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Your name must consist of at least 2 characters"
+                },
+                phone_number: {
+                    required: "Please enter your phone number",
+                    digits: "Please enter a valid phone number",
+                    minlength: "Your phone number must be at least 10 digits",
+                    maxlength: "Your phone number cannot exceed 15 digits"
+                },
+                location: {
+                    required: "Please select a service location"
+                }
+            },
+            submitHandler: function(form) {
+                if (grecaptcha.getResponse() === '') {
+                    document.getElementById('recaptcha-error22').style.display = 'block';
+                    return false;
+                } else {
+                    form.submit();
+                }
+            }
+        });
+
+        // Handle modal for consultation form
+        var consultpopup = document.getElementById("ConsultForm22");
+        var cobtn = document.querySelector(".open-consult-22");
+        var consclose = document.getElementsByClassName("close-btn-22")[0];
+
+        // Open the modal when the button is clicked
+        cobtn.onclick = function() {
+            consultpopup.style.display = "block";
+        };
+
+        // Close the modal when the span (x) is clicked
+        consclose.onclick = function() {
+            consultpopup.style.display = "none";
+        };
+
+        // Close the modal when clicked outside of it
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                consultpopup.style.display = "none";
+            }
+        };
+    });
+
+    // Enable the submit button when reCAPTCHA is completed
+    function enableConsultbtn() {
+        const submitBtn = document.getElementById('consultsub22');
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('disabled-btn');
+        submitBtn.classList.add('active-btn');
+    }
+
+    // Close Contact Form Modal when clicked outside the modal content or on the close button
+    function closeConsultForm(event) {
+        const modal = document.getElementById('ConsultForm22');
+        if (event.target === modal || event.type === 'click') {
+            modal.style.display = 'none';
+        }
+    }
+
+    function openConsultForm() {
+        document.getElementById('ConsultForm22').style.display = 'block';
+    }
 </script>
 
 <!-- Google Tag Manager (noscript) -->

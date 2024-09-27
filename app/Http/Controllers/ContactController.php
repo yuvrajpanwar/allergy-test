@@ -24,7 +24,7 @@ class ContactController extends Controller
         //Mail::to('yogipanwar173@gmail.com')->send(new ContactFormMail($data));
         Mail::to('admin@preventivecarelab.com')->send(new ContactFormMail($data));
 
-       
+
 
         return redirect('/success')->with('success', 'Message sent successfully!')->with('data', $data);
     }
