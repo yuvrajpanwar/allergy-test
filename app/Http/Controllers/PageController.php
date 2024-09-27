@@ -94,5 +94,9 @@ public function foodintolerance()
     return view('food-intolerance');
 
 }
+public function landing1()
+{
+    return view('landing1');
+}
 
 }

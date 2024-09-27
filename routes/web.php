@@ -3,6 +3,7 @@
 use App\Http\Controllers\ConsultationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PageController;
 use App\Models\Consultation;
 
 Route::post('/send-contact-form', [ContactController::class, 'sendContactForm'])->name('send-contact-form');
@@ -73,3 +74,5 @@ route::get('/allergypanel', [App\Http\Controllers\PageController::class,'allergy
 //for consultation
 Route::post('/send-consultation-form', [ConsultationController::class, 'sendConsultationForm'])->name('send-consultation-form');
 
+//for landing1 page
+Route::get('/landing1', [App\Http\Controllers\PageController::class,'landing1'])->name('landing1');
