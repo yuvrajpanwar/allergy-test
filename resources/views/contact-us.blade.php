@@ -415,7 +415,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="text-black" for="phone_number">Phone Number</label>
-                                <input type="text" id="phone_number" name="phone_number" class="form-control">
+                                <input type="text" id="phone_number" minlength="10" maxlength="15" name="phone_number" class="form-control">
                             </div>
                         </div>
 
