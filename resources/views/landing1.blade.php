@@ -21,6 +21,87 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+/* Style for the additional info text below the form */
+.info-text {
+    margin-top: 1.5rem; /* Add some space between the form and text */
+    font-size: 1.1rem;  /* Medium text size */
+    color: #333;        /* Set the color */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 767px) {
+    .info-text {
+        font-size: 1rem; /* Slightly smaller text on small screens */
+        text-align: center; /* Center text for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .info-text {
+        font-size: 0.9rem; /* Smaller text for very small screens */
+    }
+}
+
+
+
+
+.img-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    position: relative;
+    text-align: left;
+    margin-bottom: 5px; /* Add space below each image */
+}
+
+.img-container img {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 5px; /* Add space above each image */
+}
+
+.img-text {
+    position: absolute;
+    bottom: -15px;
+    left: 0px;
+    color: white;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional for better text visibility */
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* Responsive adjustments for small displays */
+@media (max-width: 767px) {
+    .img-text {
+        font-size: 12px; /* Smaller font size on small screens */
+        /* bottom: -10px;   Adjust bottom position */
+        padding: 1px 3px; /* Smaller padding on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .img-text {
+        font-size: 10px; /* Even smaller font size for very small screens */
+        /* bottom: -5px;    Further adjust bottom position */
+        padding: 0px 0px !important; /* More compact padding */
+    }
+}
+
+
+
+/* Mobile view: 3 images per row */
+@media (max-width: 767px) {
+    .col-4 {
+        width: 33.33%;
+    }
+}
+
+
+
+.cid-toMW46ZFU7 .mbr-figure img {
+    width: 100%;
+    display: block;
+}
 
 .cid-toMW46ZFU7 .mbr-section-title {
     padding-bottom: 2rem;
@@ -28,10 +109,13 @@
 }
 .lg-fnt{
     font-size: 3.5rem;
+    word-wrap: break-word;
+    font-family: 'Francois One', sans-serif;
 
 }
 .md-fnt{
-    font-size
+    font-size: 1.4rem;
+    font-family: 'Francois One', sans-serif;
 }
 
 @media (max-width: 1199px) {
@@ -202,16 +286,129 @@
                 <div class="mbr-white col-lg-6">
                     <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong>problems.<br>Take Action, Today.</h1>
                     <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">Itching, hives, sneezing, runny nose, wheezing, chest tightness, shortness of breath, cough, swollen lips etc. are signs of allergy.<br><em><br></em><div><em>If you have any of these symptoms, take an allergy test immediately and know the cause.</em></div></h3>
-                    <div class="mbr-section-btn"><a class="btn btn-md btn-primary md-fnt" type="submit" href="customer-reviews.html">See recent Reviews</a> <a class="btn btn-md btn-danger display-5" type="submit" href="faq.html">FAQ</a></div>
+                    <div class="mbr-section-btn"><a class="btn btn-md btn-primary md-fnt" type="submit" style="background-color: #3399ff; padding: 6px 6px; border-radius: 4px;" href="tel:+919746222668">Call Now!</a> </div>
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
-                        <img src="assets/images/screenshot-2024-04-02-at-11.03.43-am.png" alt="Doctor-Allergy Tests" title="Allergy Test">
+                        <img src="{{asset('public/images/whatsapp/frontbann.png')}}" alt="Doctor-Allergy Tests" title="Allergy Test">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="container">
+        <!-- Form with fields: name, phone number, service location, and a button -->
+        <div class="row">
+            <div class="col-lg-6 col-md-12" style="margin-top: 2rem;">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="">Select Service Location</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Kochi">Kochi</option>
+                            <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Get a Call Back</button>
+                </form>
+                
+                <!-- Additional text below the form -->
+                <div class="info-text">
+                    <p ><h1 class="mbr-section-title mbr-fonts-style lg-fnt">25+ years in Allergy Testing in India.</p>
+                    <p ><h4 class="mbr-section-title mbr-fonts-style md-fnt"><i>NABL and ISO Certified operations.</h4></p>
+                </div>
+            </div>
+            <!-- Images section with text on bottom left -->
+            <div class="col-lg-6 col-md-12" >
+                <div class="row" style="margin-top: 2rem;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/itching2.png')}}" class="img-fluid" alt="Itching">
+                            <p class="img-text">Itching</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png')}}" class="img-fluid" alt="Hives">
+                            <p class="img-text">Hives</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256%203.png')}}" class="img-fluid" alt="Sneezing">
+                            <p class="img-text">Sneezing</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png')}}" class="img-fluid" alt="Runny nose">
+                            <p class="img-text">Runny nose</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png')}}" class="img-fluid" alt="Wheezing">
+                            <p class="img-text">Wheezing</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256_2.png')}}" class="img-fluid" alt="Swollen lips">
+                            <p class="img-text">Swollen lips</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256_3.png')}}" class="img-fluid" alt="Shortness of breath">
+                            <p class="img-text">Shortness of breath</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png')}}" class="img-fluid" alt="Chest tightness">
+                            <p class="img-text">Chest tightness</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png')}}" class="img-fluid" alt="Cough">
+                            <p class="img-text">Cough</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256%202.png')}}" class="img-fluid" alt="Swollen eyes">
+                            <p class="img-text">Swollen eyes</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256%206.png')}}" class="img-fluid" alt="Skin rashes">
+                            <p class="img-text">Skin rashes</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
+                        <div class="img-container">
+                            <img src="{{asset('public/images/whatsapp/skin-rashes-480x320-384x256%205.png')}}" class="img-fluid" alt="Face swelling">
+                            <p class="img-text">Face swelling</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
 
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>

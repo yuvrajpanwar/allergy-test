@@ -609,17 +609,17 @@
             @csrf
             @if (session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button> --}}
                     <strong>{{ session('success') }}</strong>
                 </div>
             @endif
             @if ($errors->any())
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button> --}}
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -632,11 +632,11 @@
             <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                     <label class="text-black" for="name">Name</label>
-                    <input type="text" id="name11" name="name" class="form-control">
+                    <input type="text" id="name11" name="name"  minlength="2" class="form-control">
                 </div>
                 <div class="col-md-6">
                     <label class="text-black" for="phone_number">Phone Number</label>
-                    <input type="text" id="phone_number11" name="phone_number" class="form-control">
+                    <input type="text" id="phone_number11" name="phone_number" class="form-control" required>
                 </div>
             </div>
 
@@ -816,23 +816,46 @@
                 <form id="consultationForm22" action="{{ route('send-consultation-form') }}"
                     name="consultationForm22" method="POST">
                     @csrf
+
                     @if (session('success'))
-                        {{-- add code to open ConsultForm22 model --}}
+                        {{-- add code to open ConsultForm22 modal --}}
                         <script>
                             document.addEventListener('DOMContentLoaded', function() {
                                 // Open the consultation modal when a success message is present
                                 var popup = document.getElementById("ConsultForm22");
-                                popup.style.display = "block";
+                                var name = document.getElementById("name22");
+                                var phonenumber = document.getElementById("phone_number22");
+                                var location = document.getElementById("location22");
+                                var consultsub = document.getElementById("consultsub22");
+                                var successMessage = document.getElementById("success-message");
+                                var recaptcha = document.querySelector(".smallrecap"); // Target reCAPTCHA
+
+                                // Open the modal
+                                if (popup) {
+                                    popup.style.display = "block"; // Show the modal
+
+                                    // Hide form elements
+                                    if (name) name.style.display = "none";
+                                    if (phonenumber) phonenumber.style.display = "none";
+                                    if (location) location.style.display = "none";
+                                    if (consultsub) consultsub.style.display = "none";
+                                    if (recaptcha) recaptcha.style.display = "none"; // Hide reCAPTCHA
+
+                                    // Show success message
+                                    if (successMessage) successMessage.style.display = "block";
+                                }
                             });
                         </script>
 
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button> --}}
                             <strong>{{ session('success') }}</strong>
                         </div>
                     @endif
+
+
                     @if ($errors->any())
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -850,8 +873,8 @@
                     <div class="row form-group">
                         <div class="col-md-12 mb-3 mb-md-0">
                             {{-- <label class="text-black" for="name22"></label> --}}
-                            <input type="text" id="name22" name="name" placeholder="Your Name"
-                                class="form-control" placeholder="Your Name">
+                            <input type="text" id="name22" name="name22"  minlength="2" placeholder="Your Name"
+                                class="form-control" placeholder="Your Name" required>
                         </div>
                     </div>
 
@@ -859,7 +882,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
-                            <input type="tel" id="phone_number22" name="phone_number" placeholder="Phone Number"
+                            <input type="tel" id="phone_number22" name="phone_number22" placeholder="Phone Number"
                                 class="form-control" placeholder="Phone Number" required>
                         </div>
                     </div>
@@ -868,7 +891,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             {{-- <label class="text-black" for="location22">Choose Service Location</label> --}}
-                            <select name="location" id="location22" aria-placeholder="Choose Service Location"
+                            <select name="location22" id="location22" aria-placeholder="Choose Service Location"
                                 class="form-control" required>
                                 <option value="" selected disabled>---- Select Service Location ----</option>
                                 <option value="Mumbai">Mumbai</option>
@@ -884,7 +907,7 @@
 
                     <!-- Google reCAPTCHA -->
                     <div class="form-group">
-                        <div class="g-recaptcha" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
+                        <div class="g-recaptcha smallrecap" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
                             data-callback="enableConsultbtn"></div>
                         <span class="help-block" id="recaptcha-error22" style="display: none;">
                             <strong class="error">Please verify that you are not a robot.</strong>
@@ -1870,32 +1893,32 @@
         // Validate #consultationForm22 form
         $('#consultationForm22').validate({
             rules: {
-                name: {
+                name22: {
                     required: true,
                     minlength: 2
                 },
-                phone_number: {
+                phone_number22: {
                     required: true,
                     digits: true,
                     minlength: 10,
                     maxlength: 15
                 },
-                location: {
+                location22: {
                     required: true
                 }
             },
             messages: {
-                name: {
+                name22: {
                     required: "Please enter your name",
                     minlength: "Your name must consist of at least 2 characters"
                 },
-                phone_number: {
+                phone_number22: {
                     required: "Please enter your phone number",
                     digits: "Please enter a valid phone number",
                     minlength: "Your phone number must be at least 10 digits",
                     maxlength: "Your phone number cannot exceed 15 digits"
                 },
-                location: {
+                location22: {
                     required: "Please select a service location"
                 }
             },
