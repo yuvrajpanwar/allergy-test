@@ -23,8 +23,12 @@ class ConsultationFormMail extends Mailable
 
     public function build()
     {
-        return $this->subject('New Consultation Request')
+        return $this->from('default@example.com', $this->data['name22']) // Use a default email with dynamic name
+            ->subject('New Consultation Request: ' . $this->data['name22']) // Subject with the sender's name
             ->view('emails.consultationForm')
             ->with('data', $this->data);
     }
+    
+    
+    
 }
