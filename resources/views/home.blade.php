@@ -725,7 +725,7 @@
                 </div>
                 <div class="col-md-6">
                     <label class="text-black" for="phone_number">Phone Number</label>
-                    <input type="text" id="phone_number11" name="phone_number" minlength="10"
+                    <input type="number" id="phone_number11" name="phone_number" minlength="10"
                         maxlength="15"class="form-control" required>
                 </div>
             </div>
@@ -966,9 +966,9 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
-                            <input type="tel" id="phone_number22" name="phone_number22"
-                                placeholder="Phone Number" minlength="10" maxlength="15" class="form-control"
-                                placeholder="Phone Number" required>
+                            <input type="tel" required id="phone_number22" name="phone_number22"
+                                placeholder="Phone Number" minlength="10" maxlength="15" 
+                                placeholder="Phone Number"  class="form-control">
                         </div>
                     </div>
 
