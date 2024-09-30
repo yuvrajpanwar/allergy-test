@@ -21,6 +21,81 @@
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
 
     <style>
+        #flash-message {
+            position: fixed;
+            z-index: 9999;
+            background-color: #3399ff;
+            /* Solid green background */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            /* Optional shadow for better visibility */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Content inside the flash message */
+        .flash-message-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Space between icon and text */
+        }
+
+        .flash-icon {
+            font-size: 20px;
+            /* Icon size */
+        }
+
+        .flash-text {
+            font-size: 16px;
+            white-space: nowrap;
+            /* Prevent text from wrapping */
+        }
+
+        @media (max-width: 768px) {
+            .flash-text {
+                font-size: 14px;
+                /* Smaller font size for mobile screens */
+                white-space: normal;
+                /* Allow text to wrap on smaller screens */
+            }
+        }
+
+
+        /* Flash message position for large screens */
+        @media (min-width: 768px) {
+            #flash-message {
+                top: 20px;
+                right: 20px;
+                word-wrap: break-word;
+
+            }
+        }
+
+        /* Flash message position for small screens (mobile) */
+        @media (max-width: 767px) {
+            #flash-message {
+                top: 20px;
+                right: 10px;
+                left: 10px;
+                /* Ensures the flash message stays within the viewport on mobile */
+                max-width: calc(100% - 20px);
+                /* Maintain margin on both sides */
+                word-wrap: break-word;
+
+            }
+        }
+
+
+
+
+
+
         /* Popup Container */
         .popup-container-22 {
             display: none;
@@ -53,6 +128,20 @@
 
         /* Close Button */
         .close-btn-22 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .close-btn-23 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .close-btn-24 {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -632,11 +721,12 @@
             <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                     <label class="text-black" for="name">Name</label>
-                    <input type="text" id="name11" name="name"  minlength="2" class="form-control">
+                    <input type="text" id="name11" name="name" minlength="2" class="form-control">
                 </div>
                 <div class="col-md-6">
                     <label class="text-black" for="phone_number">Phone Number</label>
-                    <input type="text" id="phone_number11" name="phone_number"  minlength="10" maxlength="15"class="form-control" required>
+                    <input type="text" id="phone_number11" name="phone_number" minlength="10"
+                        maxlength="15"class="form-control" required>
                 </div>
             </div>
 
@@ -795,7 +885,7 @@
 
                 <!-- Book Consultation Popup Trigger -->
                 <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
-                    <a href="javascript:void(0);" class="open-consult-22" onclick="openConsultForm()"
+                    <a href="javascript:void(0);" class="open-consult-22" onclick="openConsultForm('ConsultForm22')"
                         style="text-decoration: none;">
                         <div class="d-flex quick-info-2 align-items-center">
                             <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
@@ -821,36 +911,30 @@
                         {{-- add code to open ConsultForm22 modal --}}
                         <script>
                             document.addEventListener('DOMContentLoaded', function() {
-                                // Open the consultation modal when a success message is present
+                                // Close the modal after success
                                 var popup = document.getElementById("ConsultForm22");
-                                var name = document.getElementById("name22");
-                                var phonenumber = document.getElementById("phone_number22");
-                                var location = document.getElementById("location22");
-                                var consultsub = document.getElementById("consultsub22");
-                                var successMessage = document.getElementById("success-message");
-                                var recaptcha = document.querySelector(".smallrecap"); // Target reCAPTCHA
-
-                                // Open the modal
                                 if (popup) {
-                                    popup.style.display = "block"; // Show the modal
-
-                                    // Hide form elements
-                                    if (name) name.style.display = "none";
-                                    if (phonenumber) phonenumber.style.display = "none";
-                                    if (location) location.style.display = "none";
-                                    if (consultsub) consultsub.style.display = "none";
-                                    if (recaptcha) recaptcha.style.display = "none"; // Hide reCAPTCHA
-
-                                    // Show success message
-                                    if (successMessage) successMessage.style.display = "block";
+                                    popup.style.display = "none"; // Close the modal
                                 }
+
+                                // Flash message container
+                                var flashMessage = document.createElement('div');
+                                flashMessage.id = "flash-message";
+                                flashMessage.innerHTML = `
+                                                        <div class="flash-message-content">
+                                                            <span class="flash-icon">&#10003;</span>  <!-- Success icon -->
+                                                            <span class="flash-text">{{ session('success') }}</span>
+                                                        </div>
+                                                    `;
+                                document.body.appendChild(flashMessage);
+
+                                // Show flash message
+                                setTimeout(function() {
+                                    flashMessage.style.display = 'none'; // Auto close after 3 seconds
+                                }, 6000);
                             });
                         </script>
-
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button> --}}
                             <strong>{{ session('success') }}</strong>
                         </div>
                     @endif
@@ -873,8 +957,8 @@
                     <div class="row form-group">
                         <div class="col-md-12 mb-3 mb-md-0">
                             {{-- <label class="text-black" for="name22"></label> --}}
-                            <input type="text" id="name22" name="name22"  minlength="2" placeholder="Your Name"
-                                class="form-control" placeholder="Your Name" required>
+                            <input type="text" id="name22" name="name22" minlength="2"
+                                placeholder="Your Name" class="form-control" placeholder="Your Name" required>
                         </div>
                     </div>
 
@@ -882,8 +966,9 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
-                            <input type="tel" id="phone_number22" name="phone_number22" placeholder="Phone Number" minlength="10" maxlength="15"
-                                class="form-control" placeholder="Phone Number" required>
+                            <input type="tel" id="phone_number22" name="phone_number22"
+                                placeholder="Phone Number" minlength="10" maxlength="15" class="form-control"
+                                placeholder="Phone Number" required>
                         </div>
                     </div>
 
@@ -1107,6 +1192,9 @@
         </div>
     </div>
 </div>
+
+
+
 <div class="site-section">
     <div class="container">
         <div class="row mb-5">
@@ -1114,7 +1202,8 @@
                 <h2 class="site-section-heading text-center font-secondary"
                     style="font-family: 'Francois One';font-size: 32px;font-weight: 400;line-height: 24px;text-align: center;">
                     ALLERGY SYMPTOMS <br><span
-                        style="font-family: 'Francois One';font-size: 22px;font-weight: 400;line-height: 24px;text-align: center;">If
+                        style="font-family: 'Francois One';font-size: 22px;font-weight: 400;line-height: 24px;text-align: center;">
+                        If
                         you experience any of the following, then you may take an Allergy Test at the earliest.</span>
                 </h2>
             </div>
@@ -1295,6 +1384,183 @@
 
     </div>
 </div>
+
+<!-- Book a Free Consultation Section -->
+<div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
+    <!-- Background image and white overlay -->
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; background-position: center; z-index: -1;">
+    </div>
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.65); z-index: -1;">
+    </div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div>
+            <div class="row">
+                <!-- WhatsApp Link -->
+                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                        target="_blank" style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-whatsapp mr-3"
+                                style="width: 48px;height: 48px;color: #016426;"></span>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach
+                                us on WhatsApp</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Call Us Link -->
+                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                    <a href="tel:9746222668" style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
+                            <div class="text">
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Call us today</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    +91 97462 22668</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Book Consultation Popup Trigger -->
+                <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
+                    <a href="javascript:void(0);" class="open-consult-22" onclick="openConsultForm('ConsultForm23')"
+                        style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book a
+                                free Consultation!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Floating Popup -->
+        <div class="popup-container-22" id="ConsultForm23">
+            <div class="popup-content-22">
+                <span class="close-btn-23" onclick="closeConsultForm(event)">&times;</span>
+                <h4 class="popup-title-22">Book a Free Consultation</h4>
+
+                <form id="consultationForm22" action="{{ route('send-consultation-form') }}"
+                    name="consultationForm22" method="POST">
+                    @csrf
+
+                    @if (session('success'))
+                        {{-- Flash message and modal closing logic --}}
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Close the modal after success
+                                var popup = document.getElementById("ConsultForm23");
+                                if (popup) {
+                                    popup.style.display = "none"; // Close the modal
+                                }
+
+                                // Flash message container
+                                var flashMessage = document.createElement('div');
+                                flashMessage.id = "flash-message";
+                                flashMessage.innerHTML = `
+                                <div class="flash-message-content">
+                                    <span class="flash-icon">&#10003;</span>  <!-- Success icon -->
+                                    <span class="flash-text">{{ session('success') }}</span>
+                                </div>
+                            `;
+                                document.body.appendChild(flashMessage);
+
+                                // Show flash message
+                                setTimeout(function() {
+                                    flashMessage.style.display = 'none'; // Auto close after 3 seconds
+                                }, 6000);
+                            });
+                        </script>
+
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ session('success') }}</strong>
+                        </div>
+                    @endif
+
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <!-- Name input -->
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            {{-- <label class="text-black" for="name22"></label> --}}
+                            <input type="text" id="name22" name="name22" minlength="2"
+                                placeholder="Your Name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number input -->
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
+                            <input type="tel" id="phone_number22" name="phone_number22"
+                                placeholder="Phone Number" minlength="10" maxlength="15" class="form-control"
+                                placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <!-- Collection Point selection -->
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            {{-- <label class="text-black" for="location22">Choose Service Location</label> --}}
+                            <select name="location22" id="location22" aria-placeholder="Choose Service Location"
+                                class="form-control" required>
+                                <option value="" selected disabled>---- Select Service Location ----</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Kochi">Kochi</option>
+                                <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Google reCAPTCHA -->
+                    <div class="form-group">
+                        <div class="g-recaptcha smallrecap" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
+                            data-callback="enableConsultbtn2"></div>
+                        <span class="help-block" id="recaptcha-error22" style="display: none;">
+                            <strong class="error">Please verify that you are not a robot.</strong>
+                        </span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="row form-group mt-2">
+                        <div class="col-md-12">
+                            <button disabled id="consultsub23" type="submit"
+                                class="btn btn-pill btn-md text-white disabled-btn">
+                                Call me back
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 
 <div class="block-services-1 py-5 bg-light">
@@ -1463,88 +1729,6 @@
     </div>
 </div>
 
-
-<div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
-    <!-- Background image -->
-    <div
-        style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        z-index: -1;
-    ">
-    </div>
-
-    <!-- White overlay -->
-    <div
-        style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent white */
-        z-index: -1;
-    ">
-    </div>
-
-    <div class="container" style="position: relative; z-index: 1;">
-        <div>
-            <div class="row">
-                <!-- WhatsApp Link -->
-                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
-                        target="_blank" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-whatsapp mr-3"
-                                style="width: 48px;height: 48px;color: #016426;"></span>
-                            <p class="lead m-0"
-                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach
-                                us on WhatsApp</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Call Us Link -->
-                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
-                    <a href="tel:9746222668" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
-                            <div class="text">
-                                <p class="lead m-0"
-                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    Call us today</p>
-                                <p class="lead m-0"
-                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    +91 97462 22668</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Book Appointment Link -->
-                <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
-                    <a href="{{ route('contact-us') }}" style="text-decoration: none;">
-                        <div class="d-flex quick-info-2 align-items-center">
-                            <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
-                            <p class="lead m-0"
-                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book
-                                an appointment</p>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
 {{-- our location  --}}
 <div class="site-section block-services-1"
     style="background-image: url(' {{ asset(`/`) }}/public/images/whatsapp/Group35.png');">
@@ -1677,6 +1861,183 @@
         </div>
     </div>
 </div>
+
+<!-- Book a Free Consultation Section -->
+<div class="block-quick-info-2" style="position: relative; padding: 20px 0;">
+    <!-- Background image and white overlay -->
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('{{ asset(`/`) }}/public/images/whatsapp/Rectangle71.png'); background-repeat: no-repeat; background-size: cover; background-position: center; z-index: -1;">
+    </div>
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.65); z-index: -1;">
+    </div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div>
+            <div class="row">
+                <!-- WhatsApp Link -->
+                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                    <a class="align-items-center d-flex quick-info-link" href="https://wa.me/7358728170"
+                        target="_blank" style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-whatsapp mr-3"
+                                style="width: 48px;height: 48px;color: #016426;"></span>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Reach
+                                us on WhatsApp</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Call Us Link -->
+                <div class="col-sm-12 col-md-4 mb-3 mb-md-0 quick-info-item">
+                    <a href="tel:9746222668" style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-phone mr-3" style="width: 46.68px;height: 46.69px;"></span>
+                            <div class="text">
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    Call us today</p>
+                                <p class="lead m-0"
+                                    style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
+                                    +91 97462 22668</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Book Consultation Popup Trigger -->
+                <div class="col-sm-12 col-md-4 quick-info-item book-appointment">
+                    <a href="javascript:void(0);" class="open-consult-22" onclick="openConsultForm('ConsultForm24')"
+                        style="text-decoration: none;">
+                        <div class="d-flex quick-info-2 align-items-center">
+                            <span class="icon icon-home mr-3" style="width: 41.59px;height: 41.59px;"></span>
+                            <p class="lead m-0"
+                                style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">Book a
+                                free Consultation!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Floating Popup -->
+        <div class="popup-container-22" id="ConsultForm24">
+            <div class="popup-content-22">
+                <span class="close-btn-24" onclick="closeConsultForm(event)">&times;</span>
+                <h4 class="popup-title-22">Book a Free Consultation</h4>
+
+                <form id="consultationForm22" action="{{ route('send-consultation-form') }}"
+                    name="consultationForm22" method="POST">
+                    @csrf
+
+                    @if (session('success'))
+                        {{-- Flash message and modal closing logic --}}
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Close the modal after success
+                                var popup = document.getElementById("ConsultForm24");
+                                if (popup) {
+                                    popup.style.display = "none"; // Close the modal
+                                }
+
+                                // Flash message container
+                                var flashMessage = document.createElement('div');
+                                flashMessage.id = "flash-message";
+                                flashMessage.innerHTML = `
+                                <div class="flash-message-content">
+                                    <span class="flash-icon">&#10003;</span>  <!-- Success icon -->
+                                    <span class="flash-text">{{ session('success') }}</span>
+                                </div>
+                            `;
+                                document.body.appendChild(flashMessage);
+
+                                // Show flash message
+                                setTimeout(function() {
+                                    flashMessage.style.display = 'none'; // Auto close after 3 seconds
+                                }, 6000);
+                            });
+                        </script>
+
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ session('success') }}</strong>
+                        </div>
+                    @endif
+
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <!-- Name input -->
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            {{-- <label class="text-black" for="name22"></label> --}}
+                            <input type="text" id="name22" name="name22" minlength="2"
+                                placeholder="Your Name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number input -->
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
+                            <input type="tel" id="phone_number22" name="phone_number22"
+                                placeholder="Phone Number" minlength="10" maxlength="15" class="form-control"
+                                placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <!-- Collection Point selection -->
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            {{-- <label class="text-black" for="location22">Choose Service Location</label> --}}
+                            <select name="location22" id="location22" aria-placeholder="Choose Service Location"
+                                class="form-control" required>
+                                <option value="" selected disabled>---- Select Service Location ----</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Kochi">Kochi</option>
+                                <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Google reCAPTCHA -->
+                    <div class="form-group">
+                        <div class="g-recaptcha smallrecap" data-sitekey="6LeKJBAqAAAAAAF041g1oz9mrl4MJMCUwywAvHmY"
+                            data-callback="enableConsultbtn3"></div>
+                        <span class="help-block" id="recaptcha-error22" style="display: none;">
+                            <strong class="error">Please verify that you are not a robot.</strong>
+                        </span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="row form-group mt-2">
+                        <div class="col-md-12">
+                            <button disabled id="consultsub24" type="submit"
+                                class="btn btn-pill btn-md text-white disabled-btn">
+                                Call me back
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <footer class="site-footer off-white" style="background: #000000">
     <div class="container">
@@ -1934,17 +2295,37 @@
 
         // Handle modal for consultation form
         var consultpopup = document.getElementById("ConsultForm22");
+        var consultpopup1 = document.getElementById("ConsultForm23");
+        var consultpopup2 = document.getElementById("ConsultForm24");
+
         var cobtn = document.querySelector(".open-consult-22");
+        var cobtn2 = document.querySelector(".open-consult-23");
+        var cobt3 = document.querySelector(".open-consult-24");
         var consclose = document.getElementsByClassName("close-btn-22")[0];
+        var consclose2 = document.getElementsByClassName("close-btn-23")[0];
+        var consclose3 = document.getElementsByClassName("close-btn-24")[0];
 
         // Open the modal when the button is clicked
         cobtn.onclick = function() {
             consultpopup.style.display = "block";
         };
+        cobtn2.onclick = function() {
+            consultpopup1.style.display = "block";
+        };    
+         cobtn3.onclick = function() {
+            consultpopup2.style.display = "block";
+        };
 
         // Close the modal when the span (x) is clicked
         consclose.onclick = function() {
             consultpopup.style.display = "none";
+        };
+                // Close the modal when the span (x) is clicked
+                consclose2.onclick = function() {
+            consultpopup1.style.display = "none";
+        };        // Close the modal when the span (x) is clicked
+        consclose3.onclick = function() {
+            consultpopup2.style.display = "none";
         };
 
         // Close the modal when clicked outside of it
@@ -1953,6 +2334,19 @@
                 consultpopup.style.display = "none";
             }
         };
+                // Close the modal when clicked outside of it
+                window.onclick = function(event) {
+            if (event.target == popup) {
+                consultpopup1.style.display = "none";
+            }
+        };
+                // Close the modal when clicked outside of it
+                window.onclick = function(event) {
+            if (event.target == popup) {
+                consultpopup2.style.display = "none";
+            }
+        };
+        
     });
 
     // Enable the submit button when reCAPTCHA is completed
@@ -1963,16 +2357,34 @@
         submitBtn.classList.add('active-btn');
     }
 
+    function enableConsultbtn2() {
+        const submitBtn = document.getElementById('consultsub23');
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('disabled-btn');
+        submitBtn.classList.add('active-btn');
+    }
+
+    function enableConsultbtn3() {
+        const submitBtn = document.getElementById('consultsub24');
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('disabled-btn');
+        submitBtn.classList.add('active-btn');
+    }
+
     // Close Contact Form Modal when clicked outside the modal content or on the close button
     function closeConsultForm(event) {
         const modal = document.getElementById('ConsultForm22');
+        const modal2 = document.getElementById('ConsultForm23');
+        const modal3 = document.getElementById('ConsultForm24');
         if (event.target === modal || event.type === 'click') {
             modal.style.display = 'none';
+            modal2.style.display = 'none';
+            modal3.style.display = 'none';
         }
     }
 
-    function openConsultForm() {
-        document.getElementById('ConsultForm22').style.display = 'block';
+    function openConsultForm(id) {
+        document.getElementById(id).style.display = 'block';
     }
 </script>
 

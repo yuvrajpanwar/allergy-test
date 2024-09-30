@@ -21,9 +21,107 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+
+/* Mobile view: 3 images per row */
+@media (max-width: 767px) {
+    .col-5 {
+        width: 100%;
+        height: 30%;
+    }
+}
+
+
+/* Allergen section styling */
+.section-title22 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle22 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.allergen-item22 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.allergen-text22 {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Testimonial section styling */
+.testimonial-card22 {
+    margin-bottom: 1rem;
+    border: none;
+}
+
+.testimonial-card22 .card-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-card22 .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+/* Responsive Styling */
+@media (max-width: 767px) {
+    .allergen-images22 {
+        flex-direction: column;
+    }
+    
+    .allergen-item22 img {
+        max-width: 100%;
+        height: 30%;
+    }
+
+    .testimonial-card22 .card-body h5 {
+        font-size: 1.2rem;
+    }
+
+    .testimonial-card22 .card-body p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title22 {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .section-subtitle22 {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card22 .card-body h5 {
+        font-size: 1rem;
+    }
+
+    .testimonial-card22 .card-body p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
 /* Style for the additional info text below the form */
 .info-text {
-    margin-top: 1.5rem; /* Add some space between the form and text */
+    margin-top: 14rem; /* Add some space between the form and text */
     font-size: 1.1rem;  /* Medium text size */
     color: #333;        /* Set the color */
 }
@@ -31,6 +129,7 @@
 /* Responsive adjustments for small screens */
 @media (max-width: 767px) {
     .info-text {
+        margin-top: 1.5rem;
         font-size: 1rem; /* Slightly smaller text on small screens */
         text-align: center; /* Center text for smaller screens */
     }
@@ -93,6 +192,10 @@
 @media (max-width: 767px) {
     .col-4 {
         width: 33.33%;
+    }
+    .sm-padd{
+        margin-left: 2px;
+        margin-right: 2px;
     }
 }
 
@@ -324,13 +427,14 @@
                 </form>
                 
                 <!-- Additional text below the form -->
-                <div class="info-text">
-                    <p ><h1 class="mbr-section-title mbr-fonts-style lg-fnt">25+ years in Allergy Testing in India.</p>
-                    <p ><h4 class="mbr-section-title mbr-fonts-style md-fnt"><i>NABL and ISO Certified operations.</h4></p>
-                </div>
+            <!-- Additional text below the form -->
+            <div class="info-text">
+                <h1 class="" style="font-size: 1.9em; font-family: 'Francois One', sans-serif;"><span style="color:#ff0000">25+</span> years in Allergy Testing in India.</h1>
+                <h4 class="md-fnt">NABL and ISO Certified operations.</h4>
+            </div>
             </div>
             <!-- Images section with text on bottom left -->
-            <div class="col-lg-6 col-md-12" >
+            <div class="col-lg-6 col-md-12 sm-padd" >
                 <div class="row" style="margin-top: 2rem;">
                     <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
@@ -410,6 +514,106 @@
     </div>
     
 
+    <div class="container">
+        <div class="row">
+            <!-- Types of Allergens Section -->
+            <div class="col-lg-6 col-md-12 allergen-section22">
+                <h2 class="section-title22">Types of Allergens we test</h2>
+                <h4 class="section-subtitle22">See the complete list of various allergens that are in the panel</h4>
+    
+                <div class="row allergen-images22">
+                    <div class="col-lg-3 col-12 col-5">
+                        <div class="allergen-item22">
+                            <img src="{{asset('public/images/whatsapp/t1.jpeg')}}" alt="Allergen 1" class="img-fluid">
+                            <p class="allergen-text22">Veg Food</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-12 col-5">
+                        <div class="allergen-item22">
+                            <img src="{{asset('public/images/whatsapp/t2.jpeg')}}" alt="Allergen 2" class="img-fluid">
+                            <p class="allergen-text22">Non-veg food</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-12 col-5">
+                        <div class="allergen-item22">
+                            <img src="{{asset('public/images/whatsapp/t3.jpeg')}}" alt="Allergen 3" class="img-fluid">
+                            <p class="allergen-text22">Inhalants</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-12 col-5">
+                        <div class="allergen-item22">
+                            <img src="{{asset('public/images/whatsapp/t4.jpeg')}}" alt="Allergen 4" class="img-fluid">
+                            <p class="allergen-text22">Contact</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+
+
+            <!-- Testimonials Section -->
+<div class="col-lg-6 col-md-12 testimonials-section22">
+    <div id="testimonialCarousel22" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Testimonial 1 -->
+            <div class="carousel-item active">
+                <div class="card testimonial-card22">
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <img src="{{asset('path-to-your-testimonial-image1.jpg')}}" class="card-img" alt="Person 1">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title name22">Person 1</h5>
+                                <p class="profession22">Software Engineer</p>
+                                <p class="card-text short-text22">Allergy test results: Positive for dust mites. The condition is manageable with medication. It's important to keep... <span class="more-text22" style="display: none;">further dust exposure to a minimum.</span></p>
+                                <button class="btn btn-link more-btn22">More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="carousel-item">
+                <div class="card testimonial-card22">
+                    <div class="row no-gutters">
+                        <div class="col-md-3">
+                            <img src="{{asset('path-to-your-testimonial-image2.jpg')}}" class="card-img" alt="Person 2">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title name22">Person 2</h5>
+                                <p class="profession22">Marketing Specialist</p>
+                                <p class="card-text short-text22">Allergy test results: Negative for pollen. This test was crucial to confirm... <span class="more-text22" style="display: none;">no allergies to seasonal pollen were present.</span></p>
+                                <button class="btn btn-link more-btn22">More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#testimonialCarousel22" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#testimonialCarousel22" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+    
+
+
+    {{-- devide screen into 2 parts(one fro our locatins, one for ) --}}
 
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('public/js/jquery-ui.js') }}"></script>
@@ -431,5 +635,19 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZHMTSD" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        // Handle "More" button toggle
+        var moreButtons = document.querySelectorAll('.more-btn22');
+        moreButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var cardText = this.previousElementSibling;
+                var moreText = cardText.querySelector('.more-text22');
+                moreText.style.display = moreText.style.display === 'none' ? 'inline' : 'none';
+                this.textContent = moreText.style.display === 'none' ? 'More' : 'Less';
+            });
+        });
+    });
+    </script>
 </body>
 </html>
