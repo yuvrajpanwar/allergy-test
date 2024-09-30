@@ -941,6 +941,17 @@
 
 
                     @if ($errors->any())
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Open the consultation modal when a success message is present
+                            var popup = document.getElementById("ConsultForm22");
+                            // Open the modal
+                            if (popup) {
+                                popup.style.display = "block"; // Show the modal
+                    
+                            }
+                        });
+                    </script>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -966,9 +977,9 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
-                            <input type="tel" required id="phone_number22" name="phone_number22"
+                            <input type="tel" required  name="phone_number22"
                                 placeholder="Phone Number" minlength="10" maxlength="15" 
-                                placeholder="Phone Number"  class="form-control">
+                                placeholder="Phone Number"  class="form-control" id="phone_number22">
                         </div>
                     </div>
 
@@ -1488,6 +1499,18 @@
 
 
                     @if ($errors->any())
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Open the consultation modal when a success message is present
+                            var popup = document.getElementById("ConsultForm23");
+                            // Open the modal
+                            if (popup) {
+                                popup.style.display = "block"; // Show the modal
+                    
+                            }
+                        });
+                    </script>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -1965,6 +1988,19 @@
 
 
                     @if ($errors->any())
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Open the consultation modal when a success message is present
+                            var popup = document.getElementById("ConsultForm24");
+                            // Open the modal
+                            if (popup) {
+                                popup.style.display = "block"; // Show the modal
+                    
+                            }
+                        });
+                    </script>
+
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
