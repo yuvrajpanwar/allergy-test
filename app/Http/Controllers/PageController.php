@@ -98,5 +98,9 @@ public function landing1()
 {
     return view('landing1');
 }
+public function landing2()
+{
+    return view('landing2');
+}
 
 }

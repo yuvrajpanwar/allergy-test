@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Get rid of Allergy problems. Take a Comprehensive Allergy Test today.</title>
     <meta charset="utf-8">
@@ -20,58 +21,15 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
-        /* Footer Styling */
-        .footer22 {
-            background-color: #000;
-            /* Black background */
-            padding: 15px 0;
-            text-align: center;
-            width: 100%;
-        }
 
-        .footer-text22 {
-            color: #fff;
-            /* White text */
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .footer-text22 {
-                font-size: 12px;
-                /* Adjust font size for smaller screens */
-            }
-        }
-
-        .card-body {
-            padding: 0;
-        }
-
-        @media(max-width: 768px) {
-            .card-body {
-                padding: 1.25rem;
-            }
-        }
-
-        @media(min-width: 1100px) {
-            .frm-margin {
-                margin-right: 4rem;
-            }
-        }
-
-        .custom-hr {
-            /* border: 0; */
-            height: 1px;
-            /* Set the height of the line */
-            background-color: #bfbfbf;
-            /* Line color */
-            margin: 20px 0;
-            /* Space above and below the line */
-            width: 100%;
-            position: absolute;
-        }
+.custom-hr {
+    /* border: 0; */
+    height: 1px; /* Set the height of the line */
+    background-color: #ef8984; /* Line color */
+    margin: 20px 0; /* Space above and below the line */
+    width: 100%;
+    position: absolute;
+}
 
         /* Active blue state after reCAPTCHA success */
         .active-btn {
@@ -239,25 +197,24 @@
         /* Testimonial section styling */
         /* Card container styling */
         .testimonial-card22 {
-            background-color: #ffffff;
+            border-radius: 20px;
+            background-color: #f9f9f9;
             /* Light color related to white */
             position: relative;
             overflow: hidden;
         }
 
-
-
-        .rounded-img22 {
-            width: 85%;
+        .dashed-box22 {
+            border: 2px dashed #c8c8c8;
+            border-radius: 15px;
+            padding: 20px;
             position: relative;
-            height: auto;
+            margin: 0.5rem;
         }
 
-        @media (min-width: 1100px) {
-            .rounded-img22 {
-                width: 116px;
-                height: 113px
-            }
+        .rounded-img22 {
+            border-radius: 15px;
+            width: 100%;
         }
 
         .name22 {
@@ -274,7 +231,6 @@
         }
 
         .result22 {
-            display: inline-block;
             font-size: 14px;
             color: #555;
         }
@@ -350,11 +306,10 @@
             /* Center the text horizontally */
             display: inline-block;
             /* Inline block to apply width/height */
-            color: rgb(255, 0, 0);
+            color: rgb(0, 0, 0);
             /* Background color */
-            background-color: #000000
-                /* Arrow color */
-                cursor: pointer;
+            /* Arrow color */
+            cursor: pointer;
             /* Pointer on hover */
         }
 
@@ -422,7 +377,7 @@
 
         /* Style for the additional info text below the form */
         .info-text {
-            /* margin-top: 10rem; */
+            margin-top: 10rem;
             /* Add some space between the form and text */
             font-size: 1.1rem;
             /* Medium text size */
@@ -465,7 +420,6 @@
         }
 
         .img-text {
-            font-family: 'Jost';
             position: absolute;
             bottom: -15px;
             left: 0px;
@@ -691,8 +645,7 @@
                 <div class="col-12 col-xl-8 text-content">
                     <p class="city-info">
                         Mumbai, Chennai, Bengaluru, Hyderabad, Trivandrum, Kochi & Pune. <br>
-                        <a href="https://wa.me/7358728170" style="text-decoration:none; color: #8c8c8c">Click here to
-                            Chat with us
+                        <a href="https://wa.me/7358728170" style="text-decoration:none;">Click here to Chat with us
                             now</a> or
                         Call us Now: <strong><a href="tel:+919746222668" style="text-decoration:none; color: #ff3300;">
                                 97462 22668</a></strong>
@@ -706,7 +659,7 @@
     </div>
     <section class="header2 cid-toMW46ZFU7" id="header2-1e">
         <div class="container">
-            <div class="row align-items-center" style="padding-top: 1rem;">
+            <div class="row align-items-center">
                 <div class="mbr-white col-lg-6">
                     <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">Get rid of your
                         <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong>problems.<br>Take Action, Today.
@@ -718,7 +671,7 @@
                                 cause.</em></div>
                     </h3>
                     <div class="mbr-section-btn"><a class="btn btn-md btn-primary md-fnt" type="submit"
-                            style="background-color: #3399ff; padding: 9px 16px; border-radius: 4px;"
+                            style="background-color: #3399ff; padding: 6px 6px; border-radius: 4px;"
                             href="tel:+919746222668">Call Now!</a> </div>
                 </div>
                 <div class="col-lg-6 align-left img-block">
@@ -733,9 +686,9 @@
     <div class="container">
         <!-- Form with fields: name, phone number, service location, and a button -->
         <div class="row">
-            <div class="col-lg-6 col-md-12" style="margin-top: 4rem;">
+            <div class="col-lg-6 col-md-12" style="margin-top: 2rem;">
                 <form id="consultationForm22" action="{{ route('send-consultation-form') }}" name="consultationForm22"
-                    method="POST" class="frm-margin">
+                    method="POST">
                     @csrf
 
                     @if (session('success'))
@@ -819,103 +772,104 @@
                         <span class="help-block" id="recaptcha-error22" style="display: none;">
                             <strong class="error">Please verify that you are not a robot.</strong>
                         </span>
+
+
+
                     </div>
 
                     <button disabled id="consultsub22" type="submit"
-                        class="btn btn-pill btn-md text-white disabled-btn"
-                        style="background-color: #3399ff; padding: 8px 14px; border-radius: 4px;">
+                        class="btn btn-pill btn-md text-white disabled-btn" style="background-color:#007bff">
                         Get a Call Back
                     </button>
                 </form>
                 <!-- Additional text below the form -->
                 <div class="info-text">
-                    <h1 class=""
-                        style="font-size: 1.9em; font-family: 'Francois One', sans-serif; margin-top:1rem;"><span
-                            style="color:#ff0000; ">25+</span> years in Allergy Testing in India.</h1>
+                    <h1 class="" style="font-size: 1.9em; font-family: 'Francois One', sans-serif;"><span
+                            style="color:#ff0000">25+</span> years in Allergy Testing in India.</h1>
                     <h4 class="md-fnt">NABL and ISO Certified operations.</h4>
                 </div>
             </div>
             <!-- Images section with text on bottom left -->
-            <div class="col-lg-6 col-md-12 sm-padd lag-padd ">
-                <div class="row" style="margin-top: 4rem;">
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+            <div class="col-lg-6 col-md-12 sm-padd lag-padd">
+                <div class="row" style="margin-top: 2rem;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/itching2.png') }}" class="img-fluid"
                                 alt="Itching">
                             <p class="img-text">Itching</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x25622.png') }}"
                                 class="img-fluid" alt="Hives">
                             <p class="img-text">Hives</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256%203.png') }}"
                                 class="img-fluid" alt="Sneezing">
                             <p class="img-text">Sneezing</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2564.png') }}"
                                 class="img-fluid" alt="Runny nose">
                             <p class="img-text">Runny nose</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x2561.png') }}"
                                 class="img-fluid" alt="Wheezing">
                             <p class="img-text">Wheezing</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_2.png') }}"
                                 class="img-fluid" alt="Swollen lips">
                             <p class="img-text">Swollen lips</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_3.png') }}"
                                 class="img-fluid" alt="Shortness of breath">
                             <p class="img-text">Shortness of breath</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_4.png') }}"
                                 class="img-fluid" alt="Chest tightness">
                             <p class="img-text">Chest tightness</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256_1.png') }}"
                                 class="img-fluid" alt="Cough">
                             <p class="img-text">Cough</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256%202.png') }}"
                                 class="img-fluid" alt="Swollen eyes">
                             <p class="img-text">Swollen eyes</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256%206.png') }}"
                                 class="img-fluid" alt="Skin rashes">
                             <p class="img-text">Skin rashes</p>
                         </div>
                     </div>
-                    <div class="col-3" style="padding-left: 1px;padding-right:1px;">
+                    <div class="col-4" style="padding-left: 1px;padding-right:1px;">
                         <div class="img-container">
                             <img src="{{ asset('public/images/whatsapp/skin-rashes-480x320-384x256%205.png') }}"
                                 class="img-fluid" alt="Face swelling">
@@ -926,13 +880,12 @@
             </div>
         </div>
     </div>
-    <div class="container" style="margin-top: 4rem;">
+    <div class="container" style="margin-top: 2rem;">
         <div class="row">
             <!-- Types of Allergens Section -->
             <div class="col-lg-6 col-md-12 allergen-section22">
                 <h2 class="section-title22">Types of Allergens we test</h2>
-                <h4 class="section-subtitle22"><a href="allergypanel" style="text-decoration: none;">See the complete
-                        list of various allergens that are in the panel</a></h4>
+                <h4 class="section-subtitle22">See the complete list of various allergens that are in the panel</h4>
 
                 <div class="row allergen-images22">
                     <div class="col-lg-3 col-12 col-5">
@@ -967,133 +920,134 @@
             </div>
             <!-- Testimonials Section -->
             <div class="col-lg-6 col-md-12 testimonials-section22">
-                <h2 class="section-title22"> Testimonials</h2>
-
                 <div id="testimonialCarousel22" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <div class="carousel-inner">
                         <!-- Testimonial 1 -->
                         <div class="carousel-item active">
-                            <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person1.png') }}"
-                                            class="card-img rounded-img22" alt="Person 1">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Accountant</p>
-                                            <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, consectetur 
-                                                    adipiscing elit. Sed do eiusmod tempor incididunt ut 
-                                                    labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                                    quis nostrud exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation</p>
-                                            <button class="more-btn22" style="display: none;"></button>
-                                            <button class="less-btn22" style="display: none;">Less</button>
+                            <div class="card testimonial-card22">
+                                <div class="dashed-box22">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('public/images/whatsapp/person1.png') }}"
+                                                class="card-img rounded-img22" alt="Person 1">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title name22">Elsy perry</h5>
+                                                <p class="profession22">Accountant</p>
+                                                <p class="card-text result22"
+                                                    data-text="Lorem ipsum dolor sit amet, consectetur
+                                                     adipiscing elit. Sed do eiusmod tempor 
+                                                     incididunt ut labore et dolore magna 
+                                                     aliqua. Ut enim ad minim veniam, quis 
+                                                     nostrud exercitation">
+                                                    Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing elit. Sed do eiusmod tempor
+                                                    incididunt ut labore et dolore magna
+                                                    aliqua. Ut enim ad minim veniam, quis
+                                                    nostrud exercitation</p>
+                                                <button class="more-btn22" style="display: none;">More</button>
+                                                <button class="less-btn22" style="display: none;">Less</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
                         <!-- Testimonial 2 -->
                         <div class="carousel-item">
-                            <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person2.png') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title name22">Person 2</h5>
-                                            <p class="profession22">Engineer</p>
-                                            <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <div class="card testimonial-card22">
+                                <div class="dashed-box22">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('public/images/whatsapp/person2.png') }}"
+                                                class="card-img rounded-img22" alt="Person 2">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title name22">Person 2</h5>
+                                                <p class="profession22">Engineer</p>
+                                                <p class="card-text result22"
+                                                    data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                                      Sed do eiusmod tempor incididunt ut labore et dolore magna
                                                       aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
                                                        por incididunt ut labore et dolore magna aliqua. 
                                                        Ut enim ad">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
-                                                por incididunt ut labore et dolore magna aliqua.
-                                                Ut enim ad</p>
-                                            <button class="more-btn22" style="display: none;"></button>
-                                            <button class="less-btn22" style="display: none;">Less</button>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Sed do eiusmod tempor incididunt ut labore et dolore magna
+                                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
+                                                    por incididunt ut labore et dolore magna aliqua.
+                                                    Ut enim ad</p>
+                                                <button class="more-btn22" style="display: none;">More</button>
+                                                <button class="less-btn22" style="display: none;">Less</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
                         <!-- Testimonial 3 -->
                         <div class="carousel-item">
-                            <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person3.png') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Accountant</p>
-                                            <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, 
+                            <div class="card testimonial-card22">
+                                <div class="dashed-box22">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('public/images/whatsapp/person3.png') }}"
+                                                class="card-img rounded-img22" alt="Person 2">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title name22">Elsy perry</h5>
+                                                <p class="profession22">Accountant</p>
+                                                <p class="card-text result22"
+                                                    data-text="Lorem ipsum dolor sit amet, 
                                                     consectetur adipiscing elit. Sed do eiusmod 
                                                     tempor incididunt ut labore et dolore magna 
                                                     aliqua. Ut enim ad minim veniam, quis nostrud
                                                      exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Sed do eiusmod tempor incididunt ut labore et
-                                                dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation</p>
-                                            <button class="more-btn22" style="display: none;"></button>
-                                            <button class="less-btn22" style="display: none;">Less</button>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Sed do eiusmod tempor incididunt ut labore et
+                                                    dolore magna aliqua. Ut enim ad minim veniam,
+                                                    quis nostrud exercitation</p>
+                                                <button class="more-btn22" style="display: none;">More</button>
+                                                <button class="less-btn22" style="display: none;">Less</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
                         <!-- Testimonial 4 -->
                         <div class="carousel-item">
-                            <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person4.png') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Engineer</p>
-                                            <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, 
+                            <div class="card testimonial-card22">
+                                <div class="dashed-box22">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('public/images/whatsapp/person4.png') }}"
+                                                class="card-img rounded-img22" alt="Person 2">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title name22">Elsy perry</h5>
+                                                <p class="profession22">Engineer</p>
+                                                <p class="card-text result22"
+                                                    data-text="Lorem ipsum dolor sit amet, 
                                                     consectetur adipiscing elit. Sed do 
                                                     eiusmod tempor incididunt ut labore 
                                                     et dolore magna aliqua. Ut enim ad minim 
                                                     veniam, quis nostrud exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                ad minim veniam, quis nostrud exercitation</p>
-                                            <button class="more-btn22" style="display: none;"></button>
-                                            <button class="less-btn22" style="display: none;">Less</button>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                                                    ad minim veniam, quis nostrud exercitation</p>
+                                                <button class="more-btn22" style="display: none;">More</button>
+                                                <button class="less-btn22" style="display: none;">Less</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
@@ -1170,15 +1124,6 @@
             </div>
         </div>
     </div>
-
-    {{-- add a small footer here. should be in black color bg. text should be in white color. add "©2018-2024 Proact Healthcare (P) Limited | All rights reserved" in center for all screen. make it responsive. --}}
-
-
-    <footer class="footer22">
-        <div class="container22">
-            <p class="footer-text22">©2018-2024 Proact Healthcare (P) Limited | All rights reserved</p>
-        </div>
-    </footer>
 
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -1266,6 +1211,34 @@
                     }
                 }
             });
+            // Limit the display of the result text to 3 lines or a specific character count
+            $('.result22').each(function() {
+                var fullText = $(this).data('text'); // Get the full text from the data-text attribute
+                var shortText = fullText.substring(0, 100) + '...'; // Show only the first 100 characters
+
+                // Only apply shortening if the full text is longer than 100 characters
+                if (fullText.length > 100) {
+                    $(this).text(shortText); // Set the shortened text
+                    $(this).siblings('.more-btn22').show(); // Show the "More" button
+                }
+            });
+
+            // When "More" is clicked, show the full text and hide the "More" button
+            $('.more-btn22').on('click', function() {
+                var fullText = $(this).siblings('.result22').data('text'); // Get the full text
+                $(this).siblings('.result22').text(fullText); // Show the full text
+                $(this).hide(); // Hide the "More" button
+                $(this).siblings('.less-btn22').show(); // Show the "Less" button
+            });
+
+            // When "Less" is clicked, show the shortened text and hide the "Less" button
+            $('.less-btn22').on('click', function() {
+                var shortText = $(this).siblings('.result22').data('text').substring(0, 100) +
+                    '...'; // Shorten the text again
+                $(this).siblings('.result22').text(shortText); // Show the shortened text
+                $(this).hide(); // Hide the "Less" button
+                $(this).siblings('.more-btn22').show(); // Show the "More" button
+            });
         });
 
         // Initialize reCAPTCHA for both forms
@@ -1283,34 +1256,6 @@
             submitBtn.classList.remove('disabled-btn');
             submitBtn.classList.add('active-btn');
         }
-
-        $(document).ready(function() {
-            $('.result22').each(function() {
-                var fullText = $(this).data('text'); // Get the full text from the data-text attribute
-                var shortText = fullText.substring(0, 129); // Show only the first 100 characters
-
-                // Only apply shortening if the full text is longer than 100 characters
-                if (fullText.length > 77) {
-                    $(this).html(shortText +
-                    '... <span class="more-btn22">More</span>'); // Add the "More" button inline
-                    $(this).siblings('.more-btn22').show(); // Show the "More" button if hidden
-                }
-            });
-
-            // Toggle full text on clicking "More"
-            $(document).on('click', '.more-btn22', function() {
-                var fullText = $(this).parent().data('text');
-                $(this).parent().html(fullText +
-                ' <span class="less-btn22">Less</span>'); // Display full text and "Less" button
-            });
-
-            // Collapse text on clicking "Less"
-            $(document).on('click', '.less-btn22', function() {
-                var shortText = $(this).parent().data('text').substring(0, 129);
-                $(this).parent().html(shortText +
-                '... <span class="more-btn22">More</span>'); // Collapse back to short text
-            });
-        });
     </script>
 
 </body>
