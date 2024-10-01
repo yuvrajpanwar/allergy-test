@@ -76,3 +76,6 @@ Route::post('/send-consultation-form', [ConsultationController::class, 'sendCons
 
 //for landing1 page
 Route::get('/landing1', [App\Http\Controllers\PageController::class,'landing1'])->name('landing1');
+
+//for landing2
+Route::get('/landing2', [App\Http\Controllers\PageController::class,'landing2'])->name('landing2');
