@@ -874,7 +874,7 @@
                             <div class="text">
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    Call us today</p>
+                                    Call us for Current Offers</p>
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
                                     +91 97462 22668</p>
@@ -1431,7 +1431,7 @@
                             <div class="text">
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    Call us today</p>
+                                    Call us for Current Offers</p>
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
                                     +91 97462 22668</p>
@@ -1920,7 +1920,7 @@
                             <div class="text">
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    Call us today</p>
+                                    Call us for Current Offers</p>
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
                                     +91 97462 22668</p>
