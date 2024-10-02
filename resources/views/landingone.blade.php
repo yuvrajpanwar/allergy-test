@@ -21,6 +21,154 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+        .rounded-img22 {
+            /* border-radius: 50%; */
+            width: 70%;
+            height: auto;
+            margin-left: 2rem;
+            margin-top: 0px !important;
+            /* position: flex !important; */
+        }
+
+        .name22,
+        .profession22 {
+            margin-left: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .testimonial-card22 {
+                display: flex;
+                align-items: center;
+            }
+
+            .name22,
+            .profession22 {
+                text-align: left;
+                margin-left: 0.8rem;
+            }
+
+            .result22 {
+                text-align: justify;
+                margin-right: 1.5rem;
+
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .rounded-img22 {
+                /* margin-top: 1rem; */
+                margin-left: 5rem;
+
+                width: 50%;
+            }
+
+            .testimonial-card22 {
+                flex-direction: column;
+            }
+        }
+
+
+
+
+
+        .fixed-icons11 {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+
+        }
+
+        .icon11 {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+
+        }
+
+        .icon-image11 {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+
+        }
+
+        .icon11:hover .icon-image11 {
+            transform: scale(1.1);
+        }
+
+
+        .locations-list22 {
+            list-style: none;
+            padding: 0;
+        }
+
+        .locations-list22 li {
+            margin-bottom: 10px;
+        }
+
+        .toggle-location22 {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .location-details22 {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .plus-icon22 {
+            float: right;
+            font-size: 1.2rem;
+            color: #666;
+            padding-right: 300px;
+        }
+
+        .contact-bg22 {
+            /* background-color: yellow; */
+            padding: 5px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .locations-list22 li {
+                font-size: 1rem;
+            }
+
+            .facilities-section22 img {
+                width: 100%;
+                /* Stack facilities on small screens */
+            }
+
+            .contact-bg22 {
+                font-size: 1.2rem;
+            }
+
+            .plus-icon22 {
+                padding-right: 250px;
+            }
+        }
+
+
+
+
+        .card-title {
+            margin-bottom: 0rem;
+        }
+
         /* Default: no line break */
         .line-break {
             display: none;
@@ -37,6 +185,7 @@
 
         .card-text .result22 {
             text-align: justify;
+            margin-bottom: 0.2rem;
         }
 
         /* Reorder for mobile view */
@@ -92,18 +241,6 @@
             .frm-margin {
                 margin-right: 4rem;
             }
-        }
-
-        .custom-hr {
-            /* border: 0; */
-            height: 1px;
-            /* Set the height of the line */
-            background-color: #bfbfbf;
-            /* Line color */
-            margin: 20px 0;
-            /* Space above and below the line */
-            width: 100%;
-            position: absolute;
         }
 
         /* Active blue state after reCAPTCHA success */
@@ -225,7 +362,7 @@
         .facilities-section22 .facility-img22 {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            /* border-radius: 8px; */
         }
 
         .facilities-section22 p {
@@ -240,10 +377,9 @@
         }
 
         .contact-bg22 {
-            background-color: #bfbfbf96;
             padding: 5px 10px;
             font-weight: bold;
-            border-radius: 5px;
+            font-size: 1.5rem;
         }
 
         /* Media Queries for responsiveness */
@@ -278,25 +414,11 @@
             overflow: hidden;
         }
 
-
-
-        .rounded-img22 {
-            width: 85%;
-            position: relative;
-            height: auto;
-        }
-
-        @media (min-width: 1100px) {
-            .rounded-img22 {
-                width: 116px;
-                height: 113px
-            }
-        }
-
         .name22 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #e94e4e;
+            margin-left: 2rem;
             /* Red color for the name */
         }
 
@@ -304,6 +426,8 @@
             font-size: 14px;
             font-weight: bold;
             color: #333;
+            margin-left: 2rem;
+
         }
 
         .result22 {
@@ -352,7 +476,8 @@
 
             .name22,
             .profession22 {
-                text-align: center;
+                text-align: left;
+                margin-left: 0.5rem;
             }
 
             .carousel-control-prev,
@@ -742,6 +867,15 @@
             </div>
         </div>
     </header>
+    <!-- Icons Section -->
+    <div class="fixed-icons11">
+        <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
+        </a>
+
+    </div>
+
+
     <section class="header2 cid-toMW46ZFU7" id="header2-1e">
         <div class="container">
             <div class="row align-items-center" style="padding-top: 1rem;">
@@ -1012,21 +1146,22 @@
             <div class="col-lg-6 col-md-12 testimonials-section22">
                 <h2 class="section-title22"> Testimonials</h2>
 
+
+
                 <div id="testimonialCarousel22" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <div class="carousel-inner">
                         <!-- Testimonial 1 -->
                         <div class="carousel-item active">
                             <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
+                                <div class="row no-gutters " style="">
+                                    <div class="col-lg-4 d-flex flex-column">
+                                        <h5 class="card-title name22">Lakshmikutty</h5>
+                                        <p class="profession22">Bank Employee</p>
                                         <img src="{{ asset('public/images/whatsapp/p1.jpg') }}"
-                                            class="card-img rounded-img22" alt="Person 1">
+                                            class="card-img rounded-img22 mt-3" alt="Person 1">
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Lakshmikutty</h5>
-                                            <p class="profession22">Bank Employee</p>
                                             <p class="card-text result22"
                                                 data-text="&ldquo;I have been having terrible problems on my skin for the last 6 years.
                                 Suddenly rashes will appear and itching will start. I met several doctors and used
@@ -1053,29 +1188,29 @@
                                                 afterwards. Now I
                                                 am taking my son for the test so that we will know what things he should
                                                 avoid
-                                                eating.&rdquo;</p>
+                                                eating.&rdquo;
+                                            </p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
+                        <!-- Repeat structure for other testimonials -->
                         <!-- Testimonial 2 -->
                         <div class="carousel-item">
                             <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
+                                <div class="row no-gutters " style="">
+                                    <div class="col-lg-4 d-flex flex-column">
+                                        <h5 class="card-title name22">Shahana</h5>
+                                        <p class="profession22">Housewife</p>
                                         <img src="{{ asset('public/images/whatsapp/p2.jpg') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
+                                            class="card-img rounded-img22 mt-3" alt="Person 2">
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Shahana</h5>
-                                            <p class="profession22">Housewife</p>
                                             <p class="card-text result22"
                                                 data-text="&ldquo;My 8 years old son Firoz have been getting allergic attacks since he
                                 was six months old. We consulted many doctors and were afraid to give too much
@@ -1098,29 +1233,28 @@
                                                 feeding him these only. I felt so bad. I immediately stopped giving him
                                                 milk and
                                                 bananas and his allergies have vanished. I am glad that the problem is
-                                                solved.&rdquo;</p>
+                                                solved.&rdquo;
+                                            </p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
                         <!-- Testimonial 3 -->
                         <div class="carousel-item">
                             <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
+                                <div class="row no-gutters " style="">
+                                    <div class="col-lg-4 d-flex flex-column">
+                                        <h5 class="card-title name22">Jiyesh</h5>
+                                        <p class="profession22">Businessman</p>
                                         <img src="{{ asset('public/images/whatsapp/p3.jpg') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
+                                            class="card-img rounded-img22 mt-3" alt="Person 3">
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Jiyesh</h5>
-                                            <p class="profession22">Businessman</p>
                                             <p class="card-text result22"
                                                 data-text="&ldquo;For years I have been suffering from allergy and have been under
                                 various medications. When I stop the medicine the itching and rashes will come back.
@@ -1145,19 +1279,18 @@
                                                 disappeared.
                                                 I am grateful that I could get such an irritating problem solved so
                                                 easily.
-                                                &rdquo;</p>
+                                                &rdquo;
+                                            </p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
-
                     </div>
 
-                    <!-- Controls (Prev/Next buttons with custom icons) -->
+                    <!-- Carousel Controls -->
                     <a class="carousel-control-prev control22" href="#testimonialCarousel22" role="button"
                         data-slide="prev">
                         <span class="previous round">&#8249;</span>
@@ -1169,26 +1302,89 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+
+
+
+
             </div>
         </div>
     </div>
-
-    <hr class="custom-hr">
-
-
     <div class="container" style="margin-top: 2rem; font-family: 'Francois One', Arial;">
         <div class="row">
             <!-- Our Locations Section -->
             <div class="col-lg-6 col-md-12 mb-4">
                 <h2 style="font-size: 2.5rem; font-family:  'Francois One', Arial;">Our Locations</h2>
                 <ul class="locations-list22">
-                    <li><a href="#">Mumbai</a></li>
-                    <li><a href="#">Pune</a></li>
-                    <li><a href="#">Hyderabad</a></li>
-                    <li><a href="#">Bangalore</a></li>
-                    <li><a href="#">Chennai</a></li>
-                    <li><a href="#">Kochi</a></li>
-                    <li><a href="#">Trivandrum</a></li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#mumbai-details" style="color: #999999;">
+                            Mumbai <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="mumbai-details" class="collapse">
+                            F-59, 1st Floor, THE ZONE MALL, Chandavarkar Rd,<br>
+                            Borivali (W), Mumbai-400092<br>
+                            Ph. 97462 22668
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#pune-details" style="color: #999999;">
+                            Pune <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="pune-details" class="collapse">
+                            Flat no. 103, Jadhav Complex, Airport Road, Lohegaon<br>
+                            Pune-411047<br>
+                            Ph. 97462 22668
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#hyderabad-details" style="color: #999999;">
+                            Hyderabad <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="hyderabad-details" class="collapse">
+                            No.10A&B, Mayfair Gardens, Rd No.12, Banjara Hills<br>
+                            Hyderabad-500034<br>
+                            Ph. 77366 51520
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#bengaluru-details" style="color: #999999;">
+                            Bangalore <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="bengaluru-details" class="collapse">
+                            151, 6th cross, 22nd A Main Rd, 1st Sector, HSR Layout<br>
+                            Bengaluru-560102<br>
+                            Ph. 97462 22668
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#chennai-details" style="color: #999999;">
+                            Chennai <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="chennai-details" class="collapse">
+                            10, Shalom Building, 4, Mannar Street, T.Nagar<br>
+                            Chennai-600017<br>
+                            Ph. 96772 11647
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#kochi-details" style="color: #999999;">
+                            Kochi <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="kochi-details" class="collapse">
+                            Ground floor, Chinna Complex, Aiswarya Road (Metro Pillar 548), Palarivattom<br>
+                            Kochi-682 025<br>
+                            Ph. 95672 22877
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#trivandrum-details" style="color: #999999;">
+                            Trivandrum <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="trivandrum-details" class="collapse">
+                            1st Floor, Crown Plaza, Pattom, Next to St.Mary's Church<br>
+                            Trivandrum-695004<br>
+                            Ph. 73569 45575
+                        </div>
+                    </li>
                 </ul>
             </div>
 
@@ -1196,38 +1392,35 @@
             <div class="col-lg-6 col-md-12">
                 <h2 style="font-size: 2.5rem; font-family:  'Francois One', Arial;">Our Facilities</h2>
                 <div class="row text-center facilities-section22">
-                    <!-- 4 images in a row for large displays, and stacked on small displays -->
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f8.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 1">
-                        {{-- <p>Facility 1</p> --}}
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f3.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 2">
-                        {{-- <p>Facility 2</p> --}}
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f6.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 3">
-                        {{-- <p>Facility 3</p> --}}
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f7.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 4">
-                        {{-- <p>Facility 4</p> --}}
                     </div>
                 </div>
 
-                <!-- Contact Information Section -->
                 <br><br>
                 <h3>Contact us for a Free Consultation:</h3>
                 <p class="contact-number22">
-                    <a href="tel:+919746222668">Call us Now: <span class="contact-bg22">97462 22668</span></a>
+                    <a href="tel:+919746222668">
+                        <span class="contact-bg22">Tel: 97462 22668</span>
+                    </a>
                 </p>
             </div>
         </div>
     </div>
+
 
     {{-- add a small footer here. should be in black color bg. text should be in white color. add "©2018-2024 Proact Healthcare (P) Limited | All rights reserved" in center for all screen. make it responsive. --}}
 
@@ -1345,10 +1538,10 @@
         $(document).ready(function() {
             $('.result22').each(function() {
                 var fullText = $(this).data('text'); // Get the full text from the data-text attribute
-                var shortText = fullText.substring(0, 129); // Show only the first 100 characters
+                var shortText = fullText.substring(0, 420); // Show only the first 100 characters
 
                 // Only apply shortening if the full text is longer than 100 characters
-                if (fullText.length > 77) {
+                if (fullText.length > 420) {
                     $(this).html(shortText +
                         '... <span class="more-btn22">More</span>'); // Add the "More" button inline
                     $(this).siblings('.more-btn22').show(); // Show the "More" button if hidden
@@ -1364,9 +1557,25 @@
 
             // Collapse text on clicking "Less"
             $(document).on('click', '.less-btn22', function() {
-                var shortText = $(this).parent().data('text').substring(0, 129);
+                var shortText = $(this).parent().data('text').substring(0, 420);
                 $(this).parent().html(shortText +
                     '... <span class="more-btn22">More</span>'); // Collapse back to short text
+            });
+        });
+
+        // Toggle location details on click
+        document.querySelectorAll('.toggle-location22').forEach(function(locationLink) {
+            locationLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(locationLink.getAttribute('data-target'));
+                if (target.style.display === 'none' || target.style.display === '') {
+                    target.style.display = 'block';
+                    locationLink.querySelector('.plus-icon22').innerHTML =
+                    '&#8722;'; // Change to minus sign
+                } else {
+                    target.style.display = 'none';
+                    locationLink.querySelector('.plus-icon22').innerHTML = '&#43;'; // Change to plus sign
+                }
             });
         });
     </script>
