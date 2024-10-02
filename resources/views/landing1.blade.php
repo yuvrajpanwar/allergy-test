@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Get rid of Allergy problems. Take a Comprehensive Allergy Test today.</title>
     <meta charset="utf-8">
@@ -20,11 +21,29 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+
+.card-text .result22{
+    text-align:justify;
+}
+        /* Reorder for mobile view */
+        @media (max-width: 768px) {
+            .text-block {
+                order: 2;
+                /* Text block appears second on mobile */
+            }
+
+            .img-block {
+                order: 1;
+                /* Image block appears first on mobile */
+            }
+        }
+
+
         /* Footer Styling */
         .footer22 {
             background-color: #000;
             /* Black background */
-            padding: 15px 0;
+            padding: 80px 0;
             text-align: center;
             width: 100%;
         }
@@ -277,7 +296,8 @@
             display: inline-block;
             font-size: 14px;
             color: #555;
-        }
+            text-align:justify;
+                }
 
         .more-btn22,
         .less-btn22 {
@@ -701,25 +721,25 @@
             </div>
         </div>
     </header>
-
-    </div>
-    </div>
     <section class="header2 cid-toMW46ZFU7" id="header2-1e">
         <div class="container">
             <div class="row align-items-center" style="padding-top: 1rem;">
-                <div class="mbr-white col-lg-6">
-                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">Get rid of your
-                        <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong>problems.<br>Take Action, Today.
+                <div class="col-lg-6 text-block">
+                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">
+                        Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong>problems.<br>Take
+                        Action, Today.
                     </h1>
-                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">Itching, hives,
-                        sneezing, runny nose, wheezing, chest tightness, shortness of breath, cough, swollen lips etc.
-                        are signs of allergy.<br><em><br></em>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">
+                        Itching, hives, sneezing, runny nose, wheezing, chest tightness, shortness of breath, cough,
+                        swollen lips, etc. are signs of allergy.<br><em><br></em>
                         <div><em>If you have any of these symptoms, take an allergy test immediately and know the
                                 cause.</em></div>
                     </h3>
-                    <div class="mbr-section-btn"><a class="btn btn-md btn-primary md-fnt" type="submit"
-                            style="background-color: #3399ff; padding: 9px 16px; border-radius: 4px;"
-                            href="tel:+919746222668">Call Now!</a> </div>
+                    <div class="mbr-section-btn">
+                        <a class="btn btn-md btn-primary md-fnt" type="submit"
+                            style="background-color: #3399ff; border-color: #3399ff; padding: 9px 16px; border-radius: 4px;"
+                            href="tel:+919746222668">Call Now!</a>
+                    </div>
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
@@ -729,6 +749,7 @@
                 </div>
             </div>
         </div>
+
     </section>
     <div class="container">
         <!-- Form with fields: name, phone number, service location, and a button -->
@@ -977,21 +998,40 @@
                                 {{-- <div class="dashed-box22"> --}}
                                 <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
                                     <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person1.png') }}"
+                                        <img src="{{ asset('public/images/whatsapp/p1.jpg') }}"
                                             class="card-img rounded-img22" alt="Person 1">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Accountant</p>
+                                            <h5 class="card-title name22">Lakshmikutty</h5>
+                                            <p class="profession22">Bank Employee</p>
                                             <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, consectetur 
-                                                    adipiscing elit. Sed do eiusmod tempor incididunt ut 
-                                                    labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                                    quis nostrud exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation</p>
+                                                data-text="&ldquo;I have been having terrible problems on my skin for the last 6 years.
+                                Suddenly rashes will appear and itching will start. I met several doctors and used
+                                several medicines with no success. Recently I came to know about Proact Healthcare
+                                and allergy tests. I gave it a try and it turned out to be an unexpected solution
+                                for my itching and rashes. When I got the report I was surprised to know that I have
+                                milk allergy. I never thought that milk can cause allergy. Immediately I stopped
+                                taking milk and my problems solved. I never had allergic attacks afterwards. Now I
+                                am taking my son for the test so that we will know what things he should avoid
+                                eating.&rdquo;">
+                                                &ldquo;I have been having terrible problems on my skin for the last 6
+                                                years.
+                                                Suddenly rashes will appear and itching will start. I met several
+                                                doctors and used
+                                                several medicines with no success. Recently I came to know about Proact
+                                                Healthcare
+                                                and allergy tests. I gave it a try and it turned out to be an unexpected
+                                                solution
+                                                for my itching and rashes. When I got the report I was surprised to know
+                                                that I have
+                                                milk allergy. I never thought that milk can cause allergy. Immediately I
+                                                stopped
+                                                taking milk and my problems solved. I never had allergic attacks
+                                                afterwards. Now I
+                                                am taking my son for the test so that we will know what things he should
+                                                avoid
+                                                eating.&rdquo;</p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
@@ -1007,24 +1047,36 @@
                                 {{-- <div class="dashed-box22"> --}}
                                 <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
                                     <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person2.png') }}"
+                                        <img src="{{ asset('public/images/whatsapp/p2.jpg') }}"
                                             class="card-img rounded-img22" alt="Person 2">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Person 2</h5>
-                                            <p class="profession22">Engineer</p>
+                                            <h5 class="card-title name22">Shahana</h5>
+                                            <p class="profession22">Housewife</p>
                                             <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                     Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                      aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
-                                                       por incididunt ut labore et dolore magna aliqua. 
-                                                       Ut enim ad">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
-                                                por incididunt ut labore et dolore magna aliqua.
-                                                Ut enim ad</p>
+                                                data-text="&ldquo;My 8 years old son Firoz have been getting allergic attacks since he
+                                was six months old. We consulted many doctors and were afraid to give too much
+                                medicines as we know medicines have its side effects too. Recently I took him to
+                                Proact Healthcare Lab and took Allergy Tests. When we got the report I was shocked
+                                to know that Firoz has allergy from bananas and milk. Most of the time we were
+                                feeding him these only. I felt so bad. I immediately stopped giving him milk and
+                                bananas and his allergies have vanished. I am glad that the problem is
+                                solved.&rdquo;">
+                                                &ldquo;My 8 years old son Firoz have been getting allergic attacks since
+                                                he
+                                                was six months old. We consulted many doctors and were afraid to give
+                                                too much
+                                                medicines as we know medicines have its side effects too. Recently I
+                                                took him to
+                                                Proact Healthcare Lab and took Allergy Tests. When we got the report I
+                                                was shocked
+                                                to know that Firoz has allergy from bananas and milk. Most of the time
+                                                we were
+                                                feeding him these only. I felt so bad. I immediately stopped giving him
+                                                milk and
+                                                bananas and his allergies have vanished. I am glad that the problem is
+                                                solved.&rdquo;</p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
@@ -1040,54 +1092,38 @@
                                 {{-- <div class="dashed-box22"> --}}
                                 <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
                                     <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person3.png') }}"
+                                        <img src="{{ asset('public/images/whatsapp/p3.jpg') }}"
                                             class="card-img rounded-img22" alt="Person 2">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Accountant</p>
+                                            <h5 class="card-title name22">Jiyesh</h5>
+                                            <p class="profession22">Businessman</p>
                                             <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, 
-                                                    consectetur adipiscing elit. Sed do eiusmod 
-                                                    tempor incididunt ut labore et dolore magna 
-                                                    aliqua. Ut enim ad minim veniam, quis nostrud
-                                                     exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Sed do eiusmod tempor incididunt ut labore et
-                                                dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation</p>
-                                            <button class="more-btn22" style="display: none;"></button>
-                                            <button class="less-btn22" style="display: none;">Less</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- </div> --}}
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 4 -->
-                        <div class="carousel-item">
-                            <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person4.png') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Engineer</p>
-                                            <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, 
-                                                    consectetur adipiscing elit. Sed do 
-                                                    eiusmod tempor incididunt ut labore 
-                                                    et dolore magna aliqua. Ut enim ad minim 
-                                                    veniam, quis nostrud exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                ad minim veniam, quis nostrud exercitation</p>
+                                                data-text="&ldquo;For years I have been suffering from allergy and have been under
+                                various medications. When I stop the medicine the itching and rashes will come back.
+                                I am a non-vegetarian and many people said I should stop eating meat. I tried that
+                                too, but with no success. I took allergy test at Proact Healthcare and when I got
+                                the report I was surprised to see that I am allergic to tomatoes and dal only. I
+                                immediately stopped these from my diet and in 2-3 days my allergy problems
+                                disappeared.
+                                I am grateful that I could get such an irritating problem solved so easily.
+                                &rdquo;">
+                                                &ldquo;For years I have been suffering from allergy and have been under
+                                                various medications. When I stop the medicine the itching and rashes
+                                                will come back.
+                                                I am a non-vegetarian and many people said I should stop eating meat. I
+                                                tried that
+                                                too, but with no success. I took allergy test at Proact Healthcare and
+                                                when I got
+                                                the report I was surprised to see that I am allergic to tomatoes and dal
+                                                only. I
+                                                immediately stopped these from my diet and in 2-3 days my allergy
+                                                problems
+                                                disappeared.
+                                                I am grateful that I could get such an irritating problem solved so
+                                                easily.
+                                                &rdquo;</p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
@@ -1292,7 +1328,7 @@
                 // Only apply shortening if the full text is longer than 100 characters
                 if (fullText.length > 77) {
                     $(this).html(shortText +
-                    '... <span class="more-btn22">More</span>'); // Add the "More" button inline
+                        '... <span class="more-btn22">More</span>'); // Add the "More" button inline
                     $(this).siblings('.more-btn22').show(); // Show the "More" button if hidden
                 }
             });
@@ -1301,14 +1337,14 @@
             $(document).on('click', '.more-btn22', function() {
                 var fullText = $(this).parent().data('text');
                 $(this).parent().html(fullText +
-                ' <span class="less-btn22">Less</span>'); // Display full text and "Less" button
+                    ' <span class="less-btn22">Less</span>'); // Display full text and "Less" button
             });
 
             // Collapse text on clicking "Less"
             $(document).on('click', '.less-btn22', function() {
                 var shortText = $(this).parent().data('text').substring(0, 129);
                 $(this).parent().html(shortText +
-                '... <span class="more-btn22">More</span>'); // Collapse back to short text
+                    '... <span class="more-btn22">More</span>'); // Collapse back to short text
             });
         });
     </script>
