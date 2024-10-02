@@ -134,6 +134,7 @@
             font-size: 20px;
             cursor: pointer;
         }
+
         .close-btn-23 {
             position: absolute;
             top: 10px;
@@ -141,6 +142,7 @@
             font-size: 20px;
             cursor: pointer;
         }
+
         .close-btn-24 {
             position: absolute;
             top: 10px;
@@ -941,17 +943,17 @@
 
 
                     @if ($errors->any())
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Open the consultation modal when a success message is present
-                            var popup = document.getElementById("ConsultForm22");
-                            // Open the modal
-                            if (popup) {
-                                popup.style.display = "block"; // Show the modal
-                    
-                            }
-                        });
-                    </script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Open the consultation modal when a success message is present
+                                var popup = document.getElementById("ConsultForm22");
+                                // Open the modal
+                                if (popup) {
+                                    popup.style.display = "block"; // Show the modal
+
+                                }
+                            });
+                        </script>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -977,9 +979,9 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
-                            <input type="tel" required  name="phone_number22"
-                                placeholder="Phone Number" minlength="10" maxlength="15" 
-                                placeholder="Phone Number"  class="form-control" id="phone_number22">
+                            <input type="tel" required name="phone_number22" placeholder="Phone Number"
+                                minlength="10" maxlength="15" placeholder="Phone Number" class="form-control"
+                                id="phone_number22">
                         </div>
                     </div>
 
@@ -1500,17 +1502,17 @@
 
                     @if ($errors->any())
 
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Open the consultation modal when a success message is present
-                            var popup = document.getElementById("ConsultForm23");
-                            // Open the modal
-                            if (popup) {
-                                popup.style.display = "block"; // Show the modal
-                    
-                            }
-                        });
-                    </script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Open the consultation modal when a success message is present
+                                var popup = document.getElementById("ConsultForm23");
+                                // Open the modal
+                                if (popup) {
+                                    popup.style.display = "block"; // Show the modal
+
+                                }
+                            });
+                        </script>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -1989,17 +1991,17 @@
 
                     @if ($errors->any())
 
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Open the consultation modal when a success message is present
-                            var popup = document.getElementById("ConsultForm24");
-                            // Open the modal
-                            if (popup) {
-                                popup.style.display = "block"; // Show the modal
-                    
-                            }
-                        });
-                    </script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Open the consultation modal when a success message is present
+                                var popup = document.getElementById("ConsultForm24");
+                                // Open the modal
+                                if (popup) {
+                                    popup.style.display = "block"; // Show the modal
+
+                                }
+                            });
+                        </script>
 
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -2347,8 +2349,8 @@
         };
         cobtn2.onclick = function() {
             consultpopup1.style.display = "block";
-        };    
-         cobtn3.onclick = function() {
+        };
+        cobtn3.onclick = function() {
             consultpopup2.style.display = "block";
         };
 
@@ -2356,10 +2358,10 @@
         consclose.onclick = function() {
             consultpopup.style.display = "none";
         };
-                // Close the modal when the span (x) is clicked
-                consclose2.onclick = function() {
+        // Close the modal when the span (x) is clicked
+        consclose2.onclick = function() {
             consultpopup1.style.display = "none";
-        };        // Close the modal when the span (x) is clicked
+        }; // Close the modal when the span (x) is clicked
         consclose3.onclick = function() {
             consultpopup2.style.display = "none";
         };
@@ -2370,19 +2372,19 @@
                 consultpopup.style.display = "none";
             }
         };
-                // Close the modal when clicked outside of it
-                window.onclick = function(event) {
+        // Close the modal when clicked outside of it
+        window.onclick = function(event) {
             if (event.target == popup) {
                 consultpopup1.style.display = "none";
             }
         };
-                // Close the modal when clicked outside of it
-                window.onclick = function(event) {
+        // Close the modal when clicked outside of it
+        window.onclick = function(event) {
             if (event.target == popup) {
                 consultpopup2.style.display = "none";
             }
         };
-        
+
     });
 
     // Enable the submit button when reCAPTCHA is completed
