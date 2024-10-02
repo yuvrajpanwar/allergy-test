@@ -158,7 +158,7 @@
             }
 
             .plus-icon22 {
-                padding-right: 250px;
+                padding-right: 245px;
             }
         }
 
