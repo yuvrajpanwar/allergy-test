@@ -968,6 +968,7 @@
 
 
                     <div class="form-group">
+                        <h5 class="md-fnt"> Or Get a call back</h5>
                         <input type="text" id="name22" name="name22" minlength="2" placeholder="Your Name"
                             class="form-control" placeholder="Your Name" required>
                     </div>
@@ -1148,7 +1149,7 @@
 
 
 
-                <div id="testimonialCarousel22" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div id="testimonialCarousel22" class="carousel slide" data-ride="carousel" data-interval="4000">
                     <div class="carousel-inner">
                         <!-- Testimonial 1 -->
                         <div class="carousel-item active">
@@ -1316,7 +1317,7 @@
                 <h2 style="font-size: 2.5rem; font-family:  'Francois One', Arial;">Our Locations</h2>
                 <ul class="locations-list22">
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#mumbai-details" style="color: #999999;">
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#mumbai-details" style="color: #999999;">
                             Mumbai <span class="plus-icon22">&#43;</span>
                         </a>
                         <div id="mumbai-details" class="collapse">
@@ -1326,7 +1327,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#pune-details" style="color: #999999;">
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#pune-details" style="color: #999999;">
                             Pune <span class="plus-icon22">&#43;</span>
                         </a>
                         <div id="pune-details" class="collapse">
@@ -1336,7 +1337,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#hyderabad-details" style="color: #999999;">
+                        <a href="#" data-toggle="collapse"  class="toggle-location22"data-target="#hyderabad-details" style="color: #999999;">
                             Hyderabad <span class="plus-icon22">&#43;</span>
                         </a>
                         <div id="hyderabad-details" class="collapse">
@@ -1346,7 +1347,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#bengaluru-details" style="color: #999999;">
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#bengaluru-details" style="color: #999999;">
                             Bangalore <span class="plus-icon22">&#43;</span>
                         </a>
                         <div id="bengaluru-details" class="collapse">
@@ -1356,7 +1357,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#chennai-details" style="color: #999999;">
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#chennai-details" style="color: #999999;">
                             Chennai <span class="plus-icon22">&#43;</span>
                         </a>
                         <div id="chennai-details" class="collapse">
@@ -1366,7 +1367,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#kochi-details" style="color: #999999;">
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#kochi-details" style="color: #999999;">
                             Kochi <span class="plus-icon22">&#43;</span>
                         </a>
                         <div id="kochi-details" class="collapse">
@@ -1376,7 +1377,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" data-toggle="collapse" data-target="#trivandrum-details" style="color: #999999;">
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#trivandrum-details" style="color: #999999;">
                             Trivandrum <span class="plus-icon22">&#43;</span>
                         </a>
                         <div id="trivandrum-details" class="collapse">
@@ -1561,23 +1562,39 @@
                 $(this).parent().html(shortText +
                     '... <span class="more-btn22">More</span>'); // Collapse back to short text
             });
-        });
 
-        // Toggle location details on click
-        document.querySelectorAll('.toggle-location22').forEach(function(locationLink) {
-            locationLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                var target = document.querySelector(locationLink.getAttribute('data-target'));
-                if (target.style.display === 'none' || target.style.display === '') {
-                    target.style.display = 'block';
-                    locationLink.querySelector('.plus-icon22').innerHTML =
-                    '&#8722;'; // Change to minus sign
-                } else {
-                    target.style.display = 'none';
-                    locationLink.querySelector('.plus-icon22').innerHTML = '&#43;'; // Change to plus sign
-                }
+            // Toggle location details on click
+// Toggle location details on click
+document.querySelectorAll('.toggle-location22').forEach(function(locationLink) {
+    locationLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the target collapse element for the clicked location
+        var target = document.querySelector(locationLink.getAttribute('data-target'));
+        
+        // Check if the target is already open
+        var isOpen = target.style.display === 'block';
+
+        // Close all other locations
+        document.querySelectorAll('.collapse').forEach(function(collapseDiv) {
+            collapseDiv.style.display = 'none';
+            document.querySelectorAll('.plus-icon22').forEach(function(icon) {
+                icon.innerHTML = '&#43;'; // Reset all icons to plus sign
             });
         });
+
+        // Toggle the clicked location (only open if it was closed)
+        if (!isOpen) {
+            target.style.display = 'block';
+            locationLink.querySelector('.plus-icon22').innerHTML = '&#8722;'; // Change to minus sign
+        }
+    });
+});
+
+        });
+
+
+
     </script>
 
 </body>
