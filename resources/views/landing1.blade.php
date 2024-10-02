@@ -496,7 +496,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             /* Optional for better text visibility */
             padding: 2px 5px;
-            border-radius: 3px;
+            /* border-radius: 3px; */
         }
 
         /* Responsive adjustments for small displays */
@@ -515,8 +515,8 @@
                 font-size: 10px;
                 /* Even smaller font size for very small screens */
                 /* bottom: -5px;    Further adjust bottom position */
-                /* padding: 0px 0px !important; */
-                /* More compact padding */
+                padding-left: 4px;
+                                /* More compact padding */
             }
         }
 
