@@ -75,7 +75,7 @@ route::get('/allergypanel', [App\Http\Controllers\PageController::class,'allergy
 Route::post('/send-consultation-form', [ConsultationController::class, 'sendConsultationForm'])->name('send-consultation-form');
 
 //for landing1 page
-Route::get('/landing1', [App\Http\Controllers\PageController::class,'landing1'])->name('landing1');
+Route::get('/landingone', [App\Http\Controllers\PageController::class,'landingone'])->name('landingone');
 
 //for landing2
 Route::get('/landing2', [App\Http\Controllers\PageController::class,'landing2'])->name('landing2');
