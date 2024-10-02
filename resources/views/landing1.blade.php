@@ -485,7 +485,9 @@
         }
 
         .img-text {
-            font-family: 'Jost';
+            /* font-family: 'Jost'; */
+            font-family: 'Francois One', sans-serif;
+            padding: 5px 8px;
             position: absolute;
             bottom: -15px;
             left: 0px;
@@ -513,7 +515,7 @@
                 font-size: 10px;
                 /* Even smaller font size for very small screens */
                 /* bottom: -5px;    Further adjust bottom position */
-                padding: 0px 0px !important;
+                /* padding: 0px 0px !important; */
                 /* More compact padding */
             }
         }
@@ -627,7 +629,7 @@
                 font-weight: bold;
             }
             .smlrg{
-                font-size: 1rem;
+                font-size: 1.3rem;
             }
 
             .text-content p {
