@@ -21,10 +21,24 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+        /* Default: no line break */
+        .line-break {
+            display: none;
+        }
 
-.card-text .result22{
-    text-align:justify;
-}
+        /* On small screens (e.g., less than 768px wide) */
+        @media (max-width: 768px) {
+            .line-break {
+                display: block;
+                /* Acts like a <br> on small screens */
+            }
+        }
+
+
+        .card-text .result22 {
+            text-align: justify;
+        }
+
         /* Reorder for mobile view */
         @media (max-width: 768px) {
             .text-block {
@@ -296,8 +310,8 @@
             display: inline-block;
             font-size: 14px;
             color: #555;
-            text-align:justify;
-                }
+            text-align: justify;
+        }
 
         .more-btn22,
         .less-btn22 {
@@ -516,7 +530,7 @@
                 /* Even smaller font size for very small screens */
                 /* bottom: -5px;    Further adjust bottom position */
                 padding-left: 4px;
-                                /* More compact padding */
+                /* More compact padding */
             }
         }
 
@@ -628,7 +642,8 @@
                 line-height: 1.8;
                 font-weight: bold;
             }
-            .smlrg{
+
+            .smlrg {
                 font-size: 1.3rem;
             }
 
@@ -721,7 +736,7 @@
                             Chat with us
                             now</a> or
                         Call us Now: <strong><a href="tel:+919746222668" style="text-decoration:none; color: #ff3300;">
-                                 <span class="smlrg">97462 22668</span></a></strong>
+                                <span class="smlrg">97462 22668</span></a></strong>
                     </p>
                 </div>
             </div>
@@ -732,7 +747,8 @@
             <div class="row align-items-center" style="padding-top: 1rem;">
                 <div class="col-lg-6 text-block">
                     <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">
-                        Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong><br>problems.<br>Take
+                        Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong><span
+                            class="line-break"></span> problems.<br>Take
                         Action, Today.
                     </h1>
                     <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">
