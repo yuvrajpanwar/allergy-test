@@ -226,7 +226,7 @@
         }
 
         .contact-bg22 {
-            background-color: yellow;
+            background-color: #bfbfbf96;
             padding: 5px 10px;
             font-weight: bold;
             border-radius: 5px;
@@ -626,10 +626,14 @@
                 line-height: 1.8;
                 font-weight: bold;
             }
+            .smlrg{
+                font-size: 1rem;
+            }
 
             .text-content p {
                 display: flex;
                 flex-direction: column;
+                line-height: 1.6;
             }
 
             .site-logo {
@@ -715,7 +719,7 @@
                             Chat with us
                             now</a> or
                         Call us Now: <strong><a href="tel:+919746222668" style="text-decoration:none; color: #ff3300;">
-                                97462 22668</a></strong>
+                                 <span class="smlrg">97462 22668</span></a></strong>
                     </p>
                 </div>
             </div>
@@ -726,7 +730,7 @@
             <div class="row align-items-center" style="padding-top: 1rem;">
                 <div class="col-lg-6 text-block">
                     <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">
-                        Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong>problems.<br>Take
+                        Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong><br>problems.<br>Take
                         Action, Today.
                     </h1>
                     <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">
