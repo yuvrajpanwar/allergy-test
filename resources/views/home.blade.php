@@ -134,6 +134,7 @@
             font-size: 20px;
             cursor: pointer;
         }
+
         .close-btn-23 {
             position: absolute;
             top: 10px;
@@ -141,6 +142,7 @@
             font-size: 20px;
             cursor: pointer;
         }
+
         .close-btn-24 {
             position: absolute;
             top: 10px;
@@ -694,7 +696,7 @@
     <div class="modal-content11" onclick="event.stopPropagation()">
         <span class="close11" onclick="closeContactForm11(event)">&times;</span>
         <h2>Contact Us</h2>
-        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" method="POST">
+        <form id="messageForm11" action="{{ route('send-contact-form') }}" name="messageForm11" onsubmit="return validateRecaptcha()" method="POST">
             @csrf
             @if (session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -874,7 +876,7 @@
                             <div class="text">
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    Call us for Current Offers</p>
+                                    Call us for the Prices</p>
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
                                     +91 97462 22668</p>
@@ -904,7 +906,7 @@
                 <h4 class="popup-title-22">Book a Free Consultation</h4>
 
                 <form id="consultationForm22" action="{{ route('send-consultation-form') }}"
-                    name="consultationForm22" method="POST">
+                    name="consultationForm22" method="POST" onsubmit="return validateRecaptcha22()">
                     @csrf
 
                     @if (session('success'))
@@ -941,17 +943,17 @@
 
 
                     @if ($errors->any())
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Open the consultation modal when a success message is present
-                            var popup = document.getElementById("ConsultForm22");
-                            // Open the modal
-                            if (popup) {
-                                popup.style.display = "block"; // Show the modal
-                    
-                            }
-                        });
-                    </script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Open the consultation modal when a success message is present
+                                var popup = document.getElementById("ConsultForm22");
+                                // Open the modal
+                                if (popup) {
+                                    popup.style.display = "block"; // Show the modal
+
+                                }
+                            });
+                        </script>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -977,9 +979,9 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             {{-- <label class="text-black" for="phone_number22">Phone Number</label> --}}
-                            <input type="tel" required  name="phone_number22"
-                                placeholder="Phone Number" minlength="10" maxlength="15" 
-                                placeholder="Phone Number"  class="form-control" id="phone_number22">
+                            <input type="tel" required name="phone_number22" placeholder="Phone Number"
+                                minlength="10" maxlength="15" placeholder="Phone Number" class="form-control"
+                                id="phone_number22">
                         </div>
                     </div>
 
@@ -1431,7 +1433,7 @@
                             <div class="text">
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    Call us for Current Offers</p>
+                                    Call us for the Prices</p>
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
                                     +91 97462 22668</p>
@@ -1461,7 +1463,7 @@
                 <h4 class="popup-title-22">Book a Free Consultation</h4>
 
                 <form id="consultationForm22" action="{{ route('send-consultation-form') }}"
-                    name="consultationForm22" method="POST">
+                    name="consultationForm22" method="POST" onsubmit="return validateRecaptcha22()">
                     @csrf
 
                     @if (session('success'))
@@ -1500,17 +1502,17 @@
 
                     @if ($errors->any())
 
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Open the consultation modal when a success message is present
-                            var popup = document.getElementById("ConsultForm23");
-                            // Open the modal
-                            if (popup) {
-                                popup.style.display = "block"; // Show the modal
-                    
-                            }
-                        });
-                    </script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Open the consultation modal when a success message is present
+                                var popup = document.getElementById("ConsultForm23");
+                                // Open the modal
+                                if (popup) {
+                                    popup.style.display = "block"; // Show the modal
+
+                                }
+                            });
+                        </script>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -1920,7 +1922,7 @@
                             <div class="text">
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
-                                    Call us for Current Offers</p>
+                                    Call us for the Prices</p>
                                 <p class="lead m-0"
                                     style="font-family: Rubik;font-size: 20px;font-weight: 800;line-height: 23.7px;">
                                     +91 97462 22668</p>
@@ -1950,7 +1952,7 @@
                 <h4 class="popup-title-22">Book a Free Consultation</h4>
 
                 <form id="consultationForm22" action="{{ route('send-consultation-form') }}"
-                    name="consultationForm22" method="POST">
+                    name="consultationForm22" method="POST" onsubmit="return validateRecaptcha22()">
                     @csrf
 
                     @if (session('success'))
@@ -1989,17 +1991,17 @@
 
                     @if ($errors->any())
 
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Open the consultation modal when a success message is present
-                            var popup = document.getElementById("ConsultForm24");
-                            // Open the modal
-                            if (popup) {
-                                popup.style.display = "block"; // Show the modal
-                    
-                            }
-                        });
-                    </script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                // Open the consultation modal when a success message is present
+                                var popup = document.getElementById("ConsultForm24");
+                                // Open the modal
+                                if (popup) {
+                                    popup.style.display = "block"; // Show the modal
+
+                                }
+                            });
+                        </script>
 
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -2167,6 +2169,7 @@
             submitHandler: function(form) {
                 if (grecaptcha.getResponse() === '') {
                     document.getElementById('recaptcha-error11').style.display = 'block';
+                    document.getElementById('submitBtn11').disabled=true;
                     return false;
                 } else {
                     form.submit();
@@ -2178,6 +2181,7 @@
             submitHandler: function(form) {
                 if (grecaptcha.getResponse() === '') {
                     document.getElementById('recaptcha-error22').style.display = 'block';
+                    document.getElementById('consultsub22').disabled=true;
                     return false;
                 } else {
                     form.submit();
@@ -2198,14 +2202,7 @@
         }
     }
 
-    // Enable submit button if reCAPTCHA is completed
-    function enableSubmitBtn() {
-        // Enable the submit button
-        const submitBtn = document.getElementById('submitBtn11');
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('disabled-btn');
-        submitBtn.classList.add('active-btn');
-    }
+
 
     // Initialize form validation
     $(document).ready(function() {
@@ -2347,8 +2344,8 @@
         };
         cobtn2.onclick = function() {
             consultpopup1.style.display = "block";
-        };    
-         cobtn3.onclick = function() {
+        };
+        cobtn3.onclick = function() {
             consultpopup2.style.display = "block";
         };
 
@@ -2356,10 +2353,10 @@
         consclose.onclick = function() {
             consultpopup.style.display = "none";
         };
-                // Close the modal when the span (x) is clicked
-                consclose2.onclick = function() {
+        // Close the modal when the span (x) is clicked
+        consclose2.onclick = function() {
             consultpopup1.style.display = "none";
-        };        // Close the modal when the span (x) is clicked
+        }; // Close the modal when the span (x) is clicked
         consclose3.onclick = function() {
             consultpopup2.style.display = "none";
         };
@@ -2370,42 +2367,177 @@
                 consultpopup.style.display = "none";
             }
         };
-                // Close the modal when clicked outside of it
-                window.onclick = function(event) {
+        // Close the modal when clicked outside of it
+        window.onclick = function(event) {
             if (event.target == popup) {
                 consultpopup1.style.display = "none";
             }
         };
-                // Close the modal when clicked outside of it
-                window.onclick = function(event) {
+        // Close the modal when clicked outside of it
+        window.onclick = function(event) {
             if (event.target == popup) {
                 consultpopup2.style.display = "none";
             }
         };
-        
+
+    //     function validateRecaptcha() {
+    //     var recaptchaResponse = grecaptcha.getResponse();
+
+    //     if (recaptchaResponse.length == 0) {
+    //         document.getElementById('recaptcha-error11').style.display = 'block';
+    //         return false; // Prevent form submission if reCAPTCHA is not validated
+    //     }
+
+    //     return true; // Allow form submission if reCAPTCHA is valid
+    // }
+
+    // function validateRecaptcha22() {
+    //     var recaptchaResponse = grecaptcha.getResponse();
+
+    //     if (recaptchaResponse.length == 0) {
+    //         document.getElementById('recaptcha-error22').style.display = 'block';
+    //         return false; // Prevent form submission if reCAPTCHA is not validated
+    //     }
+
+    //     return true; // Allow form submission if reCAPTCHA is valid
+    // }
+
+
+
+
     });
 
-    // Enable the submit button when reCAPTCHA is completed
-    function enableConsultbtn() {
-        const submitBtn = document.getElementById('consultsub22');
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('disabled-btn');
-        submitBtn.classList.add('active-btn');
-    }
+//     // Function to check if reCAPTCHA has expired and disable the button accordingly
+// function checkRecaptchaStatus() {
+//     // Check reCAPTCHA response token
+//     var recaptchaResponse = grecaptcha.getResponse();
+    
+//     // If token is empty (reCAPTCHA expired or not completed), disable the button
+//     if (recaptchaResponse.length == 0) {
+//         document.getElementById("submitBtn11").disabled = true;
+//         document.getElementById('recaptcha-error11').style.display = 'block'; // Show error message
+//     } else {
+//         document.getElementById("submitBtn11").disabled = false;
+//         document.getElementById('recaptcha-error11').style.display = 'none'; // Hide error message
+//     }
+// }
 
-    function enableConsultbtn2() {
-        const submitBtn = document.getElementById('consultsub23');
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('disabled-btn');
-        submitBtn.classList.add('active-btn');
-    }
 
-    function enableConsultbtn3() {
-        const submitBtn = document.getElementById('consultsub24');
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('disabled-btn');
-        submitBtn.classList.add('active-btn');
-    }
+//     // Function to check if reCAPTCHA has expired and disable the button accordingly
+//     function checkRecaptchaStatus2() {
+//     // Check reCAPTCHA response token
+//     var recaptchaResponse = grecaptcha.getResponse();
+    
+//     // If token is empty (reCAPTCHA expired or not completed), disable the button
+//     if (recaptchaResponse.length == 0) {
+//         document.getElementById("consultsub22").disabled = true;
+//         document.getElementById('recaptcha-error22').style.display = 'block'; // Show error message
+//     } else {
+//         document.getElementById("consultsub22").disabled = false;
+//         document.getElementById('recaptcha-error22').style.display = 'none'; // Hide error message
+//     }
+// }    // Function to check if reCAPTCHA has expired and disable the button accordingly
+// function checkRecaptchaStatus3() {
+//     // Check reCAPTCHA response token
+//     var recaptchaResponse = grecaptcha.getResponse();
+    
+//     // If token is empty (reCAPTCHA expired or not completed), disable the button
+//     if (recaptchaResponse.length == 0) {
+//         document.getElementById("consultsub23").disabled = true;
+//         document.getElementById('recaptcha-error22').style.display = 'block'; // Show error message
+//     } else {
+//         document.getElementById("consultsub23").disabled = false;
+//         document.getElementById('recaptcha-error22').style.display = 'none'; // Hide error message
+//     }
+// }    // Function to check if reCAPTCHA has expired and disable the button accordingly
+// function checkRecaptchaStatus4() {
+//     // Check reCAPTCHA response token
+//     var recaptchaResponse = grecaptcha.getResponse();
+    
+    // If token is empty (reCAPTCHA expired or not completed), disable the button
+//     if (recaptchaResponse.length == 0) {
+//         document.getElementById("consultsub24").disabled = true;
+//         document.getElementById('recaptcha-error22').style.display = 'block'; // Show error message
+//     } else {
+//         document.getElementById("consultsub24").disabled = false;
+//         document.getElementById('recaptcha-error22').style.display = 'none'; // Hide error message
+//     }
+// }
+
+$(document).ready(function() {
+    // Automatically refresh reCAPTCHA every 90 seconds
+    setInterval(function() {
+    grecaptcha.reset(); // Reset reCAPTCHA to get a new token
+}, 90 * 1000); // Refresh before it expires
+
+
+// Set interval to continuously check if reCAPTCHA has expired (check every 1 second)
+// setInterval(checkRecaptchaStatus, 5000);
+// setInterval(checkRecaptchaStatus2, 5000);
+// setInterval(checkRecaptchaStatus3, 5000);
+// setInterval(checkRecaptchaStatus4, 5000);
+
+
+
+});
+
+    // Enable submit button if reCAPTCHA is completed
+function enableSubmitBtn() {
+    const submitBtn = document.getElementById('submitBtn11');
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('disabled-btn');
+    submitBtn.classList.add('active-btn');
+
+    // Set a timer to disable the button after 2 minutes (120000 milliseconds)
+    setTimeout(function() {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('active-btn');
+        submitBtn.classList.add('disabled-btn');
+    }, 60000); // 2 minutes
+}
+
+function enableConsultbtn() {
+    const submitBtn = document.getElementById('consultsub22');
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('disabled-btn');
+    submitBtn.classList.add('active-btn');
+
+    // Set a timer to disable the button after 2 minutes
+    setTimeout(function() {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('active-btn');
+        submitBtn.classList.add('disabled-btn');
+    }, 60000); // 2 minutes
+}
+
+function enableConsultbtn2() {
+    const submitBtn = document.getElementById('consultsub23');
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('disabled-btn');
+    submitBtn.classList.add('active-btn');
+
+    // Set a timer to disable the button after 2 minutes
+    setTimeout(function() {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('active-btn');
+        submitBtn.classList.add('disabled-btn');
+    }, 60000); // 2 minutes
+}
+
+function enableConsultbtn3() {
+    const submitBtn = document.getElementById('consultsub24');
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('disabled-btn');
+    submitBtn.classList.add('active-btn');
+
+    // Set a timer to disable the button after 2 minutes
+    setTimeout(function() {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('active-btn');
+        submitBtn.classList.add('disabled-btn');
+    }, 60000); // 2 minutes
+}
+
 
     // Close Contact Form Modal when clicked outside the modal content or on the close button
     function closeConsultForm(event) {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Get rid of Allergy problems. Take a Comprehensive Allergy Test today.</title>
     <meta charset="utf-8">
@@ -20,11 +21,192 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="icon" href="{{ asset('public/images/whatsapp/tabfavicon.png') }}" type="image/x-icon">
     <style>
+        .rounded-img22 {
+            /* border-radius: 50%; */
+            width: 70%;
+            height: auto;
+            margin-left: 2rem;
+            margin-top: 0px !important;
+            /* position: flex !important; */
+        }
+
+        .name22,
+        .profession22 {
+            margin-left: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .testimonial-card22 {
+                display: flex;
+                align-items: center;
+            }
+
+            .name22,
+            .profession22 {
+                text-align: left;
+                margin-left: 0.8rem;
+            }
+
+            .result22 {
+                text-align: justify;
+                margin-right: 1.5rem;
+
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .rounded-img22 {
+                /* margin-top: 1rem; */
+                margin-left: 5rem;
+
+                width: 50%;
+            }
+
+            .testimonial-card22 {
+                flex-direction: column;
+            }
+        }
+
+
+
+
+
+        .fixed-icons11 {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+
+        }
+
+        .icon11 {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+
+        }
+
+        .icon-image11 {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+
+        }
+
+        .icon11:hover .icon-image11 {
+            transform: scale(1.1);
+        }
+
+
+        .locations-list22 {
+            list-style: none;
+            padding: 0;
+        }
+
+        .locations-list22 li {
+            margin-bottom: 10px;
+        }
+
+        .toggle-location22 {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .location-details22 {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .plus-icon22 {
+            float: right;
+            font-size: 1.2rem;
+            color: #666;
+            padding-right: 300px;
+        }
+
+        .contact-bg22 {
+            /* background-color: yellow; */
+            padding: 5px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .locations-list22 li {
+                font-size: 1rem;
+            }
+
+            .facilities-section22 img {
+                width: 100%;
+                /* Stack facilities on small screens */
+            }
+
+            .contact-bg22 {
+                font-size: 1.2rem;
+            }
+
+            .plus-icon22 {
+                padding-right: 245px;
+            }
+        }
+
+
+
+
+        .card-title {
+            margin-bottom: 0rem;
+        }
+
+        /* Default: no line break */
+        .line-break {
+            display: none;
+        }
+
+        /* On small screens (e.g., less than 768px wide) */
+        @media (max-width: 768px) {
+            .line-break {
+                display: block;
+                /* Acts like a <br> on small screens */
+            }
+        }
+
+
+        .card-text .result22 {
+            text-align: justify;
+            margin-bottom: 0.2rem;
+        }
+
+        /* Reorder for mobile view */
+        @media (max-width: 768px) {
+            .text-block {
+                order: 2;
+                /* Text block appears second on mobile */
+            }
+
+            .img-block {
+                order: 1;
+                /* Image block appears first on mobile */
+            }
+        }
+
+
         /* Footer Styling */
         .footer22 {
             background-color: #000;
             /* Black background */
-            padding: 15px 0;
+            padding: 80px 0;
             text-align: center;
             width: 100%;
         }
@@ -59,18 +241,6 @@
             .frm-margin {
                 margin-right: 4rem;
             }
-        }
-
-        .custom-hr {
-            /* border: 0; */
-            height: 1px;
-            /* Set the height of the line */
-            background-color: #bfbfbf;
-            /* Line color */
-            margin: 20px 0;
-            /* Space above and below the line */
-            width: 100%;
-            position: absolute;
         }
 
         /* Active blue state after reCAPTCHA success */
@@ -192,7 +362,7 @@
         .facilities-section22 .facility-img22 {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            /* border-radius: 8px; */
         }
 
         .facilities-section22 p {
@@ -207,10 +377,9 @@
         }
 
         .contact-bg22 {
-            background-color: yellow;
             padding: 5px 10px;
             font-weight: bold;
-            border-radius: 5px;
+            font-size: 1.5rem;
         }
 
         /* Media Queries for responsiveness */
@@ -245,25 +414,11 @@
             overflow: hidden;
         }
 
-
-
-        .rounded-img22 {
-            width: 85%;
-            position: relative;
-            height: auto;
-        }
-
-        @media (min-width: 1100px) {
-            .rounded-img22 {
-                width: 116px;
-                height: 113px
-            }
-        }
-
         .name22 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #e94e4e;
+            margin-left: 2rem;
             /* Red color for the name */
         }
 
@@ -271,12 +426,15 @@
             font-size: 14px;
             font-weight: bold;
             color: #333;
+            margin-left: 2rem;
+
         }
 
         .result22 {
             display: inline-block;
             font-size: 14px;
             color: #555;
+            text-align: justify;
         }
 
         .more-btn22,
@@ -318,7 +476,8 @@
 
             .name22,
             .profession22 {
-                text-align: center;
+                text-align: left;
+                margin-left: 0.5rem;
             }
 
             .carousel-control-prev,
@@ -465,7 +624,9 @@
         }
 
         .img-text {
-            font-family: 'Jost';
+            /* font-family: 'Jost'; */
+            font-family: 'Francois One', sans-serif;
+            padding: 5px 8px;
             position: absolute;
             bottom: -15px;
             left: 0px;
@@ -474,7 +635,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             /* Optional for better text visibility */
             padding: 2px 5px;
-            border-radius: 3px;
+            /* border-radius: 3px; */
         }
 
         /* Responsive adjustments for small displays */
@@ -493,7 +654,7 @@
                 font-size: 10px;
                 /* Even smaller font size for very small screens */
                 /* bottom: -5px;    Further adjust bottom position */
-                padding: 0px 0px !important;
+                padding-left: 4px;
                 /* More compact padding */
             }
         }
@@ -607,9 +768,14 @@
                 font-weight: bold;
             }
 
+            .smlrg {
+                font-size: 1.3rem;
+            }
+
             .text-content p {
                 display: flex;
                 flex-direction: column;
+                line-height: 1.6;
             }
 
             .site-logo {
@@ -695,31 +861,41 @@
                             Chat with us
                             now</a> or
                         Call us Now: <strong><a href="tel:+919746222668" style="text-decoration:none; color: #ff3300;">
-                                97462 22668</a></strong>
+                                <span class="smlrg">97462 22668</span></a></strong>
                     </p>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Icons Section -->
+    <div class="fixed-icons11">
+        <a href="https://wa.me/7358728170" target="_blank" class="icon11 whatsapp11" title="Chat on WhatsApp">
+            <img src="{{ asset('public/images/whatsapp/frame376.png') }}" alt="WhatsApp" class="icon-image11">
+        </a>
 
     </div>
-    </div>
+
+
     <section class="header2 cid-toMW46ZFU7" id="header2-1e">
         <div class="container">
             <div class="row align-items-center" style="padding-top: 1rem;">
-                <div class="mbr-white col-lg-6">
-                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">Get rid of your
-                        <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong>problems.<br>Take Action, Today.
+                <div class="col-lg-6 text-block">
+                    <h1 class="mbr-section-title mbr-white mbr-fonts-style align-left lg-fnt">
+                        Get rid of your <strong>ALLERGY &amp; FOOD<br>Intolerance&nbsp;</strong><span
+                            class="line-break"></span> problems.<br>Take
+                        Action, Today.
                     </h1>
-                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">Itching, hives,
-                        sneezing, runny nose, wheezing, chest tightness, shortness of breath, cough, swollen lips etc.
-                        are signs of allergy.<br><em><br></em>
+                    <h3 class="mbr-section-subtitle pb-3 mbr-fonts-style mbr-white align-left md-fnt">
+                        Itching, hives, sneezing, runny nose, wheezing, chest tightness, shortness of breath, cough,
+                        swollen lips, etc. are signs of allergy.<br><em><br></em>
                         <div><em>If you have any of these symptoms, take an allergy test immediately and know the
                                 cause.</em></div>
                     </h3>
-                    <div class="mbr-section-btn"><a class="btn btn-md btn-primary md-fnt" type="submit"
-                            style="background-color: #3399ff; padding: 9px 16px; border-radius: 4px;"
-                            href="tel:+919746222668">Call Now!</a> </div>
+                    <div class="mbr-section-btn">
+                        <a class="btn btn-md btn-primary md-fnt" type="submit"
+                            style="background-color: #3399ff; border-color: #3399ff; padding: 9px 16px; border-radius: 4px;"
+                            href="tel:+919746222668">Call Now!</a>
+                    </div>
                 </div>
                 <div class="col-lg-6 align-left img-block">
                     <div class="mbr-figure">
@@ -729,6 +905,7 @@
                 </div>
             </div>
         </div>
+
     </section>
     <div class="container">
         <!-- Form with fields: name, phone number, service location, and a button -->
@@ -791,6 +968,7 @@
 
 
                     <div class="form-group">
+                        <h5 class="md-fnt"> Or Get a call back</h5>
                         <input type="text" id="name22" name="name22" minlength="2" placeholder="Your Name"
                             class="form-control" placeholder="Your Name" required>
                     </div>
@@ -969,137 +1147,151 @@
             <div class="col-lg-6 col-md-12 testimonials-section22">
                 <h2 class="section-title22"> Testimonials</h2>
 
-                <div id="testimonialCarousel22" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+
+                <div id="testimonialCarousel22" class="carousel slide" data-ride="carousel" data-interval="4000">
                     <div class="carousel-inner">
                         <!-- Testimonial 1 -->
                         <div class="carousel-item active">
                             <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person1.png') }}"
-                                            class="card-img rounded-img22" alt="Person 1">
+                                <div class="row no-gutters " style="">
+                                    <div class="col-lg-4 d-flex flex-column">
+                                        <h5 class="card-title name22">Lakshmikutty</h5>
+                                        <p class="profession22">Bank Employee</p>
+                                        <img src="{{ asset('public/images/whatsapp/p1.jpg') }}"
+                                            class="card-img rounded-img22 mt-3" alt="Person 1">
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Accountant</p>
                                             <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, consectetur 
-                                                    adipiscing elit. Sed do eiusmod tempor incididunt ut 
-                                                    labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                                    quis nostrud exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation</p>
+                                                data-text="&ldquo;I have been having terrible problems on my skin for the last 6 years.
+                                Suddenly rashes will appear and itching will start. I met several doctors and used
+                                several medicines with no success. Recently I came to know about Proact Healthcare
+                                and allergy tests. I gave it a try and it turned out to be an unexpected solution
+                                for my itching and rashes. When I got the report I was surprised to know that I have
+                                milk allergy. I never thought that milk can cause allergy. Immediately I stopped
+                                taking milk and my problems solved. I never had allergic attacks afterwards. Now I
+                                am taking my son for the test so that we will know what things he should avoid
+                                eating.&rdquo;">
+                                                &ldquo;I have been having terrible problems on my skin for the last 6
+                                                years.
+                                                Suddenly rashes will appear and itching will start. I met several
+                                                doctors and used
+                                                several medicines with no success. Recently I came to know about Proact
+                                                Healthcare
+                                                and allergy tests. I gave it a try and it turned out to be an unexpected
+                                                solution
+                                                for my itching and rashes. When I got the report I was surprised to know
+                                                that I have
+                                                milk allergy. I never thought that milk can cause allergy. Immediately I
+                                                stopped
+                                                taking milk and my problems solved. I never had allergic attacks
+                                                afterwards. Now I
+                                                am taking my son for the test so that we will know what things he should
+                                                avoid
+                                                eating.&rdquo;
+                                            </p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
+                        <!-- Repeat structure for other testimonials -->
                         <!-- Testimonial 2 -->
                         <div class="carousel-item">
                             <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person2.png') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
+                                <div class="row no-gutters " style="">
+                                    <div class="col-lg-4 d-flex flex-column">
+                                        <h5 class="card-title name22">Shahana</h5>
+                                        <p class="profession22">Housewife</p>
+                                        <img src="{{ asset('public/images/whatsapp/p2.jpg') }}"
+                                            class="card-img rounded-img22 mt-3" alt="Person 2">
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Person 2</h5>
-                                            <p class="profession22">Engineer</p>
                                             <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                     Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                      aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
-                                                       por incididunt ut labore et dolore magna aliqua. 
-                                                       Ut enim ad">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
-                                                por incididunt ut labore et dolore magna aliqua.
-                                                Ut enim ad</p>
+                                                data-text="&ldquo;My 8 years old son Firoz have been getting allergic attacks since he
+                                was six months old. We consulted many doctors and were afraid to give too much
+                                medicines as we know medicines have its side effects too. Recently I took him to
+                                Proact Healthcare Lab and took Allergy Tests. When we got the report I was shocked
+                                to know that Firoz has allergy from bananas and milk. Most of the time we were
+                                feeding him these only. I felt so bad. I immediately stopped giving him milk and
+                                bananas and his allergies have vanished. I am glad that the problem is
+                                solved.&rdquo;">
+                                                &ldquo;My 8 years old son Firoz have been getting allergic attacks since
+                                                he
+                                                was six months old. We consulted many doctors and were afraid to give
+                                                too much
+                                                medicines as we know medicines have its side effects too. Recently I
+                                                took him to
+                                                Proact Healthcare Lab and took Allergy Tests. When we got the report I
+                                                was shocked
+                                                to know that Firoz has allergy from bananas and milk. Most of the time
+                                                we were
+                                                feeding him these only. I felt so bad. I immediately stopped giving him
+                                                milk and
+                                                bananas and his allergies have vanished. I am glad that the problem is
+                                                solved.&rdquo;
+                                            </p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
 
                         <!-- Testimonial 3 -->
                         <div class="carousel-item">
                             <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person3.png') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
+                                <div class="row no-gutters " style="">
+                                    <div class="col-lg-4 d-flex flex-column">
+                                        <h5 class="card-title name22">Jiyesh</h5>
+                                        <p class="profession22">Businessman</p>
+                                        <img src="{{ asset('public/images/whatsapp/p3.jpg') }}"
+                                            class="card-img rounded-img22 mt-3" alt="Person 3">
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Accountant</p>
                                             <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, 
-                                                    consectetur adipiscing elit. Sed do eiusmod 
-                                                    tempor incididunt ut labore et dolore magna 
-                                                    aliqua. Ut enim ad minim veniam, quis nostrud
-                                                     exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Sed do eiusmod tempor incididunt ut labore et
-                                                dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation</p>
+                                                data-text="&ldquo;For years I have been suffering from allergy and have been under
+                                various medications. When I stop the medicine the itching and rashes will come back.
+                                I am a non-vegetarian and many people said I should stop eating meat. I tried that
+                                too, but with no success. I took allergy test at Proact Healthcare and when I got
+                                the report I was surprised to see that I am allergic to tomatoes and dal only. I
+                                immediately stopped these from my diet and in 2-3 days my allergy problems
+                                disappeared.
+                                I am grateful that I could get such an irritating problem solved so easily.
+                                &rdquo;">
+                                                &ldquo;For years I have been suffering from allergy and have been under
+                                                various medications. When I stop the medicine the itching and rashes
+                                                will come back.
+                                                I am a non-vegetarian and many people said I should stop eating meat. I
+                                                tried that
+                                                too, but with no success. I took allergy test at Proact Healthcare and
+                                                when I got
+                                                the report I was surprised to see that I am allergic to tomatoes and dal
+                                                only. I
+                                                immediately stopped these from my diet and in 2-3 days my allergy
+                                                problems
+                                                disappeared.
+                                                I am grateful that I could get such an irritating problem solved so
+                                                easily.
+                                                &rdquo;
+                                            </p>
                                             <button class="more-btn22" style="display: none;"></button>
                                             <button class="less-btn22" style="display: none;">Less</button>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
                             </div>
                         </div>
-
-                        <!-- Testimonial 4 -->
-                        <div class="carousel-item">
-                            <div class="card testimonial-card22" style="border: none;">
-                                {{-- <div class="dashed-box22"> --}}
-                                <div class="row no-gutters" style="padding: 2rem; margin-top:0.8rem">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('public/images/whatsapp/person4.png') }}"
-                                            class="card-img rounded-img22" alt="Person 2">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title name22">Elsy perry</h5>
-                                            <p class="profession22">Engineer</p>
-                                            <p class="card-text result22"
-                                                data-text="Lorem ipsum dolor sit amet, 
-                                                    consectetur adipiscing elit. Sed do 
-                                                    eiusmod tempor incididunt ut labore 
-                                                    et dolore magna aliqua. Ut enim ad minim 
-                                                    veniam, quis nostrud exercitation">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                ad minim veniam, quis nostrud exercitation</p>
-                                            <button class="more-btn22" style="display: none;"></button>
-                                            <button class="less-btn22" style="display: none;">Less</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- </div> --}}
-                            </div>
-                        </div>
-
                     </div>
 
-                    <!-- Controls (Prev/Next buttons with custom icons) -->
+                    <!-- Carousel Controls -->
                     <a class="carousel-control-prev control22" href="#testimonialCarousel22" role="button"
                         data-slide="prev">
                         <span class="previous round">&#8249;</span>
@@ -1111,26 +1303,89 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+
+
+
+
             </div>
         </div>
     </div>
-
-    <hr class="custom-hr">
-
-
     <div class="container" style="margin-top: 2rem; font-family: 'Francois One', Arial;">
         <div class="row">
             <!-- Our Locations Section -->
             <div class="col-lg-6 col-md-12 mb-4">
                 <h2 style="font-size: 2.5rem; font-family:  'Francois One', Arial;">Our Locations</h2>
                 <ul class="locations-list22">
-                    <li><a href="#">Mumbai</a></li>
-                    <li><a href="#">Pune</a></li>
-                    <li><a href="#">Hyderabad</a></li>
-                    <li><a href="#">Bangalore</a></li>
-                    <li><a href="#">Chennai</a></li>
-                    <li><a href="#">Kochi</a></li>
-                    <li><a href="#">Trivandrum</a></li>
+                    <li>
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#mumbai-details" style="color: #999999;">
+                            Mumbai <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="mumbai-details" class="collapse">
+                            F-59, 1st Floor, THE ZONE MALL, Chandavarkar Rd,<br>
+                            Borivali (W), Mumbai-400092<br>
+                            Ph. 97462 22668
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#pune-details" style="color: #999999;">
+                            Pune <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="pune-details" class="collapse">
+                            Flat no. 103, Jadhav Complex, Airport Road, Lohegaon<br>
+                            Pune-411047<br>
+                            Ph. 97462 22668
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse"  class="toggle-location22"data-target="#hyderabad-details" style="color: #999999;">
+                            Hyderabad <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="hyderabad-details" class="collapse">
+                            No.10A&B, Mayfair Gardens, Rd No.12, Banjara Hills<br>
+                            Hyderabad-500034<br>
+                            Ph. 77366 51520
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#bengaluru-details" style="color: #999999;">
+                            Bangalore <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="bengaluru-details" class="collapse">
+                            151, 6th cross, 22nd A Main Rd, 1st Sector, HSR Layout<br>
+                            Bengaluru-560102<br>
+                            Ph. 97462 22668
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#chennai-details" style="color: #999999;">
+                            Chennai <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="chennai-details" class="collapse">
+                            10, Shalom Building, 4, Mannar Street, T.Nagar<br>
+                            Chennai-600017<br>
+                            Ph. 96772 11647
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#kochi-details" style="color: #999999;">
+                            Kochi <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="kochi-details" class="collapse">
+                            Ground floor, Chinna Complex, Aiswarya Road (Metro Pillar 548), Palarivattom<br>
+                            Kochi-682 025<br>
+                            Ph. 95672 22877
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" class="toggle-location22" data-target="#trivandrum-details" style="color: #999999;">
+                            Trivandrum <span class="plus-icon22">&#43;</span>
+                        </a>
+                        <div id="trivandrum-details" class="collapse">
+                            1st Floor, Crown Plaza, Pattom, Next to St.Mary's Church<br>
+                            Trivandrum-695004<br>
+                            Ph. 73569 45575
+                        </div>
+                    </li>
                 </ul>
             </div>
 
@@ -1138,38 +1393,35 @@
             <div class="col-lg-6 col-md-12">
                 <h2 style="font-size: 2.5rem; font-family:  'Francois One', Arial;">Our Facilities</h2>
                 <div class="row text-center facilities-section22">
-                    <!-- 4 images in a row for large displays, and stacked on small displays -->
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f8.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 1">
-                        {{-- <p>Facility 1</p> --}}
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f3.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 2">
-                        {{-- <p>Facility 2</p> --}}
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f6.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 3">
-                        {{-- <p>Facility 3</p> --}}
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
                         <img src="{{ asset('public/images/whatsapp/f7.jpg') }}" class="facility-img22 img-fluid"
                             alt="Facility 4">
-                        {{-- <p>Facility 4</p> --}}
                     </div>
                 </div>
 
-                <!-- Contact Information Section -->
                 <br><br>
                 <h3>Contact us for a Free Consultation:</h3>
                 <p class="contact-number22">
-                    <a href="tel:+919746222668">Call us Now: <span class="contact-bg22">97462 22668</span></a>
+                    <a href="tel:+919746222668">
+                        <span class="contact-bg22">Tel: 97462 22668</span>
+                    </a>
                 </p>
             </div>
         </div>
     </div>
+
 
     {{-- add a small footer here. should be in black color bg. text should be in white color. add "©2018-2024 Proact Healthcare (P) Limited | All rights reserved" in center for all screen. make it responsive. --}}
 
@@ -1287,12 +1539,12 @@
         $(document).ready(function() {
             $('.result22').each(function() {
                 var fullText = $(this).data('text'); // Get the full text from the data-text attribute
-                var shortText = fullText.substring(0, 129); // Show only the first 100 characters
+                var shortText = fullText.substring(0, 420); // Show only the first 100 characters
 
                 // Only apply shortening if the full text is longer than 100 characters
-                if (fullText.length > 77) {
+                if (fullText.length > 420) {
                     $(this).html(shortText +
-                    '... <span class="more-btn22">More</span>'); // Add the "More" button inline
+                        '... <span class="more-btn22">More</span>'); // Add the "More" button inline
                     $(this).siblings('.more-btn22').show(); // Show the "More" button if hidden
                 }
             });
@@ -1301,16 +1553,48 @@
             $(document).on('click', '.more-btn22', function() {
                 var fullText = $(this).parent().data('text');
                 $(this).parent().html(fullText +
-                ' <span class="less-btn22">Less</span>'); // Display full text and "Less" button
+                    ' <span class="less-btn22">Less</span>'); // Display full text and "Less" button
             });
 
             // Collapse text on clicking "Less"
             $(document).on('click', '.less-btn22', function() {
-                var shortText = $(this).parent().data('text').substring(0, 129);
+                var shortText = $(this).parent().data('text').substring(0, 420);
                 $(this).parent().html(shortText +
-                '... <span class="more-btn22">More</span>'); // Collapse back to short text
+                    '... <span class="more-btn22">More</span>'); // Collapse back to short text
+            });
+
+            // Toggle location details on click
+// Toggle location details on click
+document.querySelectorAll('.toggle-location22').forEach(function(locationLink) {
+    locationLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the target collapse element for the clicked location
+        var target = document.querySelector(locationLink.getAttribute('data-target'));
+        
+        // Check if the target is already open
+        var isOpen = target.style.display === 'block';
+
+        // Close all other locations
+        document.querySelectorAll('.collapse').forEach(function(collapseDiv) {
+            collapseDiv.style.display = 'none';
+            document.querySelectorAll('.plus-icon22').forEach(function(icon) {
+                icon.innerHTML = '&#43;'; // Reset all icons to plus sign
             });
         });
+
+        // Toggle the clicked location (only open if it was closed)
+        if (!isOpen) {
+            target.style.display = 'block';
+            locationLink.querySelector('.plus-icon22').innerHTML = '&#8722;'; // Change to minus sign
+        }
+    });
+});
+
+        });
+
+
+
     </script>
 
 </body>
